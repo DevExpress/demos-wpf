@@ -1,0 +1,54 @@
+﻿<local:GaugesDemoModule x:Class="GaugesDemo.CircularProgressgauge"
+                        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+                        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+                        xmlns:local="clr-namespace:GaugesDemo"
+                        xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+                        xmlns:controls="clr-namespace:GaugesDemo.Controls"
+                        mc:Ignorable="d"
+                        d:DesignHeight="557"
+                        d:DesignWidth="887">
+    <local:GaugesDemoModule.Resources>
+        <Style TargetType="dxe:TrackBarEdit">
+            <Setter Property="Minimum" Value="0" />
+            <Setter Property="Maximum" Value="100" />
+            <Setter Property="TickPlacement" Value="BottomRight" />
+            <Setter Property="TickFrequency" Value="10" />
+            <Setter Property="TickItemDisplayMode" Value="TickAndText" />
+        </Style>
+    </local:GaugesDemoModule.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition />
+            <ColumnDefinition />
+        </Grid.ColumnDefinitions>
+
+        <GroupBox Header="Simple Circular Progress Gauge" Margin="5">
+            <controls:SimpleCircularProgressGauge />
+        </GroupBox>
+        <GroupBox Header="Segmented Circular Progress Gauge" Grid.Column="1" Margin="5">
+            <controls:SegmentedCircularProgressGauge
+                Segment1Brush="#CCDC3B"
+                Segment2Brush="#FF5E01"
+                Segment3Brush="#29B6F6"
+                Segment4Brush="#FFC106"
+                Thickness="15"
+                ProgressThickness="15"/>
+        </GroupBox>
+        <GroupBox Header="Multi-Value Circular Progress Gauge" Grid.Row="1" Grid.ColumnSpan="2" Grid.RowSpan="2" Margin="5 0 5 5">
+            <controls:FiveRangeCircularProgressGauge
+                ProgressThickness="20"
+                Thickness="20"
+                MinValue="0"
+                MaxValue="100"
+                Range1Brush="#FFC106"
+                Range2Brush="#CCDC3B"
+                Range3Brush="#FF5E01"/>
+        </GroupBox>
+    </Grid>
+</local:GaugesDemoModule>

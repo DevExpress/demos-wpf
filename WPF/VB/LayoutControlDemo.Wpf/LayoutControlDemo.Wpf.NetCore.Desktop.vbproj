@@ -1,0 +1,326 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+    <ProjectGuid>{D4B1A7E6-7BA1-0184-2CE0-545B7C1FCF9E}</ProjectGuid>
+    <EnableDefaultItems>False</EnableDefaultItems>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>True</UseWPF>
+    <UseWindowsForms>True</UseWindowsForms>
+    <EnableWindowsTargeting>True</EnableWindowsTargeting>
+    <Configurations>Debug;Release</Configurations>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <AppendTargetFrameworkToOutputPath>False</AppendTargetFrameworkToOutputPath>
+    <EmbeddedResourceUseDependentUponConvention>False</EmbeddedResourceUseDependentUponConvention>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>LayoutControlDemo</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>WinExe</OutputType>
+    <WarningLevel>4</WarningLevel>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <IntermediateOutputPath>obj.NCD</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\DebugNetCoreDesktop\</OutputPath>
+    <DefineConstants>TRACE,DEBUG,WPF,DEBUGTEST,</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <WarningLevel>4</WarningLevel>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <ErrorReport>prompt</ErrorReport>
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\ReleaseNetCoreDesktop\</OutputPath>
+    <DefineConstants>TRACE,WPF,</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Resource Include="Images\VisualStudio.svg" />
+    <Resource Include="Images\Female.svg" />
+    <Resource Include="Images\Male.svg" />
+    <Resource Include="Images\Calc.svg" />
+    <Resource Include="Images\Home.svg" />
+    <Resource Include="Images\Rates.svg" />
+    <Resource Include="Images\Research.svg" />
+    <Resource Include="Images\Statistics.svg" />
+    <Resource Include="Images\System.svg" />
+    <Resource Include="Images\UserManagment.svg" />
+    <PackageReference Include="DevExpress.Wpf.Demos" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.All" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.ThemesLW" VersionOverride="26.1.2-beta-26148" />
+    
+    
+    
+    
+    
+    
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="demoicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.vb">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\controlCarInfo.xaml.vb">
+      <DependentUpon>controlCarInfo.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\controlProperties.xaml.vb">
+      <DependentUpon>controlProperties.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DemoModuleControl.vb" />
+    <Compile Include="Controls\LayoutControlCustomizationBehavior.vb" />
+    <Compile Include="Data\AdvancedGroupedLayoutData.vb" />
+    <Compile Include="Data\AdvancedGroupedLayoutData_FluentAPI.vb" />
+    <Compile Include="Data\AttributeSupportData.vb" />
+    <Compile Include="Data\AttributeSupportData_FluentAPI.vb" />
+    <Compile Include="Data\GroupedLayoutData.vb" />
+    <Compile Include="Data\GroupedLayoutData_FluentAPI.vb" />
+    <Compile Include="Data\MaskedInputData.vb" />
+    <Compile Include="Data\MaskedInputData_FluentAPI.vb" />
+    <Compile Include="Data\SupportedDataTypesData.vb" />
+    <Compile Include="Data\SupportedDataTypesData_FluentAPI.vb" />
+    <Compile Include="DemoTesting\Fixtures.vb" />
+    <Compile Include="MainWindow.xaml.vb">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\pageDataLayoutControl.xaml.vb">
+      <DependentUpon>pageDataLayoutControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\VehiclesViewModel.vb" />
+    <Compile Include="ViewModels\DataControlPageViewModel.vb" />
+    <Compile Include="ViewModels\PageDashboardViewModel.vb" />
+    <Compile Include="ViewModels\RealEstateViewModel.vb" />
+    <Compile Include="Modules\pageCars.xaml.vb">
+      <DependentUpon>pageCars.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\pageDashboard.xaml.vb">
+      <DependentUpon>pageDashboard.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\pageDockLayoutControl.xaml.vb">
+      <DependentUpon>pageDockLayoutControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\pageEmployees.xaml.vb">
+      <DependentUpon>pageEmployees.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\pageFlowLayoutControl.xaml.vb">
+      <DependentUpon>pageFlowLayoutControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\pageImageGallery.xaml.vb">
+      <DependentUpon>pageImageGallery.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\pageLayoutControl.xaml.vb">
+      <DependentUpon>pageLayoutControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\pageMortgageApplication.xaml.vb">
+      <DependentUpon>pageMortgageApplication.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\pageProducts.xaml.vb">
+      <DependentUpon>pageProducts.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\pageRealEstate.xaml.vb">
+      <DependentUpon>pageRealEstate.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SampleLayoutItem.vb" />
+    <Compile Include="Controls\ThicknessEdit.vb" />
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="Controls\controlCarInfo.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\controlProperties.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Modules\pageDataLayoutControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Modules\pageCars.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Modules\pageDashboard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Modules\pageDockLayoutControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Modules\pageEmployees.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Modules\pageFlowLayoutControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Modules\pageImageGallery.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Modules\pageLayoutControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Modules\pageMortgageApplication.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Modules\pageProducts.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Modules\pageRealEstate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Modules\pageTileLayoutControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\PropertyEdits.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\SampleLayoutItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Modules\pageTileLayoutControl.xaml.vb">
+      <DependentUpon>pageTileLayoutControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>LayoutControlDemo.Properties</CustomToolNamespace>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\RealEstate\1.jpg" />
+    <Resource Include="Images\RealEstate\2.jpg" />
+    <Resource Include="Images\RealEstate\3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Photos\01.JPG" />
+    <Resource Include="Images\Photos\02.JPG" />
+    <Resource Include="Images\Photos\03.JPG" />
+    <Resource Include="Images\Photos\04.JPG" />
+    <Resource Include="Images\Photos\05.JPG" />
+    <Resource Include="Images\Photos\06.JPG" />
+    <Resource Include="Images\Photos\07.JPG" />
+    <Resource Include="Images\Photos\08.JPG" />
+    <Resource Include="Images\Photos\09.JPG" />
+    <Resource Include="Images\Photos\10.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\VCL.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Agents\1.jpg" />
+    <Resource Include="Images\Agents\2.jpg" />
+    <Resource Include="Images\Agents\3.jpg" />
+    <Resource Include="Images\Agents\4.jpg" />
+    <Resource Include="Images\Agents\5.jpg" />
+    <Resource Include="Images\Agents\6.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\DashboardBackground.jpg" />
+  </ItemGroup>
+  <PropertyGroup>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <GenerateRuntimeConfigDevFile>true</GenerateRuntimeConfigDevFile>
+    <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+  </PropertyGroup>
+  <Target Name="SourceCode" BeforeTargets="PreBuildEvent">
+    <ItemGroup>
+      <Resource Include="@(Page)" />
+    </ItemGroup>
+    <ItemGroup>
+      <Resource Include="@(Compile)" />
+    </ItemGroup>
+  </Target>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" />
+  </ItemGroup>
+  <ItemGroup>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ItemGroup>
+</Project>

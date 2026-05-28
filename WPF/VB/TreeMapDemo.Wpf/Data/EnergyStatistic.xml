@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfEnergyStatistic>
+  <CountryEnergyInfo Country="USA">
+    <EnergyStatistic TypeName="Nuclear" Value="187.9" />
+    <EnergyStatistic TypeName="Oil" Value="937.6"/>
+    <EnergyStatistic TypeName="Natural Gas" Value="582"/>
+    <EnergyStatistic TypeName="Hydro Electric" Value="59.8"/>
+    <EnergyStatistic TypeName="Coal" Value="564.3"/>
+  </CountryEnergyInfo>
+  <CountryEnergyInfo Country="Japan">
+    <EnergyStatistic TypeName="Nuclear" Value="64.8"/>
+    <EnergyStatistic TypeName="Oil" Value="241.5"/>
+    <EnergyStatistic TypeName="Natural Gas" Value="64.9"/>
+    <EnergyStatistic TypeName="Hydro Electric" Value="22.6"/>
+    <EnergyStatistic TypeName="Coal" Value="120.8"/>
+  </CountryEnergyInfo>
+  <CountryEnergyInfo Country="India">
+    <EnergyStatistic TypeName="Nuclear" Value="3.8"/>
+    <EnergyStatistic TypeName="Oil" Value="119.3"/>
+    <EnergyStatistic TypeName="Natural Gas" Value="28.9"/>
+    <EnergyStatistic TypeName="Hydro Electric" Value="19"/>
+    <EnergyStatistic TypeName="Coal" Value="204.8"/>
+  </CountryEnergyInfo>
+  <CountryEnergyInfo Country="Germany">
+    <EnergyStatistic TypeName="Nuclear" Value="37.8"/>
+    <EnergyStatistic TypeName="Oil" Value="123.6"/>
+    <EnergyStatistic TypeName="Natural Gas" Value="77.3"/>
+    <EnergyStatistic TypeName="Hydro Electric" Value="6.1"/>
+    <EnergyStatistic TypeName="Coal" Value="85.7"/>
+  </CountryEnergyInfo>
+</ArrayOfEnergyStatistic>

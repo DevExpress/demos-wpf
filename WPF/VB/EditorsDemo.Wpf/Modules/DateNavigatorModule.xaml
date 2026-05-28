@@ -1,0 +1,90 @@
+<local:EditorsDemoModule x:Class="EditorsDemo.DateNavigatorModule"
+                         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                         xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+                         xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                         xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                         xmlns:local="clr-namespace:EditorsDemo">
+    <local:EditorsDemoModule.Resources>
+        <local:ListToRangeConverter x:Key="ListToRangeConverter"/>
+        <local:ModeToHeightConverter x:Key="ModeToHeightConverter"/>
+        <Style TargetType="{x:Type dxe:ComboBoxEdit}">
+            <Setter Property="FocusPopupOnOpen" Value="True" />
+        </Style>
+    </local:EditorsDemoModule.Resources>
+    <DockPanel>
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled"
+                      VerticalScrollBarVisibility="Auto"
+                      Name="PART_Options"
+                      DockPanel.Dock="Right"
+                      dx:ScrollBarExtensions.ScrollBarMode="TouchOverlap"
+                      Focusable="False">
+            <StackPanel Margin="12" MinWidth="250">
+                <GroupBox Header="Properties">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition Height="{Binding ElementName=SelectionModeEdit, Path=EditValue, Converter={StaticResource ModeToHeightConverter}}"/>
+                        </Grid.RowDefinitions>
+
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Min value:" VerticalAlignment="Center"  Margin="0,6,6,0" x:Name="minValueLabel"/>
+                        <dxe:DateEdit EditValue="{Binding ElementName=navigator, Path=MinValue, Mode=TwoWay}" Grid.Row="0" Grid.Column="1"  Margin="0,6,0,0" AllowNullInput="True" AutomationProperties.LabeledBy="{Binding ElementName=minValueLabel}"/>
+
+                        <TextBlock Grid.Row="1" Grid.Column="0" Text="Max value:" VerticalAlignment="Center"  Margin="0,6,6,0" x:Name="maxValueLabel"/>
+                        <dxe:DateEdit EditValue="{Binding ElementName=navigator, Path=MaxValue, Mode=TwoWay}" Grid.Row="1" Grid.Column="1"  Margin="0,6,0,0" AllowNullInput="True" AutomationProperties.LabeledBy="{Binding ElementName=maxValueLabel}"/>
+
+                        <dxe:CheckEdit Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" EditValueChanged="OnDisabledWeekendEditValueChanged" Content="Disable weekends"  Margin="0,6,0,0"></dxe:CheckEdit>
+                        <dxe:CheckEdit Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2" EditValueChanged="OnHighlightUSHolidaysEditValueChanged" Content="Highlight US holidays"  Margin="0,6,0,0"></dxe:CheckEdit>
+
+                        <TextBlock Grid.Row="4" Grid.Column="0" Text="Selection mode:" VerticalAlignment="Center"  Margin="0,6,6,0" x:Name="selectionModeLabel"/>
+                        <dxe:ComboBoxEdit Grid.Row="4" Grid.Column="1" Margin="0,6,0,0" x:Name="SelectionModeEdit"
+                                          EditValue="{Binding ElementName=navigator, Path=SelectionMode, Mode=TwoWay}"
+                                          ItemsSource="{dxe:EnumItemsSource EnumType={x:Type dxe:DateNavigatorSelectionMode}}"
+                                          AutomationProperties.LabeledBy="{Binding ElementName=selectionModeLabel}"/>
+
+                        <TextBlock Grid.Row="5" Grid.Column="0" Margin="0,6,6,0" Text="Selected range:" x:Name="selectedRangeLabel"/>
+                        <TextBlock Grid.Row="5" Grid.Column="1" Margin="0,6,6,0" TextWrapping="Wrap"
+                                   Text="{Binding ElementName=navigator, Path=SelectedDates, Converter={StaticResource ListToRangeConverter}}"
+                                   AutomationProperties.LabeledBy="{Binding ElementName=selectedRangeLabel}"/>
+                    </Grid>
+                </GroupBox>
+                <GroupBox Header="Appearance" Margin="0,12,0,0">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        
+                        <TextBlock Grid.Row="0" Grid.Column="0" Text="Calendar style: " VerticalAlignment="Center"  Margin="0,6,6,0" x:Name="calendarStyleLabel"/>
+                        <dxe:ComboBoxEdit x:Name="styleSettingsComboBox" Grid.Row="0" Grid.Column="1"  Margin="0,6,0,0" IsTextEditable="False" EditValueChanged="OnStyleSettingsEditValueChanged" DisplayMember="Name" ValueMember="Value" AutomationProperties.LabeledBy="{Binding ElementName=calendarStyleLabel}"/>
+
+                        <dxe:CheckEdit Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" EditValue="{Binding ElementName=navigator, Path=ShowWeekNumbers, Mode=TwoWay}"  Margin="0,6,0,0" Content="Show Week Numbers" />
+                        <dxe:CheckEdit Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" EditValue="{Binding ElementName=navigator, Path=ShowTodayButton, Mode=TwoWay}"  Margin="0,6,0,0" Content="Show TodayButton" />
+                        
+                    </Grid>
+                </GroupBox>
+            </StackPanel>
+        </ScrollViewer>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.09*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="0.09*"/>
+            </Grid.RowDefinitions>
+            <dxe:DateNavigator Grid.Row="1" Margin="50,0" x:Name="navigator" MinValue="{x:Static sys:DateTime.Now}"/>
+        </Grid>
+    </DockPanel>
+</local:EditorsDemoModule>

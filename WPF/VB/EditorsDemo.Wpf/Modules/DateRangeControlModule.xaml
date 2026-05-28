@@ -1,0 +1,173 @@
+<local:EditorsDemoModule x:Class="EditorsDemo.DateRangeControlModule"
+                         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                         xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+                         xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+                         xmlns:dxc="http://schemas.devexpress.com/winfx/2008/xaml/charts"
+                         xmlns:local="clr-namespace:EditorsDemo">
+    <local:EditorsDemoModule.DataContext>
+        <local:ChartViewModel/>
+    </local:EditorsDemoModule.DataContext>
+    <DockPanel>
+        <ScrollViewer HorizontalScrollBarVisibility="Disabled"
+                      VerticalScrollBarVisibility="Auto"
+                      Name="PART_Options"
+                      DockPanel.Dock="Right"
+                      dx:ScrollBarExtensions.ScrollBarMode="TouchOverlap"
+                      Focusable="False">
+            <StackPanel Margin="12" MinWidth="250">
+                <GroupBox Header="Behavior">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <CheckBox Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2"
+                                  Content="IsTextReadOnly"
+                                  IsChecked="{Binding ElementName=DateRangeControl, Path=IsTextReadOnly, Mode=TwoWay}" />
+
+                        <CheckBox Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"
+                                  Content="ShowPredefinedRanges"
+                                  IsChecked="{Binding ElementName=DateRangeControl, Path=ShowPredefinedRanges, Mode=TwoWay}" />
+
+                        <CheckBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                                  Content="ShowClearButtons"
+                                  IsChecked="{Binding ElementName=DateRangeControl, Path=ShowClearButtons, Mode=TwoWay}" />
+
+                        <TextBlock Grid.Row="3" Grid.Column="0" Margin="0,6,6,0" 
+                                   Text="PopupFooterButtons" x:Name="footerBtnsLabel"/>
+                        <dxe:ComboBoxEdit Grid.Row="4" Grid.Column="1" Margin="0,6,0,0"
+                                          EditValue="{Binding ElementName=DateRangeControl, Path=PopupFooterButtons, Mode=TwoWay}"
+                                          ItemsSource="{dxe:EnumItemsSource EnumType={x:Type dxe:PopupFooterButtons}}"
+                                          AutomationProperties.LabeledBy="{Binding ElementName=footerBtnsLabel}"
+                                          FocusPopupOnOpen="True"/>
+                    </Grid>
+                </GroupBox>
+                <GroupBox Header="Restrictions">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Grid.Column="0" Margin="0,6,6,0" 
+                                   Text="MinValue" x:Name="minValueLabel"/>
+                        <dxe:DateEdit Grid.Row="0" Grid.Column="1" Margin="0,6,0,0"
+                                      EditValue="{Binding ElementName=DateRangeControl, Path=MinValue, Mode=TwoWay}" 
+                                      AutomationProperties.LabeledBy="{Binding ElementName=minValueLabel}"/>
+
+                        <TextBlock Grid.Row="1" Grid.Column="0" Margin="0,6,6,0" 
+                                   Text="MaxValue" x:Name="maxValueLabel"/>
+                        <dxe:DateEdit Grid.Row="1" Grid.Column="1" Margin="0,6,0,0"
+                                      EditValue="{Binding ElementName=DateRangeControl, Path=MaxValue, Mode=TwoWay}" 
+                                      AutomationProperties.LabeledBy="{Binding ElementName=maxValueLabel}"/>
+
+                        <TextBlock Grid.Row="2" Grid.Column="0" Margin="0,6,6,0"
+                                   Text="MinRangeLength" x:Name="minRangeLengthLabel"/>
+                        <dxe:SpinEdit Grid.Row="2" Grid.Column="1" Margin="0,6,0,0"
+                                      Value="{Binding ElementName=DateRangeControl, Path=MinRangeLength, Mode=TwoWay}"
+                                      AutomationProperties.LabeledBy="{Binding ElementName=minRangeLengthLabel}"/>
+
+                        <TextBlock Grid.Row="3" Grid.Column="0" Margin="0,6,6,0"
+                                   Text="MaxRangeLength" x:Name="maxRangeLengthLabel"/>
+                        <dxe:SpinEdit Grid.Row="3" Grid.Column="1" Margin="0,6,0,0" 
+                                      Value="{Binding ElementName=DateRangeControl, Path=MaxRangeLength, Mode=TwoWay}"
+                                      AutomationProperties.LabeledBy="{Binding ElementName=maxRangeLengthLabel}"/>
+                    </Grid>
+                </GroupBox>
+                <GroupBox Header="Apperance">
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto" />
+                            <ColumnDefinition />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                            <RowDefinition />
+                        </Grid.RowDefinitions>
+                        <TextBlock Grid.Row="0" Grid.Column="0" Margin="0,6,6,0" 
+                                   Text="Mask" x:Name="maskLabel"/>
+                        <TextBox Grid.Row="0" Grid.Column="1" Margin="0,6,0,0"
+                                 Text="{Binding ElementName=DateRangeControl, Path=Mask, Mode=TwoWay}" 
+                                 AutomationProperties.LabeledBy="{Binding ElementName=maskLabel}"/>
+
+                        <TextBlock Grid.Row="1" Grid.Column="0" Margin="0,6,6,0" 
+                                   Text="StartNullText" x:Name="startNullTextLabel"/>
+                        <TextBox Grid.Row="1" Grid.Column="1" Margin="0,6,0,0"
+                                 Text="{Binding ElementName=DateRangeControl, Path=StartNullText, Mode=TwoWay}" 
+                                 AutomationProperties.LabeledBy="{Binding ElementName=startNullTextLabel}"/>
+
+                        <TextBlock Grid.Row="2" Grid.Column="0" Margin="0,6,6,0"
+                                   Text="EndNullText" x:Name="endNullTextLabel"/>
+                        <TextBox Grid.Row="2" Grid.Column="1" Margin="0,6,0,0"
+                                 Text="{Binding ElementName=DateRangeControl, Path=EndNullText, Mode=TwoWay}" 
+                                 AutomationProperties.LabeledBy="{Binding ElementName=endNullTextLabel}"/>
+                    </Grid>
+                </GroupBox>
+            </StackPanel>
+        </ScrollViewer>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <GroupBox Grid.Column="0"
+                      Header="Range"
+                      Margin="0,12,21,0"
+                      VerticalAlignment="Top"
+                      HorizontalAlignment="Right">
+                <dxe:DateRangeControl x:Name="DateRangeControl"
+                                      PopupFooterButtons="OkCancel"
+                                      MinValue="{Binding Min}"
+                                      MaxValue="{Binding Max}"
+                                      Start="{Binding Start}"
+                                      End="{Binding End}"/>
+            </GroupBox>
+            <dxc:ChartControl Grid.Row="1" BorderThickness="0"
+                              DataSource="{Binding Series}">
+                <dxc:ChartControl.Legend>
+                    <dxc:Legend VerticalPosition="Top"
+                                HorizontalPosition="Left"/>
+                </dxc:ChartControl.Legend>
+                <dxc:XYDiagram2D>
+                    <dxc:LineSeries2D ArgumentDataMember="Date"
+                                      DisplayName="PageViews"
+                                      ValueDataMember="Value"
+                                      Brush="Blue"
+                                      MarkerVisible="True"/>
+                    <dxc:AreaSeries2D ArgumentDataMember="Date"
+                                      ValueDataMember="Value"
+                                      Brush="Blue"
+                                      Transparency="0.66"/>
+                    <dxc:XYDiagram2D.AxisY>
+                        <dxc:AxisY2D>
+                            <dxc:AxisY2D.WholeRange>
+                                <dxc:Range dxc:AxisY2D.AlwaysShowZeroLevel="False"/>
+                            </dxc:AxisY2D.WholeRange>
+                        </dxc:AxisY2D>
+                    </dxc:XYDiagram2D.AxisY>
+                    <dxc:XYDiagram2D.AxisX>
+                        <dxc:AxisX2D>
+                            <dxc:AxisX2D.WholeRange>
+                                <dxc:Range SideMarginsValue="0"/>
+                            </dxc:AxisX2D.WholeRange>
+                        </dxc:AxisX2D>
+                    </dxc:XYDiagram2D.AxisX>
+                </dxc:XYDiagram2D>
+            </dxc:ChartControl>
+        </Grid>
+    </DockPanel>
+</local:EditorsDemoModule>

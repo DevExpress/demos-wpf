@@ -1,0 +1,15 @@
+﻿<dxdb:DemoShellWindow
+    x:Class="ReportWpfDemo.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dxdb="http://schemas.devexpress.com/winfx/2008/xaml/demobase"
+    xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    Title="DevExpress WPF Demos"
+    Icon="pack://application:,,,/ReportWpfDemo;component/demoicon.ico">
+    <dxdb:DemoShellWindow.Resources>
+        <Style TargetType="dxr:RibbonStatusBarControl">
+            <Setter Property="IsSizeGripVisible" Value="False" />
+        </Style>
+    </dxdb:DemoShellWindow.Resources>
+</dxdb:DemoShellWindow>

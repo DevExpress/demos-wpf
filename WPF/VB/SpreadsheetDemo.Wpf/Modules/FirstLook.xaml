@@ -1,0 +1,23 @@
+<local:SpreadsheetDemoModule xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                             xmlns:dxsps="http://schemas.devexpress.com/winfx/2008/xaml/spreadsheet"
+                             xmlns:local="clr-namespace:SpreadsheetDemo"
+                             x:Class="SpreadsheetDemo.FirstLook">
+
+    <dxsps:SpreadsheetControl x:Name="spreadsheetControl1"
+                                  CommandBarStyle="Empty"
+                                  ShowFormulaBar="True"
+                                  ShowStatusBar="True"
+                                  DocumentSource="{DXBinding '$local:DemoUtils.GetRelativePath(`InvestmentPortfolio.xltx`)'}"
+                                  BorderThickness="0,1,0,0"
+                                  InvalidFormatException="spreadsheetControl1_InvalidFormatException"
+                                  DocumentClosing="spreadsheetControl1_DocumentClosing">
+        <dxsps:SpreadsheetControl.Options>
+            <dxsps:SpreadsheetControlOptions Culture="en-US">
+                <dxsps:SpreadsheetControlOptions.Print>
+                    <dxsps:SpreadsheetPrintOptions PrintContent="ActiveSheets"/>
+                </dxsps:SpreadsheetControlOptions.Print>
+            </dxsps:SpreadsheetControlOptions>
+        </dxsps:SpreadsheetControl.Options>
+    </dxsps:SpreadsheetControl>
+</local:SpreadsheetDemoModule>

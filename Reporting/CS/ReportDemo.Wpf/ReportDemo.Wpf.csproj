@@ -1,0 +1,329 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9EC0DE7A-BF9A-46A6-91FF-D79FC8B972FF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <BaseIntermediateOutputPath>obj.Wpf</BaseIntermediateOutputPath>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ReportWpfDemo</RootNamespace>
+    <AssemblyName>ReportWpfDemo</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <ConvertToNet8Windows />
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>true</Prefer32Bit>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WPF;DEBUGTEST</DefineConstants>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;WPF;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>demoicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.AIIntegration.Desktop.v26.1">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath></HintPath>
+    <Private>False</Private></Reference>
+    <Reference Include="DevExpress.AIIntegration.v26.1">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath></HintPath>
+    <Private>False</Private></Reference>
+    <Reference Include="DevExpress.AIIntegration.Reporting.Common.v26.1">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath></HintPath>
+    <Private>False</Private></Reference>
+    <Reference Include="DevExpress.AIIntegration.Printing.v26.1">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath></HintPath>
+    <Private>False</Private></Reference>
+    <Reference Include="DevExpress.AIIntegration.Wpf.v26.1">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath></HintPath>
+    <Private>False</Private></Reference>
+    <Reference Include="DevExpress.AIIntegration.Wpf.Reporting.v26.1">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath></HintPath>
+    <Private>False</Private></Reference>
+    <Reference Include="DevExpress.Data.Desktop.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.Data.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.Drawing.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.DataAccess.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.DemoData.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.Images.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.Printing.v26.1.Core"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.Charts.v26.1.Core"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.Office.v26.1.Core"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.RichEdit.v26.1.Core"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.Utils.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.Xpf.Core.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.Xpf.Controls.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.Xpf.DemoBase.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.Xpf.Diagram.v26.1">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath></HintPath>
+    <Private>False</Private></Reference>
+    <Reference Include="DevExpress.Xpf.DocumentViewer.v26.1.Core"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.Xpf.Layout.v26.1.Core"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.Xpf.Docking.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.Xpf.Printing.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.Xpf.ReportDesigner.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.Xpf.Ribbon.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.XtraCharts.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.PivotGrid.v26.1.Core"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.XtraPivotGrid.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.XtraReports.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.XtraRichEdit.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.DemoReports.v26.1">
+      <Private>True</Private>
+    <HintPath>..\..\Bin\DevExpress.DemoReports.v26.1.dll</HintPath></Reference>
+    <Reference Include="DevExpress.Xpf.LayoutControl.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.Mvvm.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.Xpf.DataAccess.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="PresentationFramework.Luna"><Private>False</Private></Reference>
+    <Reference Include="System"><Private>False</Private></Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations"><Private>False</Private></Reference>
+    <Reference Include="System.configuration"><Private>False</Private></Reference>
+    <Reference Include="System.Core"><Private>False</Private></Reference>
+    <Reference Include="System.Data.Linq"><Private>False</Private></Reference>
+    <Reference Include="System.Drawing"><Private>False</Private></Reference>
+    <Reference Include="System.Xaml"><Private>False</Private></Reference>
+    <Reference Include="System.Xml.Linq"><Private>False</Private></Reference>
+    <Reference Include="System.Data.DataSetExtensions"><Private>False</Private></Reference>
+    <Reference Include="System.Data"><Private>False</Private></Reference>
+    <Reference Include="System.Xml"><Private>False</Private></Reference>
+    <Reference Include="UIAutomationProvider"><Private>False</Private></Reference>
+    <Reference Include="WindowsBase"><Private>False</Private></Reference>
+    <Reference Include="PresentationCore"><Private>False</Private></Reference>
+    <Reference Include="PresentationFramework"><Private>False</Private></Reference>
+    <PackageReference Include="EntityFramework">
+      <netcore3ignore />
+    </PackageReference>
+    <PackageReference Include="System.Data.SQLite">
+      <netcore3ignore />
+    </PackageReference>
+    <PackageReference Include="System.Data.SQLite.EF6">
+      <netcore3ignore />
+    </PackageReference>
+    <PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3">
+      <netcore3ignore />
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AIOperations\AIDemoException.cs" />
+    <Compile Include="AIOperations\AIExceptionHandler.cs" />
+    <Compile Include="AIOperations\AIServicesRegistration.cs" />
+    <Compile Include="AIOperations\PromoteHttpStatusErrorsPipelineTransport.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DemoTesting\ReportsCheckAllDemosFixture.cs" />
+    <Compile Include="DemoTesting\DocumentPagesReadyConditionFactory.cs" />
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\DocumentPreview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ReportDesignerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="Modules\AIIntegration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modules\AIIntegrationReportDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Resources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\AIIntegration.xaml.cs">
+      <DependentUpon>AIIntegration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\AIIntegrationReportDesigner.xaml.cs">
+      <DependentUpon>AIIntegrationReportDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\BalanceSheetReport.cs" />
+    <Compile Include="Modules\BarCodes.cs" />
+    <Compile Include="Modules\CalculatedFields.cs" />
+    <Compile Include="Modules\CarryoverSummaryReport.cs" />
+    <Compile Include="Modules\CharacterComb.cs" />
+    <Compile Include="Modules\Charts.cs" />
+    <Compile Include="Modules\ConditionalFormatting.cs" />
+    <Compile Include="Modules\CrossBandContent.cs" />
+    <Compile Include="Modules\CrossBandControls.cs" />
+    <Compile Include="Modules\CustomControl.cs" />
+    <Compile Include="Modules\DemoParameterTemplateSelector.cs" />
+    <Compile Include="Controls\DocumentPreview.xaml.cs">
+      <DependentUpon>DocumentPreview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DrillDown.cs" />
+    <Compile Include="Modules\DrillThrough.cs" />
+    <Compile Include="Modules\EmployeePerformanceReview.cs" />
+    <Compile Include="Modules\FallCatalog.cs" />
+    <Compile Include="Modules\HierarchicalReport.cs" />
+    <Compile Include="Modules\IListDataSource.cs" />
+    <Compile Include="Modules\InteractiveSorting.cs" />
+    <Compile Include="Modules\Invoice.cs" />
+    <Compile Include="Modules\LabelReport.cs" />
+    <Compile Include="Modules\LargeQuantityOfData.cs" />
+    <Compile Include="Modules\MailMerge.cs" />
+    <Compile Include="Modules\MasterDetail.cs" />
+    <Compile Include="Modules\MultiColumn.cs" />
+    <Compile Include="Modules\PdfSignature.cs" />
+    <Compile Include="Modules\PivotGrid.cs" />
+    <Compile Include="Modules\PivotGridAndChart.cs" />
+    <Compile Include="Modules\ProductList.cs" />
+    <Compile Include="Modules\ProfitAndLoss.cs" />
+    <Compile Include="Controls\ReportDesignerControl.xaml.cs">
+      <DependentUpon>ReportDesignerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ReportDesignerViewModel.cs" />
+    <Compile Include="Modules\ReportMerging.cs" />
+    <Compile Include="Modules\EmbeddedPDFContent.cs" />
+    <Compile Include="Modules\ReportMergingWithPdf.cs" />
+    <Compile Include="Controls\ReportModuleBase.cs" />
+    <Compile Include="Modules\ReportModuleViewModelBase.cs" />
+    <Compile Include="Modules\RestaurantMenu.cs" />
+    <Compile Include="Modules\RollPaper.cs" />
+    <Compile Include="Modules\Shape.cs" />
+    <Compile Include="Modules\ShrinkGrow.cs" />
+    <Compile Include="Modules\SideBySideReports.cs" />
+    <Compile Include="Modules\Sparkline.cs" />
+    <Compile Include="Modules\Subreports.cs" />
+    <Compile Include="Modules\SwissQRBill.cs" />
+    <Compile Include="Modules\Table.cs" />
+    <Compile Include="Modules\VehicleInspectionReport.cs" />
+    <Compile Include="Modules\VerticalAnchoring.cs" />
+    <Compile Include="Modules\ParametersModelProvider.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    
+    <None Include="connectionStrings.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <EmbeddedResource Include="Resources\Flags\China.png" />
+    <EmbeddedResource Include="Resources\Flags\France.png" />
+    <EmbeddedResource Include="Resources\Flags\Germany.png" />
+    <EmbeddedResource Include="Resources\Flags\India.png" />
+    <EmbeddedResource Include="Resources\Flags\Italy.png" />
+    <EmbeddedResource Include="Resources\Flags\Russia.png" />
+    <EmbeddedResource Include="Resources\Flags\United_Kingdom.png" />
+    <EmbeddedResource Include="Resources\Flags\United_States_of_America.png" />
+    <EmbeddedResource Include="Resources\Flags\Japan.png" />
+    <EmbeddedResource Include="Resources\Flags\Australia.png" />
+    <Resource Include="license.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="demoicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Azure.AI.OpenAI" />
+	<PackageReference Include="Microsoft.Agents.AI.Workflows" />
+    <PackageReference Include="Microsoft.Extensions.AI.OpenAI" />
+    <PackageReference Include="Microsoft.Extensions.AI" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AIReports\AILocalizationGuide.png" />
+    <Resource Include="Resources\AIReports\AILocalizationThumb.png" />
+    <Resource Include="Resources\AIReports\AIModificationChatGuide.png" />
+    <Resource Include="Resources\AIReports\AIModificationChatThumb.png" />
+    <Resource Include="Resources\AIReports\AIReportWizardGuide.png" />
+    <Resource Include="Resources\AIReports\AIReportWizardThumb.png" />
+    <Resource Include="Resources\AIReports\AITestDataGuide.png" />
+    <Resource Include="Resources\AIReports\AITestDataThumb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AIReports\AIExpressionGuide.png" />
+    <Resource Include="Resources\AIReports\AIExpressionThumb.png" />
+  </ItemGroup>
+  <Target Name="SourceCode" BeforeTargets="PreBuildEvent"><ItemGroup><Resource Include="@(Page)" /></ItemGroup><ItemGroup><Resource Include="@(Compile)" /></ItemGroup></Target>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <!--ONLY NETCORE3
+  <PropertyGroup>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+	<GenerateRuntimeConfigDevFile>true</GenerateRuntimeConfigDevFile>
+	<RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
+	<ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+  </PropertyGroup>
+  ONLY NETCORE3-->
+  <!--ONLY NETCORE3
+  <Import Project="Demo.targets"/>
+  ONLY NETCORE3-->
+  <!--ONLY NETCORE3
+  <Import Project="Themes.NetCore.targets"/>
+  ONLY NETCORE3-->
+  <!--ONLY NETCORE3
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+    <PackageReference Include="System.Data.SQLite.Core" />
+  </ItemGroup>
+  ONLY NETCORE3-->
+  <PropertyGroup>
+    
+  </PropertyGroup>
+  <Target Name="AfterResolveReferences">
+    <ItemGroup>
+      <netcore3ignore />
+      <EmbeddedResource Include="@(ReferenceCopyLocalPaths)" Condition="'%(ReferenceCopyLocalPaths.Extension)' == '.dll'&#xD;&#xA;                                 AND $([System.Text.RegularExpressions.Regex]::IsMatch('%(ReferenceCopyLocalPaths.FileName)', '^(?!DevExpress).*?(?&lt;!\.resources)$'))">
+        <LogicalName>%(ReferenceCopyLocalPaths.Filename)%(ReferenceCopyLocalPaths.Extension)</LogicalName>
+      </EmbeddedResource>
+    </ItemGroup>
+  </Target>
+</Project>

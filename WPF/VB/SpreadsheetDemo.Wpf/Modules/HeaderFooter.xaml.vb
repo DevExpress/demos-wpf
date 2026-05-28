@@ -1,0 +1,26 @@
+Imports DevExpress.XtraSpreadsheet.Commands
+Imports DevExpress.XtraSpreadsheet.Services
+
+Namespace SpreadsheetDemo
+
+    Public Partial Class HeaderFooter
+        Inherits SpreadsheetDemoModule
+
+        Public Sub New()
+            InitializeComponent()
+            MainWindow.CommonRibbon.Init(Nothing)
+        End Sub
+
+        Private Sub btnPageSetup_Click(ByVal sender As Object, ByVal e As System.Windows.RoutedEventArgs)
+            Dim service As ISpreadsheetCommandFactoryService = CType(spreadsheetControl1.GetService(GetType(ISpreadsheetCommandFactoryService)), ISpreadsheetCommandFactoryService)
+            Dim command As SpreadsheetCommand = service.CreateCommand(SpreadsheetCommandId.PageSetupHeaderFooter)
+            command.ForceExecute(command.CreateDefaultCommandUIState())
+        End Sub
+
+        Private Sub btnPrintPreview_Click(ByVal sender As Object, ByVal e As System.Windows.RoutedEventArgs)
+            Dim service As ISpreadsheetCommandFactoryService = CType(spreadsheetControl1.GetService(GetType(ISpreadsheetCommandFactoryService)), ISpreadsheetCommandFactoryService)
+            Dim command As SpreadsheetCommand = service.CreateCommand(SpreadsheetCommandId.FilePrintPreview)
+            command.ForceExecute(command.CreateDefaultCommandUIState())
+        End Sub
+    End Class
+End Namespace

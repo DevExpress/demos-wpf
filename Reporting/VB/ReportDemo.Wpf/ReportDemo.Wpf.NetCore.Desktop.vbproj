@@ -1,0 +1,299 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+    <ProjectGuid>{B180E47A-636D-04BD-2AA9-6114D1AD1AC7}</ProjectGuid>
+    <EnableDefaultItems>False</EnableDefaultItems>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>True</UseWPF>
+    <UseWindowsForms>True</UseWindowsForms>
+    <EnableWindowsTargeting>True</EnableWindowsTargeting>
+    <Configurations>Debug;Release</Configurations>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <AppendTargetFrameworkToOutputPath>False</AppendTargetFrameworkToOutputPath>
+    <EmbeddedResourceUseDependentUponConvention>False</EmbeddedResourceUseDependentUponConvention>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>ReportWpfDemo</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{778DAE3C-4631-46EA-AA77-85C1314464D9}</ProjectTypeGuids>
+    <OutputType>WinExe</OutputType>
+    <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <IntermediateOutputPath>obj.NCD</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <OutputPath>bin\DebugNetCoreDesktop\</OutputPath>
+    <DefineConstants>TRACE,DEBUG,WPF,DEBUGTEST,</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <WarningLevel>4</WarningLevel>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <ErrorReport>prompt</ErrorReport>
+    <OutputPath>bin\ReleaseNetCoreDesktop\</OutputPath>
+    <DefineConstants>TRACE,WPF,</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="DevExpress.AIIntegration.Wpf.Reporting" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Demos" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Win.Design" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Reporting.Demos" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.DXStyle" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.LightGray" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.MetropolisLight" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.MetropolisDark" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2007Black" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2007Blue" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2007Silver" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2010Black" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2010Blue" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2010Silver" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2013" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2013DarkGray" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2013LightGray" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2016Black" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2016BlackSE" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2016Colorful" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2016ColorfulSE" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2016DarkGraySE" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2016White" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2016WhiteSE" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2019Black" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2019DarkGray" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2019White" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2019HighContrast" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.VS2017Blue" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.VS2017Dark" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.VS2017Light" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.VS2019Blue" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Win10Light" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Win10Dark" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Win11Light" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Win11Dark" VersionOverride="26.1.2-beta-26148" />
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AIOperations\AIDemoException.vb" />
+    <Compile Include="AIOperations\AIExceptionHandler.vb" />
+    <Compile Include="AIOperations\AIServicesRegistration.vb" />
+    <Compile Include="AIOperations\PromoteHttpStatusErrorsPipelineTransport.vb" />
+    <Compile Include="App.xaml.vb">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DemoTesting\ReportsCheckAllDemosFixture.vb" />
+    <Compile Include="DemoTesting\DocumentPagesReadyConditionFactory.vb" />
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\DocumentPreview.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Controls\ReportDesignerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>XamlIntelliSenseFileGenerator</Generator>
+    </Page>
+    <Page Include="Modules\AIIntegration.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modules\AIIntegrationReportDesigner.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Themes\Resources.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="MainWindow.xaml.vb">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\AIIntegration.xaml.vb">
+      <DependentUpon>AIIntegration.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\AIIntegrationReportDesigner.xaml.vb">
+      <DependentUpon>AIIntegrationReportDesigner.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\BalanceSheetReport.vb" />
+    <Compile Include="Modules\BarCodes.vb" />
+    <Compile Include="Modules\CalculatedFields.vb" />
+    <Compile Include="Modules\CarryoverSummaryReport.vb" />
+    <Compile Include="Modules\CharacterComb.vb" />
+    <Compile Include="Modules\Charts.vb" />
+    <Compile Include="Modules\ConditionalFormatting.vb" />
+    <Compile Include="Modules\CrossBandContent.vb" />
+    <Compile Include="Modules\CrossBandControls.vb" />
+    <Compile Include="Modules\CustomControl.vb" />
+    <Compile Include="Modules\DemoParameterTemplateSelector.vb" />
+    <Compile Include="Controls\DocumentPreview.xaml.vb">
+      <DependentUpon>DocumentPreview.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DrillDown.vb" />
+    <Compile Include="Modules\DrillThrough.vb" />
+    <Compile Include="Modules\EmployeePerformanceReview.vb" />
+    <Compile Include="Modules\FallCatalog.vb" />
+    <Compile Include="Modules\HierarchicalReport.vb" />
+    <Compile Include="Modules\IListDataSource.vb" />
+    <Compile Include="Modules\InteractiveSorting.vb" />
+    <Compile Include="Modules\Invoice.vb" />
+    <Compile Include="Modules\LabelReport.vb" />
+    <Compile Include="Modules\LargeQuantityOfData.vb" />
+    <Compile Include="Modules\MailMerge.vb" />
+    <Compile Include="Modules\MasterDetail.vb" />
+    <Compile Include="Modules\MultiColumn.vb" />
+    <Compile Include="Modules\PdfSignature.vb" />
+    <Compile Include="Modules\PivotGrid.vb" />
+    <Compile Include="Modules\PivotGridAndChart.vb" />
+    <Compile Include="Modules\ProductList.vb" />
+    <Compile Include="Modules\ProfitAndLoss.vb" />
+    <Compile Include="Controls\ReportDesignerControl.xaml.vb">
+      <DependentUpon>ReportDesignerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ReportDesignerViewModel.vb" />
+    <Compile Include="Modules\ReportMerging.vb" />
+    <Compile Include="Modules\EmbeddedPDFContent.vb" />
+    <Compile Include="Modules\ReportMergingWithPdf.vb" />
+    <Compile Include="Controls\ReportModuleBase.vb" />
+    <Compile Include="Modules\ReportModuleViewModelBase.vb" />
+    <Compile Include="Modules\RestaurantMenu.vb" />
+    <Compile Include="Modules\RollPaper.vb" />
+    <Compile Include="Modules\Shape.vb" />
+    <Compile Include="Modules\ShrinkGrow.vb" />
+    <Compile Include="Modules\SideBySideReports.vb" />
+    <Compile Include="Modules\Sparkline.vb" />
+    <Compile Include="Modules\Subreports.vb" />
+    <Compile Include="Modules\SwissQRBill.vb" />
+    <Compile Include="Modules\Table.vb" />
+    <Compile Include="Modules\VehicleInspectionReport.vb" />
+    <Compile Include="Modules\VerticalAnchoring.vb" />
+    <Compile Include="Modules\ParametersModelProvider.vb" />
+    <Compile Include="Properties\AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+      <CustomToolNamespace>ReportWpfDemo.Properties</CustomToolNamespace>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="connectionStrings.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <EmbeddedResource Include="Resources\Flags\China.png" />
+    <EmbeddedResource Include="Resources\Flags\France.png" />
+    <EmbeddedResource Include="Resources\Flags\Germany.png" />
+    <EmbeddedResource Include="Resources\Flags\India.png" />
+    <EmbeddedResource Include="Resources\Flags\Italy.png" />
+    <EmbeddedResource Include="Resources\Flags\Russia.png" />
+    <EmbeddedResource Include="Resources\Flags\United_Kingdom.png" />
+    <EmbeddedResource Include="Resources\Flags\United_States_of_America.png" />
+    <EmbeddedResource Include="Resources\Flags\Japan.png" />
+    <EmbeddedResource Include="Resources\Flags\Australia.png" />
+    <Resource Include="license.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="demoicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Azure.AI.OpenAI" />
+    <PackageReference Include="Microsoft.Agents.AI.Workflows" />
+    <PackageReference Include="Microsoft.Extensions.AI.OpenAI" />
+    <PackageReference Include="Microsoft.Extensions.AI" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\AIReports\AILocalizationGuide.png" />
+    <Resource Include="Resources\AIReports\AILocalizationThumb.png" />
+    <Resource Include="Resources\AIReports\AIModificationChatGuide.png" />
+    <Resource Include="Resources\AIReports\AIModificationChatThumb.png" />
+    <Resource Include="Resources\AIReports\AIReportWizardGuide.png" />
+    <Resource Include="Resources\AIReports\AIReportWizardThumb.png" />
+    <Resource Include="Resources\AIReports\AITestDataGuide.png" />
+    <Resource Include="Resources\AIReports\AITestDataThumb.png" />
+    <Resource Include="Resources\AIReports\AIExpressionGuide.png" />
+    <Resource Include="Resources\AIReports\AIExpressionThumb.png" />
+  </ItemGroup>
+  <PropertyGroup>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <GenerateRuntimeConfigDevFile>true</GenerateRuntimeConfigDevFile>
+    <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+  </PropertyGroup>
+  <Target Name="SourceCode" BeforeTargets="PreBuildEvent">
+    <ItemGroup>
+      <Resource Include="@(Page)" />
+    </ItemGroup>
+    <ItemGroup>
+      <Resource Include="@(Compile)" />
+    </ItemGroup>
+  </Target>
+  <ItemGroup>
+    <PackageReference Include="DevExpress.Wpf.Themes.VS2019Dark" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.VS2019Light" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Seven" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.TouchlineDark" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.VS2010" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.ThemesLW" VersionOverride="26.1.2-beta-26148" />
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+    <PackageReference Include="System.Data.SQLite.Core" />
+  </ItemGroup>
+  <Target Name="AfterResolveReferences">
+  </Target>
+</Project>

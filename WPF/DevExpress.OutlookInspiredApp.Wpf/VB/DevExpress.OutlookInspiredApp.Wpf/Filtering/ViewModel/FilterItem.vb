@@ -1,0 +1,74 @@
+Imports System
+Imports System.Linq
+Imports System.Windows.Media
+Imports DevExpress.Data.Filtering
+Imports DevExpress.Mvvm.POCO
+Imports DevExpress.Xpf.Core
+
+Namespace DevExpress.DevAV.ViewModels
+
+    Public Class FilterItem
+
+        Private _FilterTreeViewModel As IFilterTreeViewModel
+
+        Public Shared Function Create(ByVal entitiesCount As Integer, ByVal name As String, ByVal filterCriteria As CriteriaOperator, ByVal imageUri As String, ByVal filterTreeViewModel As IFilterTreeViewModel) As FilterItem
+            Return ViewModelSource.Create(Function() New FilterItem(entitiesCount, name, filterCriteria, imageUri, filterTreeViewModel))
+        End Function
+
+        Protected Sub New(ByVal entitiesCount As Integer, ByVal name As String, ByVal filterCriteria As CriteriaOperator, ByVal imageUri As String, ByVal filterTreeViewModel As IFilterTreeViewModel)
+            Me.Name = name
+            Me.FilterCriteria = filterCriteria
+            Me.ImageUri = imageUri
+            Me.FilterTreeViewModel = filterTreeViewModel
+            Update(entitiesCount)
+        End Sub
+
+        Public Overridable Property Name As String
+
+        Public Overridable Property FilterCriteria As CriteriaOperator
+
+        Public Overridable Property EntitiesCount As Integer
+
+        Public Overridable Property DisplayText As String
+
+        Public Overridable Property ImageUri As String
+
+        Public Overridable Property ImageSource As ImageSource
+
+        Public Property FilterTreeViewModel As IFilterTreeViewModel
+            Get
+                Return _FilterTreeViewModel
+            End Get
+
+            Protected Set(ByVal value As IFilterTreeViewModel)
+                _FilterTreeViewModel = value
+            End Set
+        End Property
+
+        Public ReadOnly Property IsCustomFilter As Boolean
+            Get
+                If IsInDesignMode() Then Return False
+                Dim customCategory = FilterTreeViewModel.Categories.FirstOrDefault(Function(x) x.IsCustom)
+                Return If(customCategory Is Nothing, False, customCategory.FilterItems.Contains(Me))
+            End Get
+        End Property
+
+        Public Sub Update(ByVal entitiesCount As Integer)
+            Me.EntitiesCount = entitiesCount
+            DisplayText = String.Format("{0} ({1})", Name, entitiesCount)
+            If Not String.IsNullOrEmpty(ImageUri) Then ImageSource = CType(New SvgImageSourceExtension() With {.Uri = New Uri(String.Format("pack://application:,,,/DevExpress.OutlookInspiredApp.Wpf;component/{0}", ImageUri)), .Size = New Windows.Size(16, 16)}.ProvideValue(Nothing), ImageSource)
+        End Sub
+
+        Public Function Clone() As FilterItem
+            Return Create(EntitiesCount, Name, FilterCriteria, ImageUri, FilterTreeViewModel)
+        End Function
+
+        Public Function Clone(ByVal name As String, ByVal imageUri As String) As FilterItem
+            Return Create(EntitiesCount, name, FilterCriteria, imageUri, FilterTreeViewModel)
+        End Function
+
+        Protected Overridable Sub OnNameChanged()
+            Update(EntitiesCount)
+        End Sub
+    End Class
+End Namespace

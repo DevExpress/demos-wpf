@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+    <ProjectGuid>{E35ECB41-1F46-04B6-3D81-EF2A02BE08BA}</ProjectGuid>
+    <EnableDefaultItems>False</EnableDefaultItems>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>True</UseWPF>
+    <UseWindowsForms>True</UseWindowsForms>
+    <EnableWindowsTargeting>True</EnableWindowsTargeting>
+    <Configurations>Debug;Release</Configurations>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <AppendTargetFrameworkToOutputPath>False</AppendTargetFrameworkToOutputPath>
+    <EmbeddedResourceUseDependentUponConvention>False</EmbeddedResourceUseDependentUponConvention>
+    <RootNamespace>
+    </RootNamespace>
+    <AssemblyName>RichEditDemo</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <OutputType>WinExe</OutputType>
+    <WarningLevel>4</WarningLevel>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <IntermediateOutputPath>obj.NCD</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\DebugNetCoreDesktop\</OutputPath>
+    <DefineConstants>TRACE,DEBUG,WPF,DEBUGTEST,</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <WarningLevel>4</WarningLevel>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <ErrorReport>prompt</ErrorReport>
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\ReleaseNetCoreDesktop\</OutputPath>
+    <DefineConstants>TRACE,WPF,</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Resource Include="Images\About.svg" />
+    <Resource Include="Images\NewComment.svg" />
+    <Resource Include="Images\InsertDocumentProperty.svg" />
+    <Resource Include="Images\DocumentStatistics_16x16.png" />
+    <Resource Include="Images\DocumentStatistics_32x32.png" />
+    <Resource Include="Images\SpellCheckAsYouType_16x16.png" />
+    <Resource Include="Images\SpellCheckAsYouType_32x32.png" />
+    <PackageReference Include="DevExpress.Wpf.Demos" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Document.Processor" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.All" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.ThemesLW" VersionOverride="26.1.2-beta-26148" />
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.vb">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DemoTesting\Fixtures.vb" />
+    <Compile Include="MainWindow.xaml.vb">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\AutoCorrect.xaml.vb">
+      <DependentUpon>AutoCorrect.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\AutoCorrect\AutoCorrectHelper.vb" />
+    <Compile Include="Modules\ContextMenuCustomization.xaml.vb">
+      <DependentUpon>ContextMenuCustomization.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\CustomDraw\CustomDrawHighlightInfo.vb" />
+    <Compile Include="Modules\CustomDraw\CustomDrawPagePainter.vb" />
+    <Compile Include="Modules\CustomDraw\CustomsRichEditCommandFactoryService.vb" />
+    <Compile Include="Modules\CustomDraw\LayoutPageExtensions.vb" />
+    <Compile Include="Modules\DocumentProperties.xaml.vb">
+      <DependentUpon>DocumentProperties.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DocumentProperties\DocumentPropertyInfo.vb" />
+    <Compile Include="Modules\DocumentProtection\UserService.vb" />
+    <Compile Include="Modules\FirstLook\PageInfoConverter.vb" />
+    <Compile Include="Modules\HitTesting.xaml.vb">
+      <DependentUpon>HitTesting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\CustomDraw.xaml.vb">
+      <DependentUpon>CustomDraw.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\FirstLook\StaticsticsVisitor.vb" />
+    <Compile Include="Modules\FirstLook\StatisticsViewModel.vb" />
+    <Compile Include="Modules\HitTesting\HitTestPagePainter.vb" />
+    <Compile Include="Modules\HitTesting\ScopeType.vb" />
+    <Compile Include="Modules\MailMerge\DBUriStreamProvider.vb" />
+    <Compile Include="Modules\MailMerge\MailMergeCommandFactoryService.vb" />
+    <Compile Include="Modules\MailMerge\MailMergeResultWindow.xaml.vb">
+      <DependentUpon>MailMergeResultWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\MailMerge\MailMergeToNewControlCommand.vb" />
+    <Compile Include="Modules\OperationRestrictions\RichEditOptionsProvider.vb" />
+    <Compile Include="Modules\SyntaxHighlighting\CustomRichEditCommandFactoryService.vb" />
+    <Compile Include="Modules\SyntaxHighlighting\SourceCodeDocumentFormat.vb" />
+    <Compile Include="Modules\SyntaxHighlighting\SourcesCodeDocumentExporter.vb" />
+    <Compile Include="Modules\SyntaxHighlighting\SourcesCodeDocumentImporter.vb" />
+    <Compile Include="Modules\SyntaxHighlighting\SyntaxHighlightService.vb" />
+    <Compile Include="Modules\SpellChecking.xaml.vb">
+      <DependentUpon>SpellChecking.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DocumentProtection.xaml.vb">
+      <DependentUpon>DocumentProtection.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\MailMerge.xaml.vb">
+      <DependentUpon>MailMerge.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\MailMergeMasterDetail.xaml.vb">
+      <DependentUpon>MailMergeMasterDetail.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\OperationRestrictions.xaml.vb">
+      <DependentUpon>OperationRestrictions.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\FirstLook.xaml.vb">
+      <DependentUpon>FirstLook.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\RibbonUICustomization.xaml.vb">
+      <DependentUpon>RibbonUICustomization.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\DynamicContent.xaml.vb">
+      <DependentUpon>DynamicContent.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\SyntaxHighlighting.xaml.vb">
+      <DependentUpon>SyntaxHighlighting.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Navigation.xaml.vb">
+      <DependentUpon>Navigation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\Comments.xaml.vb">
+      <DependentUpon>Comments.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RichEditDemoExceptionHandler.vb" />
+    <Compile Include="DemoUtils.vb" />
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Modules\AutoCorrect.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Modules\ContextMenuCustomization.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modules\DocumentProperties.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Modules\HitTesting.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modules\CustomDraw.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Modules\MailMergeMasterDetail.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Modules\MailMerge\MailMergeResultWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Modules\SpellChecking.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Modules\DocumentProtection.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Modules\MailMerge.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Modules\OperationRestrictions.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Modules\FirstLook.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Modules\RibbonUICustomization.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Modules\DynamicContent.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Modules\SyntaxHighlighting.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Modules\Navigation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Modules\Comments.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.vb">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="RichEditDemoModule.vb" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>RichEditDemo.Properties</CustomToolNamespace>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="demoicon.ico" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Resource Include="Images\ribbon-application-32x32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\CustomizeMergeField_16x16.png" />
+    <Resource Include="Images\CustomizeMergeField_32x32.png" />
+    <Resource Include="Images\SmallAbout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="smile.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MergeToNewDocument_16x16.png" />
+    <Resource Include="Images\MergeToNewDocument_32x32.png" />
+  </ItemGroup>
+  <PropertyGroup>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <GenerateRuntimeConfigDevFile>true</GenerateRuntimeConfigDevFile>
+    <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+  </PropertyGroup>
+  <Target Name="SourceCode" BeforeTargets="PreBuildEvent">
+    <ItemGroup>
+      <Resource Include="@(Page)" />
+    </ItemGroup>
+    <ItemGroup>
+      <Resource Include="@(Compile)" />
+    </ItemGroup>
+  </Target>
+  <ItemGroup>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" />
+    <PackageReference Include="System.ServiceModel.Syndication" />
+  </ItemGroup>
+</Project>

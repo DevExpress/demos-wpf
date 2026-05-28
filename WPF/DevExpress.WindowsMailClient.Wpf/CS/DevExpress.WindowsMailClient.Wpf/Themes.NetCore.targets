@@ -1,0 +1,121 @@
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Reference Include="DevExpress.Xpf.Themes.DXStyle.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.Themes.DXStyle.v26.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.LightGray.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.Themes.LightGray.v26.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.MetropolisLight.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.Themes.MetropolisLight.v26.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.MetropolisDark.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.Themes.MetropolisDark.v26.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.Office2007Black.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.Themes.Office2007Black.v26.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.Office2007Blue.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.Themes.Office2007Blue.v26.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.Office2007Silver.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.Themes.Office2007Silver.v26.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.Office2010Black.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.Themes.Office2010Black.v26.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.Office2010Blue.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.Themes.Office2010Blue.v26.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.Office2010Silver.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.Themes.Office2010Silver.v26.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.Office2013.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.Themes.Office2013.v26.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.Office2013DarkGray.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.Themes.Office2013DarkGray.v26.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.Office2013LightGray.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.Themes.Office2013LightGray.v26.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.Office2016Black.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.Themes.Office2016Black.v26.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.Office2016BlackSE.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.Themes.Office2016BlackSE.v26.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.Office2016Colorful.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.Themes.Office2016Colorful.v26.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.Office2016ColorfulSE.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.Themes.Office2016ColorfulSE.v26.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.Office2016DarkGraySE.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.Themes.Office2016DarkGraySE.v26.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.Office2016White.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.Themes.Office2016White.v26.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.Office2016WhiteSE.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.Themes.Office2016WhiteSE.v26.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.Office2019Black.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.Themes.Office2019Black.v26.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.Office2019Colorful.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.Themes.Office2019Colorful.v26.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.Office2019DarkGray.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.Themes.Office2019DarkGray.v26.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.Office2019White.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.Themes.Office2019White.v26.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.Office2019HighContrast.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.Themes.Office2019HighContrast.v26.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.VS2017Blue.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.Themes.VS2017Blue.v26.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.VS2017Dark.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.Themes.VS2017Dark.v26.1.dll</HintPath>
+    </Reference>  
+    <Reference Include="DevExpress.Xpf.Themes.VS2017Light.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.Themes.VS2017Light.v26.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.VS2019Blue.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.Themes.VS2019Blue.v26.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.Win10Light.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.Themes.Win10Light.v26.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.Win10Dark.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.Themes.Win10Dark.v26.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.Win11Light.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.Themes.Win11Light.v26.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.Win11Dark.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.Themes.Win11Dark.v26.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.VS2019Dark.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.Themes.VS2019Dark.v26.1.dll</HintPath>
+    </Reference>  
+    <Reference Include="DevExpress.Xpf.Themes.VS2019Light.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.Themes.VS2019Light.v26.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.Seven.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.Themes.Seven.v26.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.TouchlineDark.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.Themes.TouchlineDark.v26.1.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.Xpf.Themes.VS2010.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.Themes.VS2010.v26.1.dll</HintPath>
+    </Reference>
+	<Reference Include="DevExpress.Xpf.ThemesLW.v26.1">
+      <HintPath>..\..\..\Bin\NETCore\DevExpress.Xpf.ThemesLW.v26.1.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

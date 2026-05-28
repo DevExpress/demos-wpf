@@ -1,0 +1,26 @@
+Imports System.Windows
+Imports System.Windows.Controls
+Imports DevExpress.Xpf.Editors
+
+Namespace EditorsDemo
+
+    ''' <summary>
+    ''' Interaction logic for AutoFilterRow.xaml
+    ''' </summary>
+    Public Partial Class RegularMaskEdit
+        Inherits EditorsDemoModule
+
+        Public Sub New()
+            InitializeComponent()
+            AddHandler Loaded, New RoutedEventHandler(AddressOf Me.RegularMaskEdit_Loaded)
+        End Sub
+
+        Private Sub RegularMaskEdit_Loaded(ByVal sender As Object, ByVal e As RoutedEventArgs)
+            editor.Focus()
+        End Sub
+
+        Private Sub EditorGotFocus(ByVal sender As Object, ByVal e As RoutedEventArgs)
+            mask.FocusedEditor = TryCast(sender, TextEdit)
+        End Sub
+    End Class
+End Namespace

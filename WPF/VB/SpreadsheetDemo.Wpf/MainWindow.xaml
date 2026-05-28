@@ -1,0 +1,13 @@
+﻿<dxdb:DemoShellWindow
+    x:Class="SpreadsheetDemo.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:dxdb="http://schemas.devexpress.com/winfx/2008/xaml/demobase"
+    xmlns:dxspst="http://schemas.devexpress.com/winfx/2008/xaml/spreadsheet/themekeys"
+    xmlns:local="clr-namespace:SpreadsheetDemo"
+    Title="DevExpress WPF Demos"
+    Icon="pack://application:,,,/SpreadsheetDemo;component/demoicon.ico">
+    <dxdb:DemoShellWindow.Ribbon>
+        <local:CommonRibbon Template="{DynamicResource {dxspst:SpreadsheetThemeKey ResourceKey=RibbonTemplate, IsThemeIndependent=True}}"/>
+    </dxdb:DemoShellWindow.Ribbon>
+</dxdb:DemoShellWindow>

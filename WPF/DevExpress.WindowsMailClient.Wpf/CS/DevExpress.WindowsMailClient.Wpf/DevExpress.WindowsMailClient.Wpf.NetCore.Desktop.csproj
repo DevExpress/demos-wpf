@@ -1,0 +1,225 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <ProjectGuid>{4BE43E08-22BB-0F9A-22BE-8B3BD1219831}</ProjectGuid>
+    <EnableDefaultItems>False</EnableDefaultItems>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWPF>True</UseWPF>
+    <UseWindowsForms>True</UseWindowsForms>
+    <EnableWindowsTargeting>True</EnableWindowsTargeting>
+    <Configurations>Debug;Release</Configurations>
+    <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+    <AppendTargetFrameworkToOutputPath>False</AppendTargetFrameworkToOutputPath>
+    <EmbeddedResourceUseDependentUponConvention>False</EmbeddedResourceUseDependentUponConvention>
+    <RootNamespace>DevExpress.WindowsMailClient.Wpf</RootNamespace>
+    <AssemblyName>DevExpress.WindowsMailClient.Wpf</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{9A19103F-16F7-4668-BE54-9A1E7A4F7556}</ProjectTypeGuids>
+    <OutputType>WinExe</OutputType>
+    <WarningLevel>4</WarningLevel>
+    <ApplicationIcon>Images\AppIcon\AppIcon.ico</ApplicationIcon>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <IntermediateOutputPath>obj.NCD</IntermediateOutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\x86\DebugNetCoreDesktopTest\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;DEBUGTEST;</DefineConstants>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <WarningLevel>4</WarningLevel>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <ErrorReport>prompt</ErrorReport>
+    <PlatformTarget>x86</PlatformTarget>
+    <OutputPath>bin\ReleaseNetCoreDesktop\</OutputPath>
+    <DefineConstants>TRACE;</DefineConstants>
+  </PropertyGroup>
+  <ItemGroup>
+    <Content Include="Themes.NetCore.targets" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="DevExpress.Wpf.Demos" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Scheduling" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.RichEdit" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Document.Processor" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.SpellChecker" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Win.Design" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.DXStyle" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.LightGray" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.MetropolisLight" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.MetropolisDark" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2007Black" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2007Blue" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2007Silver" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2010Black" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2010Blue" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2010Silver" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2013" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2013DarkGray" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2013LightGray" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2016Black" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2016BlackSE" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2016Colorful" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2016ColorfulSE" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2016DarkGraySE" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2016White" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2016WhiteSE" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2019Black" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2019DarkGray" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2019White" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2019HighContrast" VersionOverride="26.1.2-beta-26148" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Data\DataProvider\IDataProvider.cs" />
+    <Compile Include="Data\DataProvider\MailDataProviderBase.cs" />
+    <Compile Include="Data\DataProvider\XmlMailDataProvider.cs" />
+    <Compile Include="Data\MailFolders.cs" />
+    <Compile Include="Data\MailMessage.cs" />
+    <Compile Include="Utils\Helpers\DataHelper.cs" />
+    <Compile Include="Utils\Helpers\EmailValidationHelper.cs" />
+    <Compile Include="Utils\Helpers\FilePathHelper.cs" />
+    <Compile Include="ViewModel\Base\CommandViewModel.cs" />
+    <Compile Include="ViewModel\Base\ContentViewModel.cs" />
+    <Compile Include="ViewModel\Base\EmptyItemViewModel.cs" />
+    <Compile Include="ViewModel\Mail\AddNewMailCommandViewModel.cs" />
+    <Compile Include="ViewModel\MailHamburgerMenu\MailHamburgerMenuViewModel.cs" />
+    <Compile Include="ViewModel\Mail\MailAccountCollectionViewModel.cs" />
+    <Compile Include="ViewModel\Mail\MailAccountsSettingsViewModel.cs" />
+    <Compile Include="Utils\Helpers\MailMessageHelper.cs" />
+    <Compile Include="ViewModel\Mail\MailAccountViewModel.cs" />
+    <Compile Include="ViewModel\Mail\MailFolderCollectionViewModel.cs" />
+    <Compile Include="ViewModel\Mail\MailFolderViewModel.cs" />
+    <Compile Include="ViewModel\ModuleInjection\Bootstrapper.cs" />
+    <Compile Include="Data\DataProvider\DesignTimeMailDataProvider.cs" />
+    <Compile Include="Utils\Helpers\ExceptionHelper.cs" />
+    <Compile Include="Utils\Helpers\ImageSourceHelper.cs" />
+    <Compile Include="ViewModel\ModuleInjection\Messages\MailAccountsSettingsViewModelInjectedMessage.cs" />
+    <Compile Include="View\MailMessageReadControl.xaml.cs">
+      <DependentUpon>MailMessageReadControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\HamburgerMenuServices\HamburgerMenuStrategy.cs" />
+    <Compile Include="Utils\HamburgerMenuServices\HamburgerMenuWrapper.cs" />
+    <Compile Include="ViewModel\Mail\MailMessageViewModel.cs" />
+    <Compile Include="View\Converters.cs" />
+    <Compile Include="ViewModel\Mail\MailViewModel.cs" />
+    <Compile Include="ViewModel\Mail\MailAccountSettingsViewModel.cs" />
+    <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\ModuleInjection\Modules.cs" />
+    <Compile Include="ViewModel\ModuleInjection\ModuleType.cs" />
+    <Compile Include="ViewModel\ModuleInjection\Regions.cs" />
+    <Compile Include="View\MailView.xaml.cs">
+      <DependentUpon>MailView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MailMessageEditControl.xaml.cs">
+      <DependentUpon>MailMessageEditControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MainView.xaml.cs">
+      <DependentUpon>MainView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\MailAccountSettingsView.xaml.cs">
+      <DependentUpon>MailAccountSettingsView.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="View\MailMessageReadControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\MailView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\MailMessageEditControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MainView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\MailAccountSettingsView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Mail\Unknown-user.png" />
+  </ItemGroup>
+  <ItemGroup Condition=" '$(Configuration)' == 'ClickOnce Debug' OR '$(Configuration)' == 'ClickOnce Release'" />
+  <ItemGroup>
+    <Resource Include="Images\AppIcon\AppIcon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Mail\Add.svg" />
+    <Resource Include="Images\Mail\Customer.svg" />
+    <Resource Include="Images\Mail\Delete.svg" />
+    <Resource Include="Images\Mail\Folders.svg" />
+    <Resource Include="Images\Mail\Mail.svg" />
+    <Resource Include="Images\Mail\Reply.svg" />
+    <Resource Include="Images\Mail\Set_flag.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Mail\Archive.svg" />
+    <Resource Include="Images\Mail\Forward.svg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Mail\Send.svg" />
+  </ItemGroup>
+  <PropertyGroup>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+    <GenerateRuntimeConfigDevFile>true</GenerateRuntimeConfigDevFile>
+    <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
+    <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Sqlite" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Proxies" />
+  </ItemGroup>
+  <ItemGroup><PackageReference Include="DevExpress.Wpf.Themes.VS2017Blue" VersionOverride="26.1.2-beta-26148" /><PackageReference Include="DevExpress.Wpf.Themes.VS2017Dark" VersionOverride="26.1.2-beta-26148" /><PackageReference Include="DevExpress.Wpf.Themes.VS2017Light" VersionOverride="26.1.2-beta-26148" /><PackageReference Include="DevExpress.Wpf.Themes.VS2019Blue" VersionOverride="26.1.2-beta-26148" /><PackageReference Include="DevExpress.Wpf.Themes.Win10Light" VersionOverride="26.1.2-beta-26148" /><PackageReference Include="DevExpress.Wpf.Themes.Win10Dark" VersionOverride="26.1.2-beta-26148" /><PackageReference Include="DevExpress.Wpf.Themes.Win11Light" VersionOverride="26.1.2-beta-26148" /><PackageReference Include="DevExpress.Wpf.Themes.Win11Dark" VersionOverride="26.1.2-beta-26148" /><PackageReference Include="DevExpress.Wpf.Themes.VS2019Dark" VersionOverride="26.1.2-beta-26148" /><PackageReference Include="DevExpress.Wpf.Themes.VS2019Light" VersionOverride="26.1.2-beta-26148" /><PackageReference Include="DevExpress.Wpf.Themes.Seven" VersionOverride="26.1.2-beta-26148" /><PackageReference Include="DevExpress.Wpf.Themes.TouchlineDark" VersionOverride="26.1.2-beta-26148" /><PackageReference Include="DevExpress.Wpf.Themes.VS2010" VersionOverride="26.1.2-beta-26148" /><PackageReference Include="DevExpress.Wpf.ThemesLW" VersionOverride="26.1.2-beta-26148" /></ItemGroup>
+</Project>

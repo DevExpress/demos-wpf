@@ -1,0 +1,479 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A3D3DE49-D121-456F-B3D3-341B5192664F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <BaseIntermediateOutputPath>obj.Wpf</BaseIntermediateOutputPath>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AIDemo</RootNamespace>
+    <AssemblyName>AIDemo</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <NoWarn>OPENAI001;MEAI001;$(NoWarn)</NoWarn>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <ConvertToNet8WindowsRazor />
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>true</Prefer32Bit>
+    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>None</ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
+    <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+    <ApplicationIcon>demoicon.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;WPF;</DefineConstants>
+    <DebugType>full</DebugType>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE;WPF;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <NoWin32Manifest>true</NoWin32Manifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.AIIntegration.Desktop.v26.1">
+      <HintPath></HintPath>
+    <Private>False</Private></Reference>
+    <Reference Include="DevExpress.AIIntegration.Wpf.v26.1">
+      <HintPath></HintPath>
+    <Private>False</Private></Reference>
+    <Reference Include="DevExpress.AIIntegration.Reporting.Common.v26.1">
+      <HintPath></HintPath>
+    <Private>False</Private></Reference>
+	<Reference Include="DevExpress.AIIntegration.Printing.v26.1">
+      <HintPath></HintPath>
+    <Private>False</Private></Reference>
+    <Reference Include="DevExpress.AIIntegration.Wpf.Reporting.v26.1">
+      <HintPath></HintPath>
+    <Private>False</Private></Reference>
+    <Reference Include="DevExpress.AIIntegration.v26.1">
+      <HintPath></HintPath>
+    <Private>False</Private></Reference>
+    <Reference Include="DevExpress.AIIntegration.SemanticSearch.v26.1">
+      <HintPath></HintPath>
+    <Private>False</Private></Reference>
+    <Reference Include="DevExpress.Drawing.v26.1">
+      <HintPath></HintPath>
+    <Private>False</Private></Reference>
+    <Reference Include="DevExpress.Office.v26.1.Core">
+      <HintPath></HintPath>
+    <Private>False</Private></Reference>
+    <Reference Include="DevExpress.Pdf.v26.1.Core">
+      <HintPath></HintPath>
+    <Private>False</Private></Reference>
+    <Reference Include="DevExpress.RichEdit.v26.1.Core">
+      <HintPath></HintPath>
+    <Private>False</Private></Reference>
+    <Reference Include="DevExpress.Xpf.Diagram.v26.1">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath></HintPath>
+    <Private>False</Private></Reference>
+    <Reference Include="DevExpress.Xpf.Docking.v26.1">
+      <HintPath></HintPath>
+    <Private>False</Private></Reference>
+    <Reference Include="DevExpress.Xpf.LayoutControl.v26.1">
+      <HintPath></HintPath>
+    <Private>False</Private></Reference>
+    <Reference Include="DevExpress.Xpf.Grid.v26.1">
+      <HintPath></HintPath>
+    <Private>False</Private></Reference>
+    <Reference Include="DevExpress.Xpf.Grid.v26.1.Core">
+      <HintPath></HintPath>
+    <Private>False</Private></Reference>
+    <Reference Include="DevExpress.Xpf.PdfViewer.v26.1">
+      <HintPath></HintPath>
+    <Private>False</Private></Reference>
+    <Reference Include="DevExpress.Xpf.Ribbon.v26.1">
+      <HintPath></HintPath>
+    <Private>False</Private></Reference>
+    <Reference Include="DevExpress.Xpf.RichEdit.v26.1">
+      <HintPath></HintPath>
+    <Private>False</Private></Reference>
+    <Reference Include="DevExpress.Spreadsheet.v26.1.Core">
+      <HintPath></HintPath>
+    <Private>False</Private></Reference>
+    <Reference Include="DevExpress.Xpf.Spreadsheet.v26.1">
+      <HintPath></HintPath>
+    <Private>False</Private></Reference>
+    <Reference Include="DevExpress.Printing.v26.1.Core">
+      <HintPath></HintPath>
+    <Private>False</Private></Reference>
+    <Reference Include="DevExpress.Xpf.Printing.v26.1">
+      <HintPath></HintPath>
+    <Private>False</Private></Reference>
+    <Reference Include="DevExpress.Xpf.DocumentViewer.v26.1.Core">
+      <HintPath></HintPath>
+    <Private>False</Private></Reference>
+    <Reference Include="DevExpress.Xpf.ReportDesigner.v26.1">
+      <HintPath></HintPath>
+    <Private>False</Private></Reference>
+    <Reference Include="DevExpress.XtraReports.v26.1">
+      <HintPath></HintPath>
+    <Private>False</Private></Reference>
+    <Reference Include="DevExpress.DemoReports.v26.1">
+      <HintPath></HintPath>
+    <Private>False</Private></Reference>
+    <Reference Include="DevExpress.Xpf.DataAccess.v26.1">
+      <HintPath></HintPath>
+    <Private>False</Private></Reference>
+    <Reference Include="System"><Private>False</Private></Reference>
+    <Reference Include="System.Core"><Private>False</Private></Reference>
+    <Reference Include="System.Data"><Private>False</Private></Reference>
+    <Reference Include="System.Drawing"><Private>False</Private></Reference>
+    <Reference Include="System.Windows.Forms"><Private>False</Private></Reference>
+    <Reference Include="System.Xml"><Private>False</Private></Reference>
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    <Private>False</Private></Reference>
+    <Reference Include="WindowsBase"><Private>False</Private></Reference>
+    <Reference Include="PresentationCore"><Private>False</Private></Reference>
+    <Reference Include="PresentationFramework"><Private>False</Private></Reference>
+    <Reference Include="DevExpress.Data.Desktop.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.Data.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.DemoData.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.Images.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.Xpf.Core.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.Xpf.DemoBase.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.Mvvm.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <AppDesigner Include="Properties\" />
+    <Compile Include="DemoTesting\Fixtures.cs" />
+    <Compile Include="Modules\CodeExamplesModule.cs" />
+    <Compile Include="Modules\CodeExamples\AIExceptionHandler.cs" />
+    <Compile Include="Modules\CodeExamples\AuthoredStyleExtension.cs" />
+    <Compile Include="Modules\CodeExamples\AuthoredStyleRequest.cs" />
+    <Compile Include="Modules\CodeExamples\ConfigureAiExtensionsComposition.xaml.cs">
+      <DependentUpon>ConfigureAiExtensionsComposition.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\CodeExamples\CreateCustomExtension.xaml.cs">
+      <DependentUpon>CreateCustomExtension.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\CodeExamples\CustomProcessing.xaml.cs">
+      <DependentUpon>CustomProcessing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\CodeExamples\ErnestHemingwayStyleExtension.cs" />
+    <Compile Include="Modules\CodeExamples\ErrorLoggingAndHandling.xaml.cs">
+      <DependentUpon>ErrorLoggingAndHandling.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\CodeExamples\ModifyDefaultExtension.xaml.cs">
+      <DependentUpon>ModifyDefaultExtension.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\CodeExamples\AuthoredStyleBehavior.cs" />
+    <Compile Include="Modules\CodeExamples\WilliamShakespeareStyleExtension.cs" />
+    <Compile Include="Modules\PdfViewerModule.xaml.cs">
+      <DependentUpon>PdfViewerModule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ReportDesignerModule.xaml.cs">
+      <DependentUpon>ReportDesignerModule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ReportViewerModule.xaml.cs">
+      <DependentUpon>ReportViewerModule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\RichEditModule.xaml.cs">
+      <DependentUpon>RichEditModule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\SemanticSearchModule.xaml.cs">
+      <DependentUpon>SemanticSearchModule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\SemanticSearch\CachingEmbeddingGenerator.cs" />
+    <Compile Include="Modules\SemanticSearch\Data.cs" />
+    <Compile Include="Modules\SmartAutoCompleteModule.xaml.cs">
+      <DependentUpon>SmartAutoCompleteModule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\SmartSearchModule.xaml.cs">
+      <DependentUpon>SmartSearchModule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\PromptToExpressionModule.xaml.cs">
+      <DependentUpon>PromptToExpressionModule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\SpreadsheetModule.xaml.cs">
+      <DependentUpon>SpreadsheetModule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\SmartPasteModule.xaml.cs">
+      <DependentUpon>SmartPasteModule.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="Properties\Resource.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resource.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\Helper.cs" />
+    <Compile Include="ViewModels\PromptToExpressionModuleViewModel.cs" />
+    <Compile Include="ViewModels\SmartPasteModuleViewModel.cs" />
+    <Page Include="Modules\CodeExamples\ConfigureAiExtensionsComposition.xaml" />
+    <Page Include="Modules\CodeExamples\CreateCustomExtension.xaml" />
+    <Page Include="Modules\CodeExamples\CustomProcessing.xaml" />
+    <Page Include="Modules\CodeExamples\ErrorLoggingAndHandling.xaml" />
+    <Page Include="Modules\CodeExamples\ModifyDefaultExtension.xaml" />
+    <Page Include="Modules\PdfViewerModule.xaml" />
+    <Page Include="Modules\ReportDesignerModule.xaml" />
+    <Page Include="Modules\ReportViewerModule.xaml" />
+    <Page Include="Modules\RichEditModule.xaml" />
+    <Page Include="Modules\SemanticSearchModule.xaml" />
+    <Page Include="Modules\SmartAutoCompleteModule.xaml" />
+    <Page Include="Modules\SmartSearchModule.xaml" />
+    <Page Include="Modules\PromptToExpressionModule.xaml" />
+    <Page Include="Modules\SpreadsheetModule.xaml" />
+    <Page Include="Modules\SmartPasteModule.xaml" />
+    <Page Include="Modules\TextEditModule.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="Modules\TextEditModule.xaml.cs">
+      <DependentUpon>TextEditModule.xaml</DependentUpon>
+    </Compile>
+    <Page Include="MainWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="demoicon.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\ai_assistant_menu.png" />
+    <Resource Include="Resources\ai_smart_search.png" />
+    <EmbeddedResource Include="Data\FirstLook.docx" />
+    <EmbeddedResource Include="Data\LoanAmortizationSchedule.xlsx" />
+    <EmbeddedResource Include="Data\TableReport.prnx" />
+    <EmbeddedResource Include="Data\PageContent.pdf" />
+    <EmbeddedResource Include="Properties\Resource.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resource.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Data\VideoRent.xml" />
+    <EmbeddedResource Include="Data\MovieVectors.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Azure.AI.OpenAI" />
+	  <PackageReference Include="Microsoft.Agents.AI.Workflows" />
+    <PackageReference Include="Microsoft.Extensions.AI.OpenAI" />
+    <PackageReference Include="Microsoft.Extensions.AI" />
+    <PackageReference Include="Microsoft.Extensions.VectorData.Abstractions" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
+    <PackageReference Include="Microsoft.SemanticKernel.Connectors.InMemory" />
+    <PackageReference Include="System.Numerics.Tensors" />
+    <PackageReference Include="System.Data.SQLite">
+      <netcore3ignore />
+    </PackageReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\Reports\AILocalizationThumb.png" />
+    <Resource Include="Resources\Reports\AIModificationChatThumb.png" />
+    <Resource Include="Resources\Reports\AIReportWizardThumb.png" />
+    <Resource Include="Resources\Reports\AILocalizationGuide.png" />
+    <Resource Include="Resources\Reports\AIReportWizardGuide.png" />
+    <Resource Include="Resources\Reports\AIModificationChatGuide.png" />
+    <Resource Include="Resources\Reports\AITestDataGuide.png" />
+    <Resource Include="Resources\Reports\AITestDataThumb.png" />
+    <Resource Include="Resources\Reports\AIExpressionGuide.png" />
+    <Resource Include="Resources\Reports\AIExpressionThumb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="connectionStrings.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <Content Include="Resources\AIChat\Eiffel-Tower.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AIChat\file.svg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AIChat\access.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AIChat\dashboard.jpg">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\AIChat\dxaichat.md">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="SourceCode" BeforeTargets="PreBuildEvent"><ItemGroup><Resource Include="@(Page)" /></ItemGroup><ItemGroup><Resource Include="@(Compile)" /></ItemGroup></Target>
+  <!--ONLY NETCORE3
+   <ItemGroup>
+   <Compile Include="Agents\AgentFactory.cs" />
+   <Compile Include="Agents\Publishing\PublishingAgentTools.cs" />
+   <Compile Include="Agents\SimpleTools.cs" />
+   <Compile Include="Agents\Publishing\PublishingGroupChatManager.cs" />
+   <Compile Include="Agents\Shakespearean\ShakespeareanTools.cs" />
+   <Compile Include="Agents\TextProcessing\TextProcessingExecutors.cs" />
+   <Compile Include="Agents\Weather\WeatherAgentTools.cs" />
+   <Compile Include="Agents\WorkflowInfra\WorkflowEventContent.cs" />
+   <Compile Include="Agents\WorkflowInfra\WorkflowResponseProvider.cs" />
+   <Compile Include="Models\WeatherWidgetData.cs" />
+   <Compile Include="ViewModels\AiToolingModuleViewModel.cs" />
+   <Compile Include="Modules\AIToolsModule.xaml.cs">
+     <DependentUpon>AIToolsModule.xaml</DependentUpon>
+   </Compile>
+   <Compile Include="Modules\AIChatPromptSuggestionsModule.xaml.cs">
+     <DependentUpon>AIChatPromptSuggestionsModule.xaml</DependentUpon>
+   </Compile>
+   <Compile Include="Modules\AIChatCustomizeAppearanceModule.xaml.cs">
+     <DependentUpon>AIChatCustomizeAppearanceModule.xaml</DependentUpon>
+   </Compile>
+   <Compile Include="Modules\AIChatFileAttachmentsModule.xaml.cs">
+     <DependentUpon>AIChatFileAttachmentsModule.xaml</DependentUpon>
+   </Compile>
+   <Compile Include="Modules\AIChatResourcesModule.xaml.cs">
+     <DependentUpon>AIChatResourcesModule.xaml</DependentUpon>
+   </Compile>
+   <Compile Include="Modules\AgentModuleBase.cs" />
+   <Compile Include="Modules\GroupChatWorkflowModule.xaml.cs">
+     <DependentUpon>GroupChatWorkflowModule.xaml</DependentUpon>
+   </Compile>
+   <Compile Include="Modules\WorkflowAsAgentModule.xaml.cs">
+     <DependentUpon>WorkflowAsAgentModule.xaml</DependentUpon>
+   </Compile>
+   <Compile Include="Modules\AGUIIntegrationModule.xaml.cs">
+     <DependentUpon>AGUIIntegrationModule.xaml</DependentUpon>
+   </Compile>
+   <Compile Include="Modules\ReasoningModule.xaml.cs">
+     <DependentUpon>ReasoningModule.xaml</DependentUpon>
+   </Compile>
+   <Compile Include="Modules\WorkflowWithExecutorsModule.xaml.cs">
+     <DependentUpon>WorkflowWithExecutorsModule.xaml</DependentUpon>
+   </Compile>
+   <Compile Include="Modules\WorkflowResponseStreamingModule.xaml.cs">
+     <DependentUpon>WorkflowResponseStreamingModule.xaml</DependentUpon>
+   </Compile>
+   <Compile Include="Modules\ToolCallingAgentModule.xaml.cs">
+      <DependentUpon>ToolCallingAgentModule.xaml</DependentUpon>
+    </Compile>
+   <Compile Include="Modules\AIChat\AIChatCustomizeAppearanceMessageTemplate.razor.cs" />
+   <Compile Include="Modules\AIChat\AIChatFileAttachmentsMessageTemplate.razor.cs" />
+   <Compile Include="Modules\AIChat\AIChatResourcesDataProvider.cs" />
+   <Compile Include="Modules\AgentsAPI\EmptyMessageAreaTemplate.razor.cs" />
+   <Compile Include="Modules\AgentsAPI\WeatherMessageContentTemplate.razor.cs" />
+   <Compile Include="Services\AGUIHost.cs" />
+   <Compile Include="Services\WeatherService.cs" />
+   <Page Include="Modules\AIChatPromptSuggestionsModule.xaml" />
+   <Page Include="Modules\AIChatCustomizeAppearanceModule.xaml" />
+   <Page Include="Modules\AIChatFileAttachmentsModule.xaml" />
+   <Page Include="Modules\AIChatResourcesModule.xaml" />
+   <Page Include="Modules\AIToolsModule.xaml" />
+   <Page Include="Modules\GroupChatWorkflowModule.xaml">
+     <Generator>MSBuild:Compile</Generator>
+   </Page>
+   <Page Include="Modules\ToolCallingAgentModule.xaml">
+      <Generator>MSBuild:Compile</Generator>
+   </Page>
+   <Page Include="Modules\WorkflowAsAgentModule.xaml" />
+   <Page Include="Modules\AGUIIntegrationModule.xaml" />
+   <Page Include="Modules\ReasoningModule.xaml" />
+   <Page Include="Modules\WorkflowWithExecutorsModule.xaml">
+     <Generator>MSBuild:Compile</Generator>
+   </Page>
+   <Page Include="Modules\WorkflowResponseStreamingModule.xaml">
+     <Generator>MSBuild:Compile</Generator>
+   </Page>
+   <Compile Include="Tools\AiGridTools.cs" />
+   <Compile Include="Tools\AiLayoutControlTools.cs" />
+   <Compile Include="Tools\AiTools.cs" />
+   <Content Include="Modules\AIChat\AIChatCustomizeAppearanceMessageTemplate.razor" />
+   <Content Include="Modules\AIChat\AIChatFileAttachmentsMessageTemplate.razor" />
+   <Content Include="Modules\AgentsAPI\WeatherWidgetComponent.razor"/>
+   <Content Include="Modules\AgentsAPI\WeatherMessageContentTemplate.razor"/>
+   <Content Include="Modules\AgentsAPI\EmptyMessageAreaTemplate.razor"/>
+ </ItemGroup>
+ ONLY NETCORE3-->
+  <!--ONLY NETCORE3
+ <ItemGroup>
+   <Reference Include="DevExpress.AIIntegration.Wpf.Chat.v26.1">
+     <HintPath>..\..\..\Bin\NETCore\DevExpress.AIIntegration.Wpf.Chat.v26.1.dll</HintPath>
+   </Reference>
+   <Reference Include="DevExpress.AIIntegration.Blazor.Chat.v26.1">
+     <HintPath>..\..\..\Bin\NETCore\DevExpress.AIIntegration.Blazor.Chat.v26.1.dll</HintPath>
+   </Reference>
+   <Reference Include="DevExpress.AIIntegration.Blazor.Chat.WebView.v26.1">
+     <HintPath>..\..\..\Bin\NETCore\DevExpress.AIIntegration.Blazor.Chat.WebView.v26.1.dll</HintPath>
+   </Reference>
+   <Reference Include="DevExpress.Blazor.Resources.v26.1">
+     <HintPath>..\..\..\Bin\NETCore\DevExpress.Blazor.Resources.v26.1.dll</HintPath>
+   </Reference>
+   <Reference Include="DevExpress.Blazor.v26.1">
+     <HintPath>..\..\..\Bin\NETCore\DevExpress.Blazor.v26.1.dll</HintPath>
+   </Reference>
+   <Reference Include="DevExpress.DataAccess.v26.1.UI">
+     <HintPath>..\..\..\Bin\NETCore\DevExpress.DataAccess.v26.1.UI.dll</HintPath>
+   </Reference>
+   <Reference Include="DevExpress.DataAccess.v26.1">
+     <HintPath>..\..\..\Bin\NETCore\DevExpress.DataAccess.v26.1.dll</HintPath>
+   </Reference>
+   <Reference Include="DevExpress.AIIntegration.Agents.v26.1">
+     <HintPath>..\..\..\Bin\NETCore\DevExpress.AIIntegration.Agents.v26.1.dll</HintPath>
+   </Reference>
+   <PackageReference Include="DevExtreme.AspNet.Data" Condition="$(DEMO_REMOVE)==''" />
+   <PackageReference Include="Microsoft.AspNetCore.Components.Web" />
+   <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" />
+   <PackageReference Include="Markdig" />
+   <PackageReference Include="Microsoft.Agents.AI" />
+   <PackageReference Include="Microsoft.Agents.AI.AGUI" />
+   <PackageReference Include="Microsoft.Agents.AI.Hosting" />
+   <PackageReference Include="Microsoft.Agents.AI.Hosting.AGUI.AspNetCore" />
+ </ItemGroup>
+  ONLY NETCORE3-->
+  <!--ONLY NETCORE3
+    <Target Name="wwwrootPublish" BeforeTargets="Build" Condition="$(DEMO_REMOVE)==''">
+    <Exec Command="xcopy /E /I /Y /R ..\..\..\Blazor\DevExpress.Blazor\wwwroot\* wwwroot\_content\DevExpress.Blazor\" ContinueOnError="true" />
+    <Exec Command="xcopy /E /I /Y /R ..\..\..\Blazor\DevExpress.Blazor.Themes.Fluent\wwwroot\* wwwroot\_content\DevExpress.Blazor.Themes.Fluent\" ContinueOnError="true" />
+    
+    <Exec Command="xcopy /E /I /Y /R ..\..\..\Blazor\DevExpress.Blazor\wwwroot\* bin\DebugNetCoreDesktop\wwwroot\_content\DevExpress.Blazor\" ContinueOnError="true" />
+    <Exec Command="xcopy /E /I /Y /R ..\..\..\Blazor\DevExpress.Blazor.Themes.Fluent\wwwroot\* bin\DebugNetCoreDesktop\wwwroot\_content\DevExpress.Blazor.Themes.Fluent\" ContinueOnError="true" />
+  </Target>
+  ONLY NETCORE3-->
+  <!--ONLY NETCORE3
+  <PropertyGroup>
+    <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
+	<GenerateRuntimeConfigDevFile>true</GenerateRuntimeConfigDevFile>
+    <RunAnalyzersDuringBuild>false</RunAnalyzersDuringBuild>
+	<ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
+  </PropertyGroup>
+  ONLY NETCORE3-->
+  <!--ONLY NETCORE3
+    <Import Project="Demo.targets" />
+  ONLY NETCORE3-->
+  <!--ONLY NETCORE3
+    <Import Project="Themes.NetCore.targets" />
+  ONLY NETCORE3-->
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <Target Name="AfterResolveReferences">
+    <ItemGroup>
+      <netcore3ignore />
+      <EmbeddedResource Include="@(ReferenceCopyLocalPaths)" Condition="'%(ReferenceCopyLocalPaths.Extension)' == '.dll'&#xD;&#xA;                                 AND $([System.Text.RegularExpressions.Regex]::IsMatch('%(ReferenceCopyLocalPaths.FileName)', '^(?!DevExpress).*?(?&lt;!\.resources)$'))">
+        <LogicalName>%(ReferenceCopyLocalPaths.Filename)%(ReferenceCopyLocalPaths.Extension)</LogicalName>
+      </EmbeddedResource>
+    </ItemGroup>
+  </Target>
+</Project>

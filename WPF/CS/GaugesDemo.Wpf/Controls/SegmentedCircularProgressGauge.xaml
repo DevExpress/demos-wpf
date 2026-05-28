@@ -1,0 +1,88 @@
+﻿<UserControl x:Class="GaugesDemo.Controls.SegmentedCircularProgressGauge"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:GaugesDemo.Controls"
+             xmlns:dxga="http://schemas.devexpress.com/winfx/2008/xaml/gauges"
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+             xmlns:dxt="http://schemas.devexpress.com/winfx/2008/xaml/core/themekeys"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <DockPanel>
+        <dxe:TrackBarEdit x:Name="TrackBar2" DockPanel.Dock="Top" Value="54" />
+        <Grid DataContext="{Binding RelativeSource={RelativeSource AncestorType=local:SegmentedCircularProgressGauge}}">
+            <dxga:CircularGaugeControl>
+                <dxga:CircularGaugeControl.Scales>
+                    <dxga:ArcScale StartAngle="90" EndAngle="450"
+                                   x:Name="arc"
+                                   StartValue="{Binding ElementName=TrackBar2, Path=Minimum}"
+                                   EndValue="{Binding ElementName=TrackBar2, Path=Maximum}"
+                                   ShowMajorTickmarks="False"
+                                   ShowMinorTickmarks="False"
+                                   ShowLabels="false"
+                                   LayoutMode="Circle" Margin="15">
+                        <dxga:ArcScale.LabelOptions>
+                            <dxga:ArcScaleLabelOptions Offset="-50" />
+                        </dxga:ArcScale.LabelOptions>
+                        <dxga:ArcScale.CustomElements>
+                            <dxga:ScaleCustomElement>
+                                <Viewbox>
+                                    <TextBlock Margin="28"
+                                               FontWeight="Medium"
+                                               VerticalAlignment="Center" HorizontalAlignment="Center"
+                                               Foreground="{DynamicResource {dxt:ThemeColorsThemeKey ResourceKey=BlackForegroundColor}}"
+                                               Text="{Binding ElementName=TrackBar2, Path=Value, StringFormat='{}{0:n0}%'}">
+                                    </TextBlock>
+                                </Viewbox>
+                            </dxga:ScaleCustomElement>
+                        </dxga:ArcScale.CustomElements>
+                        <dxga:ArcScale.RangeBars>
+                            <dxga:ArcScaleRangeBar AnchorValue="{Binding ElementName=arc, Path=StartValue}"
+                                                   Value="{Binding ElementName=arc, Path=EndValue}">
+                                <dxga:ArcScaleRangeBar.Options>
+                                    <dxga:ArcScaleRangeBarOptions Offset="-20" Thickness="{Binding Thickness}" />
+                                </dxga:ArcScaleRangeBar.Options>
+                                <dxga:ArcScaleRangeBar.Presentation>
+                                    <dxga:DefaultArcScaleRangeBarPresentation Fill="#E6E6E6" />
+                                </dxga:ArcScaleRangeBar.Presentation>
+                            </dxga:ArcScaleRangeBar>
+                            <dxga:ArcScaleRangeBar AnchorValue="0" Value="{Binding ElementName=TrackBar2, Path=Value}">
+                                <dxga:ArcScaleRangeBar.Options>
+                                    <dxga:ArcScaleRangeBarOptions Offset="-20" Thickness="{Binding ProgressThickness}" />
+                                </dxga:ArcScaleRangeBar.Options>
+                                <dxga:ArcScaleRangeBar.Presentation>
+                                    <dxga:CustomArcScaleRangeBarPresentation>
+                                        <dxga:CustomArcScaleRangeBarPresentation.RangeBarTemplate>
+                                            <ControlTemplate>
+                                                <Grid RenderTransformOrigin="0.5,0.5"
+                                                      DataContext="{Binding RelativeSource={RelativeSource AncestorType=local:SegmentedCircularProgressGauge}}">
+                                                    <Grid.RowDefinitions>
+                                                        <RowDefinition />
+                                                        <RowDefinition />
+                                                    </Grid.RowDefinitions>
+                                                    <Grid.ColumnDefinitions>
+                                                        <ColumnDefinition />
+                                                        <ColumnDefinition />
+                                                    </Grid.ColumnDefinitions>
+                                                    <Rectangle Grid.Row="1" Grid.Column="0"
+                                                               Fill="{Binding Segment1Brush}" />
+                                                    <Rectangle Grid.Row="0" Grid.Column="0"
+                                                               Fill="{Binding Segment2Brush}" />
+                                                    <Rectangle Grid.Row="0" Grid.Column="1"
+                                                               Fill="{Binding Segment3Brush}" />
+                                                    <Rectangle Grid.Row="1" Grid.Column="1"
+                                                               Fill="{Binding Segment4Brush}" />
+                                                </Grid>
+                                            </ControlTemplate>
+                                        </dxga:CustomArcScaleRangeBarPresentation.RangeBarTemplate>
+                                    </dxga:CustomArcScaleRangeBarPresentation>
+                                </dxga:ArcScaleRangeBar.Presentation>
+                            </dxga:ArcScaleRangeBar>
+                        </dxga:ArcScale.RangeBars>
+                    </dxga:ArcScale>
+                </dxga:CircularGaugeControl.Scales>
+            </dxga:CircularGaugeControl>
+        </Grid>
+    </DockPanel>
+</UserControl>

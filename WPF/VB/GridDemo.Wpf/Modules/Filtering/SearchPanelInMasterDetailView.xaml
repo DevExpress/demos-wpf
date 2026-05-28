@@ -1,0 +1,82 @@
+﻿<UserControl x:Class="GridDemo.Filtering.SearchPanelInMasterDetailView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:dxe="http://schemas.devexpress.com/winfx/2008/xaml/editors"
+             xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+             xmlns:dxdb="http://schemas.devexpress.com/winfx/2008/xaml/demobase"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <!--#region !-->
+            <dxe:CheckEdit Content="Filter Detail Data" Margin="8"
+                           IsChecked="{Binding SearchPanelAllowFilter, Mode=TwoWay, ElementName=detailView}" />
+            <dxe:CheckEdit Content="Highlight Detail Data" Margin="8"
+                           IsChecked="{Binding SearchPanelHighlightResults, Mode=TwoWay, ElementName=detailView}" />
+            <!--#endregion-->
+        </StackPanel>
+        
+        <dxg:GridControl x:Name="grid"
+                         Grid.Row="1"
+                         ItemsSource="{x:Static dxdb:NWindDataProvider.Employees}"
+                         Loaded="{DXEvent '@Self.ExpandMasterRow(1)'}"
+                         ShowBorder="False">
+            <dxg:GridControl.DetailDescriptor>
+                <!--#region Customers-->
+                <dxg:DataControlDetailDescriptor ItemsSourceBinding="{Binding Customers}" ShowHeader="false">
+                    <dxg:GridControl>
+                        <dxg:GridControl.Columns>
+                            <dxg:GridColumn FieldName="ContactName" Width="*" />
+                            <dxg:GridColumn FieldName="Country" Width="*"/>
+                            <dxg:GridColumn FieldName="City" Width="*" />
+                            <dxg:GridColumn FieldName="Address" Width="*" />
+                            <dxg:GridColumn FieldName="Phone" Width="*" />
+                        </dxg:GridControl.Columns>
+                        <dxg:GridControl.View>
+                            <dxg:TableView x:Name="detailView" 
+                                           VerticalScrollbarVisibility="Auto"
+                                           SearchPanelAllowFilter="False"
+                                           SearchPanelHighlightResults="True"
+                                           SearchPanelParseMode="Mixed"
+                                           NavigationStyle="Row" 
+                                           DetailHeaderContent="Customers"/>
+                        </dxg:GridControl.View>
+                    </dxg:GridControl>
+                </dxg:DataControlDetailDescriptor>
+                <!--#endregion-->
+            </dxg:GridControl.DetailDescriptor>
+            <dxg:GridControl.View>
+                <dxg:TableView x:Name="view"
+                               SearchString="an"
+                               SearchPanelAllowFilter="False"
+                               AllowPerPixelScrolling="True"
+                               NavigationStyle="Cell"
+                               DetailHeaderContent="Employees">
+                </dxg:TableView>
+            </dxg:GridControl.View>
+            <!--#region Columns-->
+            <dxg:GridControl.Columns>
+                <dxg:GridColumn FieldName="FullName" ReadOnly="True" MinWidth="60" Width="*" />
+                <dxg:GridColumn FieldName="Title" Header="JobTitle" Width="1.5*"  />
+                <dxg:GridColumn FieldName="Country" MinWidth="60" Width="*" />
+                <dxg:GridColumn FieldName="BirthDate" MinWidth="60" Width="*">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:DateEditSettings DisplayFormat="d" />
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+                <dxg:GridColumn FieldName="Email" Header="Contacts" Width="2*">
+                    <dxg:GridColumn.EditSettings>
+                        <dxe:HyperlinkEditSettings AllowAutoNavigate="True" NavigationUrlFormat="mailto:{0}" />
+                    </dxg:GridColumn.EditSettings>
+                </dxg:GridColumn>
+            </dxg:GridControl.Columns>
+            <!--#endregion-->
+        </dxg:GridControl>
+    </Grid>
+</UserControl>

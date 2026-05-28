@@ -1,0 +1,27 @@
+﻿<dx:ThemedWindow
+    x:Class="RichEditDemo.Modules.MailMerge.MailMergeResultWindow"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:RichEditDemo.Modules.MailMerge"
+    xmlns:dxre="http://schemas.devexpress.com/winfx/2008/xaml/richedit"
+    xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+    mc:Ignorable="d"
+    Title="Mail Merge Result"
+ Height="450"
+ Width="800">
+    <Grid>
+        <dxre:RichEditControl Name="RichEditControl" CommandBarStyle="Ribbon" ReadOnly="True">
+            <dxre:RichEditControl.RibbonActions>
+                <dxb:RemoveAction ElementName="{x:Static dxre:DefaultBarItemNames.RibbonPage_Insert}"/>
+                <dxb:RemoveAction ElementName="{x:Static dxre:DefaultBarItemNames.RibbonPage_PageLayout}"/>
+                <dxb:RemoveAction ElementName="{x:Static dxre:DefaultBarItemNames.RibbonPage_References}"/>
+                <dxb:RemoveAction ElementName="{x:Static dxre:DefaultBarItemNames.RibbonPage_MailMerge}"/>
+                <dxb:RemoveAction ElementName="{x:Static dxre:DefaultBarItemNames.RibbonPage_View}"/>
+                <dxb:RemoveAction ElementName="{x:Static dxre:DefaultBarItemNames.RibbonPage_Review}"/>
+            </dxre:RichEditControl.RibbonActions>
+        </dxre:RichEditControl>
+    </Grid>
+</dx:ThemedWindow>

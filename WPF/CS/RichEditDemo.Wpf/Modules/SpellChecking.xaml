@@ -1,0 +1,43 @@
+﻿<local:RichEditDemoModule
+    x:Class="RichEditDemo.SpellChecking"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:RichEditDemo"
+    xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+    xmlns:dxr="http://schemas.devexpress.com/winfx/2008/xaml/ribbon"
+    xmlns:dxre="http://schemas.devexpress.com/winfx/2008/xaml/richedit"
+    xmlns:dxspch="http://schemas.devexpress.com/winfx/2008/xaml/spellchecker"
+    xmlns:dxmvvm="http://schemas.devexpress.com/winfx/2008/xaml/mvvm"
+    Height="400"
+    Width="800">
+
+    <DockPanel>
+        <dxr:RibbonControl DockPanel.Dock="Top">
+            <dxr:RibbonDefaultPageCategory>
+                <dxr:RibbonPage Caption="Review">
+                    <dxr:RibbonPageGroup Caption="Proofing">
+                        <dxb:BarCheckItem
+                            Content="Check As You Type"
+                            IsChecked="{DXBinding '@e(spellChecker).CheckAsYouType'}"
+                            Glyph="/RichEditDemo;component/Images/SpellCheckAsYouType_16x16.png"
+                            LargeGlyph="/RichEditDemo;component/Images/SpellCheckAsYouType_32x32.png" />
+                    </dxr:RibbonPageGroup>
+                </dxr:RibbonPage>
+            </dxr:RibbonDefaultPageCategory>
+        </dxr:RibbonControl>
+
+        <dxre:RichEditControl
+            x:Name="richEdit"
+            CommandBarStyle="Empty"
+            VerticalAlignment="Stretch"
+            ShowBorder="False"
+            DocumentSource="{DXBinding '$local:DemoUtils.GetRelativePath(`SpellChecker.rtf`)'}">
+            <dxmvvm:Interaction.Behaviors>
+                <dxspch:RichEditSpellChecker
+                    x:Name="spellChecker"
+                    Culture="en-US"
+                    CheckAsYouType="True" />
+            </dxmvvm:Interaction.Behaviors>
+        </dxre:RichEditControl>
+    </DockPanel>
+</local:RichEditDemoModule>

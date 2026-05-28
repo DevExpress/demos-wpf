@@ -1,0 +1,89 @@
+﻿<local:RichEditDemoModule
+    x:Class="RichEditDemo.MailMergeMasterDetail"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:RichEditDemo"
+    xmlns:dxg="http://schemas.devexpress.com/winfx/2008/xaml/grid"
+    xmlns:dxre="http://schemas.devexpress.com/winfx/2008/xaml/richedit"
+    xmlns:dxb="http://schemas.devexpress.com/winfx/2008/xaml/bars"
+    xmlns:dx="http://schemas.devexpress.com/winfx/2008/xaml/core"
+    mc:Ignorable="d"
+    d:DesignHeight="400"
+    d:DesignWidth="800">
+    <Grid>
+        <TabControl x:Name="tabControl" SelectionChanged="tabControl_SelectionChanged">
+            <TabItem Name="templateTabPage" Header="Mail Merge Template">
+                <Grid>
+                    <dxre:RichEditControl
+                        x:Name="templateRichEdit"
+                        CommandBarStyle="Empty"
+                        Margin="0,6,6,6"
+                        ShowBorder="False"
+                        DocumentSource="{DXBinding '$local:DemoUtils.GetRelativePath(`MailMergeMasterDetailTemplate.docx`)'}"
+                        Loaded="RichEdit_Loaded"
+                        BeforePagePaint="templateRichEdit_BeforePagePaint">
+                        <dxre:RichEditControl.RibbonActions>
+                            <dxb:InsertAction ContainerName="{x:Static dxre:DefaultBarItemNames.RibbonGroup_MailMerge_PreviewResults}" Index="3">
+                                <dxb:BarCheckItem
+                                    Name="HighlightRegionsBarItem"
+                                    Content="Highlight Regions"
+                                    LargeGlyph="{dx:DXImage 'SvgImages/RichEdit/Header.svg'}"
+                                    Glyph="{dx:DXImage 'SvgImages/RichEdit/Header.svg'}"
+                                    CheckedChanged="HighlightRegionsBarItem_CheckedChanged" />
+                            </dxb:InsertAction>
+
+                            <dxb:UpdateAction ElementName="{x:Static dxre:DefaultBarItemNames.RibbonPage_MailMerge}" PropertyName="IsSelected"  Value="True"/>
+                        </dxre:RichEditControl.RibbonActions>
+                        <dxre:RichEditControl.MailMergeOptions>
+                            <dxre:DXRichEditMailMergeOptions ViewMergedData="False" />
+                        </dxre:RichEditControl.MailMergeOptions>
+                    </dxre:RichEditControl>
+                </Grid>
+            </TabItem>
+
+            <TabItem Name="resultTabPage" Header="Mail Merge Result">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="250" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <Border Grid.Column="0" Margin="6,3,6,6">
+                        <dxg:GridControl
+                            Name="recordSelectorGridControl"
+                            Margin="0,3,0,0"
+                            SelectionMode="Row"
+                            SelectionChanged="recordSelectorGridControl_SelectionChanged">
+                            <dxg:GridControl.Columns>
+                                <dxg:GridColumn
+                                    FieldName="CompanyName"
+                                    Header="Customer"
+                                    Width="*" />
+                            </dxg:GridControl.Columns>
+                            <dxg:GridControl.View>
+                                <dxg:TableView
+                                    AllowEditing="False"
+                                    ShowGroupPanel="False" />
+                            </dxg:GridControl.View>
+                        </dxg:GridControl>
+                    </Border>
+                    <dxre:RichEditControl
+                        x:Name="resultRichEdit"
+                        Grid.Column="1"
+                        CommandBarStyle="Empty"
+                        Margin="0,6,6,6"
+                        ShowBorder="False"
+                        Loaded="RichEdit_Loaded">
+                        <dxre:RichEditControl.RibbonActions>
+                            <dxb:UpdateAction ElementName="{x:Static dxre:DefaultBarItemNames.RibbonPage_MailMerge}" PropertyName="IsSelected"  Value="True"/>
+                        </dxre:RichEditControl.RibbonActions>
+                        <dxre:RichEditControl.MailMergeOptions>
+                            <dxre:DXRichEditMailMergeOptions ViewMergedData="False" />
+                        </dxre:RichEditControl.MailMergeOptions>
+                    </dxre:RichEditControl>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</local:RichEditDemoModule>

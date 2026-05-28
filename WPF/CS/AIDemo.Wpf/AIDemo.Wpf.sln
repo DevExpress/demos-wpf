@@ -1,0 +1,21 @@
+﻿Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AIDemo.Wpf", "AIDemo.Wpf.csproj", "{A3D3DE49-D121-456F-B3D3-341B5192664F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectDependencies) = postSolution
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A3D3DE49-D121-456F-B3D3-341B5192664F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3D3DE49-D121-456F-B3D3-341B5192664F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3D3DE49-D121-456F-B3D3-341B5192664F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3D3DE49-D121-456F-B3D3-341B5192664F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
