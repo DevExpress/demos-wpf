@@ -46,11 +46,11 @@
     <Resource Include="Images\DocumentStatistics_32x32.png" />
     <Resource Include="Images\SpellCheckAsYouType_16x16.png" />
     <Resource Include="Images\SpellCheckAsYouType_32x32.png" />
-    <PackageReference Include="DevExpress.Wpf.Demos" VersionOverride="26.1.2-beta-26148" />
-    <PackageReference Include="DevExpress.Wpf" VersionOverride="26.1.2-beta-26148" />
-    <PackageReference Include="DevExpress.Document.Processor" VersionOverride="26.1.2-beta-26148" />
-    <PackageReference Include="DevExpress.Wpf.Themes.All" VersionOverride="26.1.2-beta-26148" />
-    <PackageReference Include="DevExpress.Wpf.ThemesLW" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Demos" VersionOverride="26.1.2-beta-26156" />
+    <PackageReference Include="DevExpress.Wpf" VersionOverride="26.1.2-beta-26156" />
+    <PackageReference Include="DevExpress.Document.Processor" VersionOverride="26.1.2-beta-26156" />
+    <PackageReference Include="DevExpress.Wpf.Themes.All" VersionOverride="26.1.2-beta-26156" />
+    <PackageReference Include="DevExpress.Wpf.ThemesLW" VersionOverride="26.1.2-beta-26156" />
     
     
     

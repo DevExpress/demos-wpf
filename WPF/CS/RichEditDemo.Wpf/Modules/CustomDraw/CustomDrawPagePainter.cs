@@ -40,7 +40,8 @@ namespace RichEditDemo {
         public override void DrawRow(LayoutRow row) {
             if(IsHighlightingAllowed && LayoutRowHighlights != null) {
                 var highlightBounds = row.Bounds;
-                if(row.Parent is LayoutTableCell parentLayoutCell) {
+                LayoutTableCell parentLayoutCell = row.Parent as LayoutTableCell;
+                if(parentLayoutCell != null) {
                     highlightBounds.X = parentLayoutCell.Bounds.X;
                     highlightBounds.Width = parentLayoutCell.Bounds.Width;
                 }

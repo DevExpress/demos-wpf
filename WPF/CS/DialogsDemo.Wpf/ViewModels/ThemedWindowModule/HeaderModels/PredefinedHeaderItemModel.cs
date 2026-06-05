@@ -9,7 +9,7 @@ namespace DialogsDemo {
     public class HelpHeaderItemModel : BaseHeaderItemModel {
         public string ImageSource { get; set; }
         public bool CanHelp() { return true; }
-        public void Help() { SafeProcess.Start("http://www.devexpress.com"); }
+        public void Help() { SafeProcess.Start("https://www.devexpress.com"); }
         public HelpHeaderItemModel() { ResourceKey = "HelpHeaderItem"; }
     }
     public class PinHeaderItemModel : BaseHeaderItemModel {

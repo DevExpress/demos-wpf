@@ -18,7 +18,7 @@ namespace AIDemo.Modules.CodeExamples {
             defaultAIContainer = new AIExtensionsContainerDefault();
             string azureOpenAiEndpoint = "https://public-api.devexpress.com/demo-openai";
             string azureOpenAiKey = "DEMO";
-            string deploymentName = "gpt-4o-mini";
+            string deploymentName = "demo-mini";
             IChatClient azureOpenAiClient = new AzureOpenAIClient(new Uri(azureOpenAiEndpoint),
                     new System.ClientModel.ApiKeyCredential(azureOpenAiKey))
                 .GetChatClient(deploymentName)

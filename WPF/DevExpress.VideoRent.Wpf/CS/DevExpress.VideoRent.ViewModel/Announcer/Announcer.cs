@@ -132,7 +132,7 @@ namespace DevExpress.VideoRent.ViewModel {
             OpenFirstRecordInList<Company>(CompanyDetail);
         }
         public Action<object> CommandLearnMore { get { return DoCommandLearnMore; } }
-        void DoCommandLearnMore(object p) { ObjectHelper.ShowWebSite("http://www.devexpress.com/"); }
+        void DoCommandLearnMore(object p) { ObjectHelper.ShowWebSite("https://www.devexpress.com/"); }
         public Action<object> CommandDownload { get { return DoCommandDownload; } }
         void DoCommandDownload(object p) { ObjectHelper.ShowWebSite(AssemblyInfo.DXLinkTrial); }
         public Action<object> CommandBuy { get { return DoCommandBuy; } }

@@ -21,11 +21,32 @@ Namespace SpreadsheetDemo
             typeEdit.SelectedItem = EncryptionType.Strong.ToString()
         End Sub
 
+        Private Sub spreadsheetControl1_DocumentLoaded(ByVal sender As Object, ByVal e As EventArgs)
+            ApplyCurrentEncryptionSettings()
+        End Sub
+
+        Private Sub spreadsheetControl1_NewDocumentCreated(ByVal sender As Object, ByVal e As EventArgs)
+            ApplyCurrentEncryptionSettings()
+        End Sub
+
         Private Sub PasswordChanged(ByVal sender As Object, ByVal e As EditValueChangedEventArgs)
-            spreadsheetControl1.Document.DocumentSettings.Encryption.Password = passwordEdit.Text
+            UpdateDocumentEncryptionPassword()
         End Sub
 
         Private Sub TypeChanged(ByVal sender As Object, ByVal e As EditValueChangedEventArgs)
+            UpdateDocumentEncryptionType()
+        End Sub
+
+        Private Sub ApplyCurrentEncryptionSettings()
+            UpdateDocumentEncryptionPassword()
+            UpdateDocumentEncryptionType()
+        End Sub
+
+        Private Sub UpdateDocumentEncryptionPassword()
+            spreadsheetControl1.Document.DocumentSettings.Encryption.Password = passwordEdit.Text
+        End Sub
+
+        Private Sub UpdateDocumentEncryptionType()
             spreadsheetControl1.Document.DocumentSettings.Encryption.Type = CType([Enum].Parse(GetType(EncryptionType), typeEdit.Text), EncryptionType)
         End Sub
 

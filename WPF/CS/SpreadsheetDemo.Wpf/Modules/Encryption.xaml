@@ -49,6 +49,8 @@
                                   ShowFormulaBar="True"
                                   ShowStatusBar="True"
                                   DocumentSource="{DXBinding '$local:DemoUtils.GetRelativePath(`ProfitAndLoss.xlsx`)'}"
+                                  DocumentLoaded="spreadsheetControl1_DocumentLoaded"
+                                  EmptyDocumentCreated="spreadsheetControl1_NewDocumentCreated"
                                   BorderThickness="0,1,0,0">
             <dxsps:SpreadsheetControl.Options>
                 <dxsps:SpreadsheetControlOptions Culture="en-US" >

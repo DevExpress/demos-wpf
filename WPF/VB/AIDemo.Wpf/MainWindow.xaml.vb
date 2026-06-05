@@ -74,7 +74,7 @@ Namespace AIDemo
         Private Shared Async Sub RegisterClientAndEmbeddings()
             Dim azureOpenAIClient = New AzureOpenAIClient(AzureOpenAIEndpoint, AzureOpenAIKey, New AzureOpenAIClientOptions With {.Transport = New PromoteHttpStatusErrorsPipelineTransport()})
             Dim container = AIExtensionsContainerDesktop.Default
-            Dim chatClient = azureOpenAIClient.GetChatClient("gpt-4.1").AsIChatClient()
+            Dim chatClient = azureOpenAIClient.GetChatClient("demo").AsIChatClient()
             Dim embeddingGenerator = azureOpenAIClient.GetEmbeddingClient("text-embedding-3-small").AsIEmbeddingGenerator()
             ' 
             ' For demonstration purposes, we're using a simple InMemoryCollection to store vectors in memory,

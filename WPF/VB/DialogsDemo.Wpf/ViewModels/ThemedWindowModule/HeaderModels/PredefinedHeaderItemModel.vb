@@ -13,7 +13,7 @@ Namespace DialogsDemo
         End Function
 
         Public Sub Help()
-            SafeProcess.Start("http://www.devexpress.com")
+            SafeProcess.Start("https://www.devexpress.com")
         End Sub
 
         Public Sub New()

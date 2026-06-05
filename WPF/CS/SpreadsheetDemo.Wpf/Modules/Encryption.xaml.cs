@@ -20,11 +20,30 @@ namespace SpreadsheetDemo {
             typeEdit.SelectedItem = EncryptionType.Strong.ToString();
         }
 
+        void spreadsheetControl1_DocumentLoaded(object sender, EventArgs e) {
+            ApplyCurrentEncryptionSettings();
+        }
+
+        void spreadsheetControl1_NewDocumentCreated(object sender, EventArgs e) {
+            ApplyCurrentEncryptionSettings();
+        }
+
         void PasswordChanged(object sender, EditValueChangedEventArgs e) {
-            spreadsheetControl1.Document.DocumentSettings.Encryption.Password = passwordEdit.Text;
+            UpdateDocumentEncryptionPassword();
         }
 
         void TypeChanged(object sender, EditValueChangedEventArgs e) {
+            UpdateDocumentEncryptionType();
+        }
+
+        void ApplyCurrentEncryptionSettings() {
+            UpdateDocumentEncryptionPassword();
+            UpdateDocumentEncryptionType();
+        }
+        void UpdateDocumentEncryptionPassword() {
+            spreadsheetControl1.Document.DocumentSettings.Encryption.Password = passwordEdit.Text;
+        }
+        void UpdateDocumentEncryptionType() {
             spreadsheetControl1.Document.DocumentSettings.Encryption.Type = (EncryptionType)Enum.Parse(typeof(EncryptionType), typeEdit.Text);
         }
 

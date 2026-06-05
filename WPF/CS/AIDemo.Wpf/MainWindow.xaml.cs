@@ -82,7 +82,7 @@ namespace AIDemo {
             });
 
             var container = AIExtensionsContainerDesktop.Default;
-            var chatClient = azureOpenAIClient.GetChatClient("gpt-4.1").AsIChatClient();
+            var chatClient = azureOpenAIClient.GetChatClient("demo").AsIChatClient();
             var embeddingGenerator = azureOpenAIClient.GetEmbeddingClient("text-embedding-3-small").AsIEmbeddingGenerator();
             
             var cachingEmbeddingGenerator = new CachingEmbeddingGenerator(embeddingGenerator);

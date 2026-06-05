@@ -23,7 +23,7 @@ Namespace AIDemo.Modules.CodeExamples
             Me.defaultAIContainer = New DevExpress.AIIntegration.AIExtensionsContainerDefault()
             Dim azureOpenAiEndpoint As String = "https://public-api.devexpress.com/demo-openai"
             Dim azureOpenAiKey As String = "DEMO"
-            Dim deploymentName As String = "gpt-4o-mini"
+            Dim deploymentName As String = "demo-mini"
             Dim azureOpenAiClient As Microsoft.Extensions.AI.IChatClient = New Azure.AI.OpenAI.AzureOpenAIClient(CType((New System.Uri(CStr((azureOpenAiEndpoint)))), System.Uri), CType((New System.ClientModel.ApiKeyCredential(CStr((azureOpenAiKey)))), System.ClientModel.ApiKeyCredential)).GetChatClient(CStr((deploymentName))).AsIChatClient()
             Me.defaultAIContainer.RegisterChatClient(azureOpenAiClient)
             Me.defaultAIContainer.Register(Of DevExpress.AIIntegration.Extensions.TranslateRequest, DevExpress.AIIntegration.Extensions.TranslateExtension)()

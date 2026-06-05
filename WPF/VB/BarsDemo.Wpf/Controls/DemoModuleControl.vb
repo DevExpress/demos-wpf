@@ -86,7 +86,7 @@ Namespace BarsDemo
         End Sub
 
         Private Sub GoDevExpressExecute()
-            SafeProcess.Start("http://www.devexpress.com", Nothing, Sub(startInfo) startInfo.UseShellExecute = True)
+            SafeProcess.Start("https://www.devexpress.com", Nothing, Sub(startInfo) startInfo.UseShellExecute = True)
         End Sub
     End Class
 End Namespace

@@ -58,7 +58,7 @@ namespace BarsDemo {
             demoShell.Commands.OpenLinkAbout.Execute(null);
         }
         void GoDevExpressExecute() {
-            SafeProcess.Start("http://www.devexpress.com", null, startInfo => { startInfo.UseShellExecute = true; });
+            SafeProcess.Start("https://www.devexpress.com", null, startInfo => { startInfo.UseShellExecute = true; });
         }
     }
 }

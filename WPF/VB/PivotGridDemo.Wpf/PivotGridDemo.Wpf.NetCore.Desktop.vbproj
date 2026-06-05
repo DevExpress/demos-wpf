@@ -62,10 +62,10 @@
     <Resource Include="Images\Ribbon\ExportToXLSX.svg" />
     <Resource Include="Images\Ribbon\NewReportWizard.svg" />
     <Resource Include="Images\Ribbon\Preview.svg" />
-    <PackageReference Include="DevExpress.Wpf.Demos" VersionOverride="26.1.2-beta-26148" />
-    <PackageReference Include="DevExpress.Wpf" VersionOverride="26.1.2-beta-26148" />
-    <PackageReference Include="DevExpress.Wpf.Themes.All" VersionOverride="26.1.2-beta-26148" />
-    <PackageReference Include="DevExpress.Wpf.ThemesLW" VersionOverride="26.1.2-beta-26148" />
+    <PackageReference Include="DevExpress.Wpf.Demos" VersionOverride="26.1.2-beta-26156" />
+    <PackageReference Include="DevExpress.Wpf" VersionOverride="26.1.2-beta-26156" />
+    <PackageReference Include="DevExpress.Wpf.Themes.All" VersionOverride="26.1.2-beta-26156" />
+    <PackageReference Include="DevExpress.Wpf.ThemesLW" VersionOverride="26.1.2-beta-26156" />
     
     
     

@@ -116,7 +116,7 @@
                               ChildrenPath="Items"
                               RootItemExpandButtonPosition="None"
                               SubItemExpandButtonPosition="None"
-                              SelectionMode="None"
+                              SelectionMode="Single"
                               AllowCollectionView="True"
                               Width="400"
                               Margin="0,30,0,30" />

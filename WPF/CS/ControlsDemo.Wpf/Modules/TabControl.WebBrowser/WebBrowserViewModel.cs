@@ -21,7 +21,7 @@ namespace CommonDemo.TabControl.WebBrowser {
             SpeedDials = new ObservableCollection<SpeedDialViewModel>();
             SpeedDials.Add(new SpeedDialViewModel(ImagesHelper.GetWebIcon("Microsoft.png"), new Uri("http://www.microsoft.com", UriKind.Absolute), "Microsoft"));
             SpeedDials.Add(new SpeedDialViewModel(ImagesHelper.GetWebIcon("Google.png"), new Uri("http://www.google.com", UriKind.Absolute), "Google"));
-            SpeedDials.Add(new SpeedDialViewModel(ImagesHelper.GetWebIcon("Devexpress.png"), new Uri("http://www.devexpress.com", UriKind.Absolute), "DevExpress"));
+            SpeedDials.Add(new SpeedDialViewModel(ImagesHelper.GetWebIcon("Devexpress.png"), new Uri("https://www.devexpress.com", UriKind.Absolute), "DevExpress"));
             SpeedDials.Add(new SpeedDialViewModel(ImagesHelper.GetWebIcon("Stackoverflow.png"), new Uri("http://www.stackoverflow.com", UriKind.Absolute), "Stackoverflow"));
             SpeedDials.Add(new SpeedDialViewModel(ImagesHelper.GetWebIcon("Facebook.png"), new Uri("http://www.facebook.com", UriKind.Absolute), "Facebook"));
             SpeedDials.Add(new SpeedDialViewModel(ImagesHelper.GetWebIcon("Twitter.png"), new Uri("http://www.twitter.com", UriKind.Absolute), "Twitter"));

@@ -100,7 +100,7 @@ namespace DevExpress.StockMarketTrader.Wpf.ViewModel {
 
         }
         public void DevExpressOnTheWebMenu() {
-            SafeProcess.Start("http://www.devexpress.com", null, startInfo => { startInfo.UseShellExecute = true; });
+            SafeProcess.Start("https://www.devexpress.com", null, startInfo => { startInfo.UseShellExecute = true; });
         }
     }
 }
