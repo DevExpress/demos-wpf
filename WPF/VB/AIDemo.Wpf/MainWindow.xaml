@@ -1,8 +1,0 @@
-﻿<dxdb:DemoShellWindow
-    x:Class="AIDemo.MainWindow"
-    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-    xmlns:dxdb="http://schemas.devexpress.com/winfx/2008/xaml/demobase"
-    Title="DevExpress WPF Demos"
-    Icon="pack://application:,,,/AIDemo;component/demoicon.ico">
-</dxdb:DemoShellWindow>

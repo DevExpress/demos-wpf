@@ -4,7 +4,15 @@
                              xmlns:local="clr-namespace:SpreadsheetDemo"
                              x:Class="SpreadsheetDemo.DocumentProperties">
 
-    <dxsps:SpreadsheetControl x:Name="spreadsheetControl1" CommandBarStyle="Empty" ShowFormulaBar="True" ShowStatusBar="True" BorderThickness="0,1,0,0">
+    <dxsps:SpreadsheetControl x:Name="spreadsheetControl1"
+                              CommandBarStyle="Empty"
+                              ShowFormulaBar="True"
+                              ShowStatusBar="True"
+                              BorderThickness="0,1,0,0"
+                              Unit="Point"
+                              DocumentSource="{DXBinding '$local:DemoUtils.GetRelativePath(`DocumentProperties_template.xlsx`)'}"
+                              DocumentLoaded="spreadsheetControl1_DocumentLoaded"
+                              DocumentPropertiesChanged="spreadsheetControl1_DocumentPropertiesChanged">
         <dxsps:SpreadsheetControl.Options>
             <dxsps:SpreadsheetControlOptions Culture="en-US" />
         </dxsps:SpreadsheetControl.Options>

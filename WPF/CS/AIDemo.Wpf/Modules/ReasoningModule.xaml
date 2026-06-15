@@ -11,7 +11,7 @@
     <DockPanel>
         <dxaichat:AIChatControl x:Name="aiChatControl"
                                 ShowHeader="True"
-                                UseStreaming="False"
+                                UseStreaming="True"
                                 BorderBrush="Transparent"
                                 BorderThickness="1"
                                 HeaderText="AI Assistant" />

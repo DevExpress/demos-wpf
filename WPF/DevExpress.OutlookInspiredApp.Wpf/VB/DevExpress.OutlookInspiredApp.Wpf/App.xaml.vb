@@ -111,7 +111,7 @@ Namespace DevExpress.DevAV
             get {
                 var azureOpenAIEndpoint = GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT");
                 if(string.IsNullOrEmpty(azureOpenAIEndpoint))
-                    azureOpenAIEndpoint = "https://public-api.devexpress.com/demo-openai"; 
+                    azureOpenAIEndpoint = "https://api.devexpress.com/demo-openai"; 
                 return new Uri(azureOpenAIEndpoint);
             }
         }

@@ -52,7 +52,7 @@ namespace GanttDemo {
         public virtual string EventName { get; protected set; }
         public virtual string EventArgs { get; protected set; }
         public void ShowHelp() {
-            var fileName = $"https://documentation.devexpress.com/WPF/{ownerClassName}.{EventName}.event";
+            var fileName = $"https://docs.devexpress.com/WPF/{ownerClassName}.{EventName}.event";
             SafeProcess.Start(fileName, null, startInfo => { startInfo.UseShellExecute = true;});
         }
     }

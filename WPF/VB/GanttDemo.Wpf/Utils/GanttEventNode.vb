@@ -67,7 +67,7 @@ Namespace GanttDemo
         End Sub
 
         Public Sub ShowHelp()
-            Dim fileName = $"https://documentation.devexpress.com/WPF/{ownerClassName}.{Title}.event"
+            Dim fileName = $"https://docs.devexpress.com/WPF/{ownerClassName}.{Title}.event"
             SafeProcess.Start(fileName, Nothing, Sub(startInfo) startInfo.UseShellExecute = True)
         End Sub
     End Class

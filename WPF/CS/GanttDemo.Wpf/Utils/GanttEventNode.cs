@@ -32,7 +32,7 @@ namespace GanttDemo {
             children.Add(child);
         }
         public void ShowHelp() {
-            var fileName = $"https://documentation.devexpress.com/WPF/{ownerClassName}.{Title}.event";
+            var fileName = $"https://docs.devexpress.com/WPF/{ownerClassName}.{Title}.event";
             SafeProcess.Start(fileName, null, startInfo => { startInfo.UseShellExecute = true;});
         }
     }

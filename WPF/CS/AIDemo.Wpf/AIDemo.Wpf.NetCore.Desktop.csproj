@@ -40,14 +40,14 @@
     <DefineConstants>TRACE;WPF;</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="DevExpress.AIIntegration.Wpf.Reporting" VersionOverride="26.1.2-beta-26156" />
-    <PackageReference Include="DevExpress.Reporting.Demos" VersionOverride="26.1.2-beta-26156" />
-    <PackageReference Include="DevExpress.Wpf.Demos" VersionOverride="26.1.2-beta-26156" />
-    <PackageReference Include="DevExpress.AIIntegration.Wpf.Chat" VersionOverride="26.1.2-beta-26156" />
-    <PackageReference Include="DevExpress.DataAccess.UI" VersionOverride="26.1.2-beta-26156" />
-    <PackageReference Include="DevExpress.AIIntegration.Agents" VersionOverride="26.1.2-beta-26156" />
-    <PackageReference Include="DevExpress.Wpf.Themes.All" VersionOverride="26.1.2-beta-26156" />
-    <PackageReference Include="DevExpress.Wpf.ThemesLW" VersionOverride="26.1.2-beta-26156" />
+    <PackageReference Include="DevExpress.AIIntegration.Wpf.Reporting" VersionOverride="26.1.3" />
+    <PackageReference Include="DevExpress.Reporting.Demos" VersionOverride="26.1.3" />
+    <PackageReference Include="DevExpress.Wpf.Demos" VersionOverride="26.1.3" />
+    <PackageReference Include="DevExpress.AIIntegration.Wpf.Chat" VersionOverride="26.1.3" />
+    <PackageReference Include="DevExpress.DataAccess.UI" VersionOverride="26.1.3" />
+    <PackageReference Include="DevExpress.AIIntegration.Agents" VersionOverride="26.1.3" />
+    <PackageReference Include="DevExpress.Wpf.Themes.All" VersionOverride="26.1.3" />
+    <PackageReference Include="DevExpress.Wpf.ThemesLW" VersionOverride="26.1.3" />
     
     
     
@@ -241,9 +241,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Agents\AgentFactory.cs" />
-    <Compile Include="Agents\Publishing\PublishingAgentTools.cs" />
     <Compile Include="Agents\SimpleTools.cs" />
-    <Compile Include="Agents\Publishing\PublishingGroupChatManager.cs" />
+    <Compile Include="Agents\ToolApprovals\ToolApprovalAIFunctions.cs" />
+    <Compile Include="Agents\ToolApprovals\ToolApprovalRequestBatch.cs" />
     <Compile Include="Agents\Shakespearean\ShakespeareanTools.cs" />
     <Compile Include="Agents\TextProcessing\TextProcessingExecutors.cs" />
     <Compile Include="Agents\Weather\WeatherAgentTools.cs" />
@@ -267,9 +267,6 @@
       <DependentUpon>AIChatResourcesModule.xaml</DependentUpon>
     </Compile>
     <Compile Include="Modules\AgentModuleBase.cs" />
-    <Compile Include="Modules\GroupChatWorkflowModule.xaml.cs">
-      <DependentUpon>GroupChatWorkflowModule.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Modules\WorkflowAsAgentModule.xaml.cs">
       <DependentUpon>WorkflowAsAgentModule.xaml</DependentUpon>
     </Compile>
@@ -288,6 +285,9 @@
     <Compile Include="Modules\ToolCallingAgentModule.xaml.cs">
       <DependentUpon>ToolCallingAgentModule.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Modules\AIAgentWithToolApprovalModule.xaml.cs">
+      <DependentUpon>AIAgentWithToolApprovalModule.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Modules\AIChat\AIChatCustomizeAppearanceMessageTemplate.razor.cs" />
     <Compile Include="Modules\AIChat\AIChatFileAttachmentsMessageTemplate.razor.cs" />
     <Compile Include="Modules\AIChat\AIChatResourcesDataProvider.cs" />
@@ -300,12 +300,8 @@
     <Page Include="Modules\AIChatFileAttachmentsModule.xaml" />
     <Page Include="Modules\AIChatResourcesModule.xaml" />
     <Page Include="Modules\AIToolsModule.xaml" />
-    <Page Include="Modules\GroupChatWorkflowModule.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Modules\ToolCallingAgentModule.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <Page Include="Modules\ToolCallingAgentModule.xaml" />
+    <Page Include="Modules\AIAgentWithToolApprovalModule.xaml" />
     <Page Include="Modules\WorkflowAsAgentModule.xaml" />
     <Page Include="Modules\AGUIIntegrationModule.xaml" />
     <Page Include="Modules\ReasoningModule.xaml" />
@@ -320,6 +316,8 @@
     <Compile Include="Tools\AiTools.cs" />
     <Content Include="Modules\AIChat\AIChatCustomizeAppearanceMessageTemplate.razor" />
     <Content Include="Modules\AIChat\AIChatFileAttachmentsMessageTemplate.razor" />
+    <Content Include="Modules\AgentsAPI\AIAgentWithToolApprovalMessageContentTemplate.razor" />
+    <Content Include="Modules\AgentsAPI\ReasoningMessage.razor" />
     <Content Include="Modules\AgentsAPI\WeatherWidgetComponent.razor" />
     <Content Include="Modules\AgentsAPI\WeatherMessageContentTemplate.razor" />
     <Content Include="Modules\AgentsAPI\EmptyMessageAreaTemplate.razor" />

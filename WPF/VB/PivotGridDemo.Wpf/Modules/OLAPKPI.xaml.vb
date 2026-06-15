@@ -35,7 +35,7 @@ Namespace PivotGridDemo
 
         Private Shared ReadOnly Property SampleCatalogName As String
             Get
-                If UseXmlaConnection Then Return "Adventure Works DW Standard Edition"
+                If UseXmlaConnection Then Return "Adventure Works DW Standard Edition 2026"
                 Return "Adventure Works"
             End Get
         End Property

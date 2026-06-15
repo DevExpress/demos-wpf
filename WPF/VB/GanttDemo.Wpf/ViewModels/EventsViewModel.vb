@@ -88,7 +88,7 @@ Namespace GanttDemo
         Public Overridable Property EventArgs As String
 
         Public Sub ShowHelp()
-            Dim fileName = $"https://documentation.devexpress.com/WPF/{ownerClassName}.{EventName}.event"
+            Dim fileName = $"https://docs.devexpress.com/WPF/{ownerClassName}.{EventName}.event"
             SafeProcess.Start(fileName, Nothing, Sub(startInfo) startInfo.UseShellExecute = True)
         End Sub
     End Class

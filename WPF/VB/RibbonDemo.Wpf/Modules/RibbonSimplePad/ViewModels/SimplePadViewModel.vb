@@ -164,12 +164,12 @@ Namespace RibbonDemo
 
         Public Sub NavigateToOnlineHelp()
             BackstageViewService.Close()
-            NavigateTo("https://documentation.devexpress.com/#WPF/CustomDocument7895")
+            NavigateTo("https://docs.devexpress.com/WPF/7895/controls-and-libraries/ribbon-bars-and-menu/ribbon")
         End Sub
 
         Public Sub NavigateToCodeCentral()
             BackstageViewService.Close()
-            NavigateTo("https://www.devexpress.com/Support/Center/Example/ChangeFilterSet/1?FavoritesOnly=False&MyItemsOnly=False&MyTeamItemsOnly=False&TechnologyName=.NET&PlatformName=WPF&ProductName=DXRibbon%20for%20WPF&TicketType=Examples")
+            NavigateTo("https://docs.devexpress.com/WPF/7895/controls-and-libraries/ribbon-bars-and-menu/ribbon")
         End Sub
 
         Public Sub BackstageOpened()

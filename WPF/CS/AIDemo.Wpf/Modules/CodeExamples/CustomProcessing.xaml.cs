@@ -16,7 +16,7 @@ namespace AIDemo.Modules.CodeExamples {
         }
         void OnLoaded(object sender, RoutedEventArgs e) {
             defaultAIContainer = new AIExtensionsContainerDefault();
-            string azureOpenAiEndpoint = "https://public-api.devexpress.com/demo-openai";
+            string azureOpenAiEndpoint = "https://api.devexpress.com/demo-openai";
             string azureOpenAiKey = "DEMO";
             string deploymentName = "demo-mini";
             IChatClient azureOpenAiClient = new AzureOpenAIClient(new Uri(azureOpenAiEndpoint),

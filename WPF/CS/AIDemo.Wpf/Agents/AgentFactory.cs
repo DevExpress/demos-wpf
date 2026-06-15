@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
-using AIDemo.Agents.Publishing;
+using AIDemo.Agents.ToolApprovals;
 using AIDemo.Agents.Shakespearean;
 using AIDemo.Agents.TextProcessing;
 using DevExpress.AIIntegration.Agents;
@@ -53,34 +53,24 @@ namespace AIDemo.Agents {
                 .Build();
         }
 
-        public Workflow CreatePublishingGroupChatWorkflow() {
-            ChatClientAgent contentReviewer = new ChatClientAgent(
-                chatClient,
-               "You are a content reviewer responsible for checking articles before publication. " +
-                "Review the article quality and run a plagiarism check, then report results clearly.",
-                "ContentReviewer",
-                "Content reviewer who checks article quality and originality",
-                new[] { AIFunctionFactory.Create((Func<string, string>)PublishingAgentTools.ReviewContent) , AIFunctionFactory.Create((Func<string, string>)PublishingAgentTools.RunPlagiarismCheck) });
-            ChatClientAgent publisher = new ChatClientAgent(
-                chatClient,
-                "You are a publisher responsible for scheduling and publishing articles. " +
-                "First schedule the publication date, then proceed to publish to the live channels. " +
-                "Always confirm the schedule is in place before publishing.",
-                "Publisher",
-                "Publisher who schedules and publishes articles to live channels",
-                new[] {
-                    AIFunctionFactory.Create((Func<string, string, string>)PublishingAgentTools.SchedulePublication),
-                    new ApprovalRequiredAIFunction(AIFunctionFactory.Create((Func<string, string, string>)PublishingAgentTools.PublishToLive))
+        public AIAgent CreateToolApprovalAgent() {
+           const string instructions =
+                "You are an AI assistant for a CRM demo system. The following data is currently in the system:\n" +
+                "- CRM Accounts: 8 inactive accounts in Texas at the Tier 1 service level.\n" +
+                "- Overdue Invoices: 4 clients with unpaid invoices. Total outstanding balance: $321.00.\n" +
+                "- Order History: 1,234 orders placed between 1999 and 2019 (before 2020). Archive destination: Secure archive vault.\n\n" +
+                "When calling tools, always use these exact values:\n" +
+                "- UpdateAccountTier: accountCount=8 for inactive Texas accounts.\n" +
+                "- SendBulkEmail: clientCount=4, totalBalance=\"$321.00\" for overdue invoice reminders.\n" +
+                "- ArchiveOrders: recordCount=1234, startYear=1999, destination=\"Secure archive vault\" for pre-2020 orders.";
+
+            return chatClient.AsAIAgent(
+                instructions: instructions,
+                tools: new[] {
+                    ToolApprovalAIFunctions.UpdateAccountTierTool,
+                    ToolApprovalAIFunctions.SendBulkEmailTool,
+                    ToolApprovalAIFunctions.ArchiveOrdersTool
                 });
-
-            PublishingGroupChatManager manager = new PublishingGroupChatManager(new[] { contentReviewer, publisher }) {
-                MaximumIterationCount = 4
-            };
-
-            return AgentWorkflowBuilder
-                .CreateGroupChatBuilderWith(_ => manager)
-                .AddParticipants(new[] { contentReviewer, publisher })
-                .Build();
         }
 
         public static Workflow CreateTextProcessingWorkflow() {

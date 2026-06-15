@@ -13,9 +13,13 @@ namespace SpreadsheetDemo {
             InitializeComponent();
             MainWindow.CommonRibbon.Init(spreadsheetControl1);
             RegisterCustomFunctions();
-            InitializeWorkbook();
-            GenerateCustomPropertiesWorksheet();
-            spreadsheetControl1.DocumentPropertiesChanged += new DocumentPropertiesChangedEventHandler(spreadsheetControl1_DocumentPropertiesChanged);
+        }
+
+        void RegisterCustomFunctions() {
+            IWorkbook workbook = spreadsheetControl1.Document;
+            DocumentPropertyFunction customFunction = new DocumentPropertyFunction();
+            if(!workbook.GlobalCustomFunctions.Contains(((ICustomFunction)customFunction).Name))
+                workbook.GlobalCustomFunctions.Add(customFunction);
         }
 
         void spreadsheetControl1_DocumentPropertiesChanged(object sender, DocumentPropertiesChangedEventArgs e) {
@@ -25,16 +29,8 @@ namespace SpreadsheetDemo {
                 GenerateCustomPropertiesWorksheet();
         }
 
-        void InitializeWorkbook() {
-            spreadsheetControl1.LoadDocument(DemoUtils.GetRelativePath("DocumentProperties_template.xlsx"));
-            spreadsheetControl1.Document.Unit = DevExpress.Office.DocumentUnit.Point;
-        }
-
-        void RegisterCustomFunctions() {
-            IWorkbook workbook = spreadsheetControl1.Document;
-            DocumentPropertyFunction customFunction = new DocumentPropertyFunction();
-            if(!workbook.GlobalCustomFunctions.Contains(((ICustomFunction)customFunction).Name))
-                workbook.GlobalCustomFunctions.Add(customFunction);
+        void spreadsheetControl1_DocumentLoaded(object sender, EventArgs e) {
+            GenerateCustomPropertiesWorksheet();
         }
 
         void GenerateCustomPropertiesWorksheet() {

@@ -30,7 +30,7 @@ namespace PivotGridDemo {
 
         static string GetSampleCatalogName() {
             if(UseXmlaConnection)
-                return "Adventure Works DW Standard Edition";
+                return "Adventure Works DW Standard Edition 2026";
             return "Adventure Works";
         }
 

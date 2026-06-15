@@ -34,7 +34,7 @@ Namespace PivotGridDemo
         End Function
 
         Private Shared Function GetSampleCatalogName() As String
-            If UseXmlaConnection Then Return "Adventure Works DW Standard Edition"
+            If UseXmlaConnection Then Return "Adventure Works DW Standard Edition 2026"
             Return "Adventure Works"
         End Function
 

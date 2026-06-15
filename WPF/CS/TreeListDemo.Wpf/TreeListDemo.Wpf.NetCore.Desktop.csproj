@@ -61,10 +61,10 @@
     <EmbeddedResource Include="Data\EmployeeTasks.xml">
       <SubType>Designer</SubType>
     </EmbeddedResource>
-    <PackageReference Include="DevExpress.Wpf.Demos" VersionOverride="26.1.2-beta-26156" />
-    <PackageReference Include="DevExpress.Wpf" VersionOverride="26.1.2-beta-26156" />
-    <PackageReference Include="DevExpress.Wpf.Themes.All" VersionOverride="26.1.2-beta-26156" />
-    <PackageReference Include="DevExpress.Wpf.ThemesLW" VersionOverride="26.1.2-beta-26156" />
+    <PackageReference Include="DevExpress.Wpf.Demos" VersionOverride="26.1.3" />
+    <PackageReference Include="DevExpress.Wpf" VersionOverride="26.1.3" />
+    <PackageReference Include="DevExpress.Wpf.Themes.All" VersionOverride="26.1.3" />
+    <PackageReference Include="DevExpress.Wpf.ThemesLW" VersionOverride="26.1.3" />
     
     
     

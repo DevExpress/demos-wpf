@@ -15,9 +15,12 @@ Namespace SpreadsheetDemo
             InitializeComponent()
             MainWindow.CommonRibbon.Init(spreadsheetControl1)
             RegisterCustomFunctions()
-            InitializeWorkbook()
-            GenerateCustomPropertiesWorksheet()
-            AddHandler spreadsheetControl1.DocumentPropertiesChanged, New DocumentPropertiesChangedEventHandler(AddressOf spreadsheetControl1_DocumentPropertiesChanged)
+        End Sub
+
+        Private Sub RegisterCustomFunctions()
+            Dim workbook As IWorkbook = spreadsheetControl1.Document
+            Dim customFunction As DocumentPropertyFunction = New DocumentPropertyFunction()
+            If Not workbook.GlobalCustomFunctions.Contains(CType(customFunction, ICustomFunction).Name) Then workbook.GlobalCustomFunctions.Add(customFunction)
         End Sub
 
         Private Sub spreadsheetControl1_DocumentPropertiesChanged(ByVal sender As Object, ByVal e As DocumentPropertiesChangedEventArgs)
@@ -25,15 +28,8 @@ Namespace SpreadsheetDemo
             If e.CustomPropertiesChanged Then GenerateCustomPropertiesWorksheet()
         End Sub
 
-        Private Sub InitializeWorkbook()
-            spreadsheetControl1.LoadDocument(DemoUtils.GetRelativePath("DocumentProperties_template.xlsx"))
-            spreadsheetControl1.Document.Unit = DevExpress.Office.DocumentUnit.Point
-        End Sub
-
-        Private Sub RegisterCustomFunctions()
-            Dim workbook As IWorkbook = spreadsheetControl1.Document
-            Dim customFunction As DocumentPropertyFunction = New DocumentPropertyFunction()
-            If Not workbook.GlobalCustomFunctions.Contains(CType(customFunction, ICustomFunction).Name) Then workbook.GlobalCustomFunctions.Add(customFunction)
+        Private Sub spreadsheetControl1_DocumentLoaded(ByVal sender As Object, ByVal e As EventArgs)
+            GenerateCustomPropertiesWorksheet()
         End Sub
 
         Private Sub GenerateCustomPropertiesWorksheet()

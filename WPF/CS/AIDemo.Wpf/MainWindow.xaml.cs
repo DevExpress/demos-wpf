@@ -134,11 +134,11 @@ namespace AIDemo {
             });
 
             
-            serviceCollection.AddKeyedScoped<IChatResponseProvider>(GroupChatWorkflowModule.ServiceKey, (sp, key) => {
-                return new WorkflowResponseProvider<List<ChatMessage>>(
-                    agentFactory.CreatePublishingGroupChatWorkflow(),
-                    messages => messages.ToList(),
-                    WorkflowResponseProviderStartMode.Open);
+            var toolApprovalAgent = agentFactory.CreateToolApprovalAgent();
+            var toolApprovalSession = await toolApprovalAgent.CreateSessionAsync();
+
+            serviceCollection.AddKeyedTransient<IChatResponseProvider>(AIAgentWithToolApprovalModule.ServiceKey, (sp, _) => {
+                return toolApprovalAgent.AsIChatResponseProvider(toolApprovalSession);
             });
 
             
@@ -150,8 +150,8 @@ namespace AIDemo {
                     }
                 };
                 var responsesClient = azureOpenAIClient.GetResponsesClient();
-                var reasoningClient = responsesClient.AsIChatClient().AsBuilder().ConfigureOptions(x => {
-                    x.RawRepresentationFactory = _raw => baseOptions;
+                var reasoningClient = responsesClient.AsIChatClient("demo-mini").AsBuilder().ConfigureOptions(x => {
+                    x.RawRepresentationFactory = _ => baseOptions;
                 }).Build();
                 return reasoningClient.AsIChatResponseProvider();
             });
@@ -185,7 +185,7 @@ namespace AIDemo {
             get {
                 var azureOpenAIEndpoint = GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT");
                 if(string.IsNullOrEmpty(azureOpenAIEndpoint))
-                    azureOpenAIEndpoint = "https://public-api.devexpress.com/demo-openai"; 
+                    azureOpenAIEndpoint = "https://api.devexpress.com/demo-openai"; 
                 return new Uri(azureOpenAIEndpoint);
             }
         }
