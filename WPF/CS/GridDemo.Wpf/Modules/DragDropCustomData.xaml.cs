@@ -13,7 +13,7 @@ namespace GridDemo {
             InitializeComponent();
             MainWindow.CommonRibbon.ExportGrid = grid;
             MainWindow.CommonRibbon.ReportService = rmsDragDropCustomData;
-            Unloaded += OnDragDropCustomDataUnloaded;
+            ModuleUnloaded += OnDragDropCustomDataUnloaded;
         }
         void OnDragDropCustomDataUnloaded(object sender, RoutedEventArgs e) {
             scheduler.DataSource = null;

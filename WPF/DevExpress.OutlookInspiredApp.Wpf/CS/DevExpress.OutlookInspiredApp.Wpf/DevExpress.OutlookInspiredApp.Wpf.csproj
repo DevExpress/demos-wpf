@@ -21,14 +21,16 @@
     <OutputPath>bin\DebugTest\</OutputPath>
     <DefineConstants>DEBUG;TRACE;DEBUGTEST</DefineConstants>
     <DebugType>full</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
     <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
     <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -114,9 +116,7 @@
     <PackageReference Include="System.Data.SQLite.EF6">
       <netcore3ignore />
     </PackageReference>
-	<PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3">
-       <netcore3ignore />
-    </PackageReference>
+	<PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" />
     <PackageReference Include="System.Text.Json">
       <netcore3ignore />
     </PackageReference>

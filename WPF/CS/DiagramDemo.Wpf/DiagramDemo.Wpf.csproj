@@ -25,7 +25,8 @@
     <DefineConstants>TRACE;DEBUG;WPF;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
@@ -36,7 +37,8 @@
     <DefineConstants>TRACE;WPF;</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <PlatformTarget>x86</PlatformTarget>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
     <NoWin32Manifest>true</NoWin32Manifest>
   </PropertyGroup>
@@ -83,6 +85,7 @@
     <Reference Include="DevExpress.Data.Desktop.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
     <Reference Include="DevExpress.Data.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
     <Reference Include="DevExpress.DemoData.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.DevAV.v26.1.Data"><HintPath></HintPath><Private>False</Private></Reference>
     <Reference Include="DevExpress.Xpf.Layout.v26.1.Core"><HintPath></HintPath><Private>False</Private></Reference>
     <Reference Include="DevExpress.Xpf.Docking.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
     <Reference Include="DevExpress.Xpf.Controls.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
@@ -127,9 +130,7 @@
     <PackageReference Include="System.Data.SQLite.EF6">
       <netcore3ignore />
     </PackageReference>
-    <PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3">
-      <netcore3ignore />
-    </PackageReference>
+    <PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
@@ -359,7 +360,7 @@
   <ItemGroup>
     <Resource Include="demoicon.ico" />
   </ItemGroup>
-  <ItemGroup />
+  
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Target Name="SourceCode" BeforeTargets="PreBuildEvent"><ItemGroup><Resource Include="@(Page)" /></ItemGroup><ItemGroup><Resource Include="@(Compile)" /></ItemGroup></Target>
   <!--ONLY NETCORE3

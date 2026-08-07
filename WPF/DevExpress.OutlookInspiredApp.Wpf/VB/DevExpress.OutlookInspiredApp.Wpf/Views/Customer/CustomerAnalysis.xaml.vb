@@ -10,9 +10,14 @@ Namespace DevExpress.DevAV.Views.Customer
     Public Partial Class CustomerAnalysis
         Inherits UserControl
 
+        Private dataPeriod As DatePeriod
+
+        Private reportPeriod As DatePeriod
+
         Public Sub New()
             Me.InitializeComponent()
             SubscribeEvents()
+            InitializeCurrentDateTimePeriod()
         End Sub
 
         Private Sub SubscribeEvents()
@@ -36,26 +41,35 @@ Namespace DevExpress.DevAV.Views.Customer
             CType(Me.splashScreenService, Mvvm.ISplashScreenService).HideSplashScreen()
         End Sub
 
+        Private Sub InitializeCurrentDateTimePeriod()
+            Dim viewModel As CustomerAnalysisViewModel = CType(DataContext, CustomerAnalysisViewModel)
+            Dim maxDate = viewModel.GetMaxOrdersDate()
+            dataPeriod = CalculateAnalysisPeriod(maxDate)
+            reportPeriod = CalculateReportPeriod(maxDate)
+        End Sub
+
         Private Sub LoadData()
             Dim ViewModel As CustomerAnalysisViewModel = CType(DataContext, CustomerAnalysisViewModel)
             Me.spreadsheetControl.Document.BeginUpdate()
+            Dim defName = Me.spreadsheetControl.Document.DefinedNames.GetDefinedName("ReportYear")
+            If defName IsNot Nothing Then defName.RefersTo = "=" & reportPeriod.End.Year.ToString(Globalization.CultureInfo.InvariantCulture)
             Dim salesReportWorksheet = Me.spreadsheetControl.Document.Worksheets("Sales Report")
-            Dim salesReportItems = ViewModel.GetSalesReport().ToList()
+            Dim salesReportItems = ViewModel.GetSalesReport(dataPeriod.Start, dataPeriod.End).ToList()
             Dim frCustomers = salesReportItems.[Select](Function(i) i.CustomerName).Distinct().OrderBy(Function(i) i).ToList()
             salesReportWorksheet.Import(frCustomers, 14, 1, True)
             For Each item As CustomersAnalysis.Item In salesReportItems
                 Dim rowOffset As Integer = frCustomers.IndexOf(item.CustomerName)
-                Dim columnOffset As Integer = MonthOffsetFromStart(item.Date) \ 12
+                Dim columnOffset As Integer = MonthOffset(dataPeriod.Start, item.Date) \ 12
                 If rowOffset < 0 OrElse columnOffset < 0 Then Continue For
                 salesReportWorksheet.Cells(14 + rowOffset, 3 + columnOffset * 2).SetValue(item.Total)
             Next
 
             Dim salesDataWorksheet = Me.spreadsheetControl.Document.Worksheets("Sales Data")
-            Dim salesDataItems = ViewModel.GetSalesData().ToList()
+            Dim salesDataItems = ViewModel.GetSalesData(dataPeriod.Start, dataPeriod.End).ToList()
             Dim states = salesDataItems.[Select](Function(i) i.State).Distinct().OrderBy(Function(i) i).ToList()
             salesDataWorksheet.Import(ViewModel.GetStates(states), 5, 3, False)
             For Each item As CustomersAnalysis.Item In salesDataItems
-                Dim rowOffset As Integer = MonthOffsetFromStart(item.Date)
+                Dim rowOffset As Integer = MonthOffset(dataPeriod.Start, item.Date)
                 Dim columnOffset As Integer = states.IndexOf(item.State)
                 If rowOffset < 0 OrElse columnOffset < 0 Then Continue For
                 salesDataWorksheet.Cells(6 + rowOffset, 3 + columnOffset).SetValue(item.Total)

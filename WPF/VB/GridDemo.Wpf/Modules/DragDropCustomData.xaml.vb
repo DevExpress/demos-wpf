@@ -16,7 +16,7 @@ Namespace GridDemo
             Me.InitializeComponent()
             GridDemo.MainWindow.CommonRibbon.ExportGrid = Me.grid
             GridDemo.MainWindow.CommonRibbon.ReportService = Me.rmsDragDropCustomData
-            AddHandler Unloaded, AddressOf Me.OnDragDropCustomDataUnloaded
+            AddHandler ModuleUnloaded, AddressOf Me.OnDragDropCustomDataUnloaded
         End Sub
 
         Private Sub OnDragDropCustomDataUnloaded(ByVal sender As Object, ByVal e As System.Windows.RoutedEventArgs)

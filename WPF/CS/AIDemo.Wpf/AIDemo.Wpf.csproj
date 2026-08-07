@@ -279,6 +279,9 @@
     <PackageReference Include="System.Data.SQLite">
       <netcore3ignore />
     </PackageReference>
+    <PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3">
+      <netcore3ignore />
+    </PackageReference>
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\Reports\AILocalizationThumb.png" />

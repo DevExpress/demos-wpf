@@ -32,7 +32,7 @@ namespace PivotGridDemo {
                 new FieldItem { Name = "fieldMPGCity", DataBinding = new DataSourceColumnBinding("MPGCity"), Area = FieldArea.FilterArea, Caption = "MPG City", Width = 140d },
                 new FieldItem { Name = "fieldMPGHighway", DataBinding = new DataSourceColumnBinding("MPGHighway"), Area = FieldArea.FilterArea, Caption = "MPG Highway", Width = 140d },
             };
-            DataSource = VehiclesData.GetMDBData();
+            DataSource = VehiclesData.GetData();
         }
         public object DataSource { get; private set; }
         public IEnumerable<FormatConditionItem> FormatConditionsSource { get; private set; }

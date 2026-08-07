@@ -142,7 +142,7 @@
             <dxr:RibbonStatusBarControl.LeftItems>
                 <dxb:BarStaticItem Content="{Binding Count, ElementName=customSummaryProvider, Converter={StaticResource IntToItemsConverter}}"/>
                 <dxb:BarItemLinkSeparator/>
-                <dxb:BarButtonItem Glyph="pack://application:,,,/DevExpress.ProductsDemo.Wpf;component/Images/Tasks/Reminder.svg" BarItemDisplayMode="ContentAndGlyph" GlyphSize="Small" GlyphAlignment="Right" Content="REMINDERS: 11"/>
+                <dxb:BarButtonItem Glyph="pack://application:,,,/DevExpress.ProductsDemo.Wpf;component/Images/Tasks/Reminder.svg" BarItemDisplayMode="ContentAndGlyph" GlyphSize="Small" GlyphAlignment="Right" Content="Reminders: 11"/>
             </dxr:RibbonStatusBarControl.LeftItems>
         </dxr:RibbonStatusBarControl>
     </Grid>

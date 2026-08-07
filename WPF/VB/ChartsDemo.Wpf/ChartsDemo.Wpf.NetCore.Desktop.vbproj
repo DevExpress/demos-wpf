@@ -16,7 +16,7 @@
     <AssemblyName>ChartsDemo</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{F184B08F-C81C-45F6-A57F-5ABD9991F28F}</ProjectTypeGuids>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{778DAE3C-4631-46EA-AA77-85C1314464D9}</ProjectTypeGuids>
     <OutputType>WinExe</OutputType>
     <WarningLevel>4</WarningLevel>
     <ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
@@ -147,10 +147,10 @@
     <Resource Include="Images\SeriesViews\ChartTypes_Bubble3D.svg" />
     <Resource Include="Images\SeriesViews\ChartTypes_Point3D.svg" />
     <Resource Include="Data\CityWeather.xml" />
-    <PackageReference Include="DevExpress.Wpf.Demos" VersionOverride="26.1.3" />
-    <PackageReference Include="DevExpress.Wpf" VersionOverride="26.1.3" />
-    <PackageReference Include="DevExpress.Wpf.Themes.All" VersionOverride="26.1.3" />
-    <PackageReference Include="DevExpress.Wpf.ThemesLW" VersionOverride="26.1.3" />
+    <PackageReference Include="DevExpress.Wpf.Demos" VersionOverride="26.1.4" />
+    <PackageReference Include="DevExpress.Wpf" VersionOverride="26.1.4" />
+    <PackageReference Include="DevExpress.Wpf.Themes.All" VersionOverride="26.1.4" />
+    <PackageReference Include="DevExpress.Wpf.ThemesLW" VersionOverride="26.1.4" />
     
     
     
@@ -1165,7 +1165,6 @@
   <ItemGroup>
     <Resource Include="Images\Volume.png" />
   </ItemGroup>
-  <ItemGroup />
   <PropertyGroup>
     <CopyLocalLockFileAssemblies>false</CopyLocalLockFileAssemblies>
     <GenerateRuntimeConfigDevFile>true</GenerateRuntimeConfigDevFile>

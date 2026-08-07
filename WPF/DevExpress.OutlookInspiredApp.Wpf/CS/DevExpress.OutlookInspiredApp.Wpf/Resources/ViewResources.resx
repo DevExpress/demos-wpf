@@ -94,7 +94,7 @@
     <value>Close</value>
   </data>
     <data name="Command_Count" xml:space="preserve">
-    <value>RECORDS: {0}</value>
+    <value>Records: {0}</value>
   </data>
     <data name="Command_CustomizeLayout" xml:space="preserve">
     <value>Customize</value>

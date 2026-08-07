@@ -194,7 +194,7 @@
         </dxr:RibbonControl>
         <dxr:RibbonStatusBarControl DockPanel.Dock="Bottom">
             <dxr:RibbonStatusBarControl.LeftItems>
-                <dxb:BarStaticItem Padding="12,0" Content="{Binding Entities.Count, Converter={dxmvvm:FormatStringConverter FormatString='RECORDS: {0}'}}" />
+                <dxb:BarStaticItem Padding="12,0" Content="{Binding Entities.Count, Converter={dxmvvm:FormatStringConverter FormatString='Records: {0}'}}" />
             </dxr:RibbonStatusBarControl.LeftItems>
         </dxr:RibbonStatusBarControl>
         <dxdo:DockLayoutManager AllowDocumentSelector="False">

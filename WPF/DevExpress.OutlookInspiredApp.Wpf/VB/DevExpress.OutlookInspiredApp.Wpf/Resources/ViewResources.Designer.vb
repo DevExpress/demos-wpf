@@ -67,7 +67,7 @@ Namespace DevExpress.DevAV.Resources
         End Property
 
         ''' <summary>
-        '''   Looks up a localized string similar to RECORDS: {0}.
+        '''   Looks up a localized string similar to Records: {0}.
         ''' </summary>
         Public Shared ReadOnly Property Command_Count As String
             Get

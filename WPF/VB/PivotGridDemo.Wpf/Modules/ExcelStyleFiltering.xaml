@@ -49,7 +49,7 @@
             RowTotalsLocation="Far"
             ShowBorder="False"
             FilterString="[fieldBodyStyle] In ('Sedan', 'Sport Utility Vehicle')"
-            DataSource="{DXBinding Expr='$dxdd:VehiclesData.GetMDBData()'}"
+            DataSource="{DXBinding Expr='$dxdd:VehiclesData.GetData()'}"
             AllowDrag="False"
             AllowHideFields="Never"
             AllowFilterPanelNavigation="True">

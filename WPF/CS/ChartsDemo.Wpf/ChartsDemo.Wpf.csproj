@@ -150,58 +150,26 @@
     <Resource Include="Images\SeriesViews\ChartTypes_Bubble3D.svg" />
     <Resource Include="Images\SeriesViews\ChartTypes_Point3D.svg" />
     <Resource Include="Data\CityWeather.xml" />
-    <Reference Include="DevExpress.Charts.Designer.v26.1">
-      <Private>False</Private>
-    <HintPath></HintPath></Reference>
-    <Reference Include="DevExpress.Printing.v26.1.Core">
-      <Private>False</Private>
-    <HintPath></HintPath></Reference>
+    <Reference Include="DevExpress.Charts.Designer.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.Printing.v26.1.Core"><HintPath></HintPath><Private>False</Private></Reference>
     <Reference Include="DevExpress.Data.Desktop.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
     <Reference Include="DevExpress.Drawing.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
-    <Reference Include="DevExpress.Data.v26.1">
-      <Private>False</Private>
-    <HintPath></HintPath></Reference>
-    <Reference Include="DevExpress.DemoData.v26.1">
-      <Private>False</Private>
-    <HintPath></HintPath></Reference>
-    <Reference Include="DevExpress.Charts.v26.1.Core">
-      <Private>False</Private>
-    <HintPath></HintPath></Reference>
+    <Reference Include="DevExpress.Data.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.DemoData.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.Charts.v26.1.Core"><HintPath></HintPath><Private>False</Private></Reference>
     <Reference Include="DevExpress.TreeMap.v26.1.Core"><HintPath></HintPath><Private>False</Private></Reference>
-    <Reference Include="DevExpress.Xpf.Core.v26.1">
-      <Private>False</Private>
-    <HintPath></HintPath></Reference>
-    <Reference Include="DevExpress.Xpf.Charts.v26.1">
-      <Private>False</Private>
-    <HintPath></HintPath></Reference>
-    <Reference Include="DevExpress.Xpf.Grid.v26.1">
-      <Private>False</Private>
-    <HintPath></HintPath></Reference>
-    <Reference Include="DevExpress.Xpf.Grid.v26.1.Core">
-      <Private>False</Private>
-    <HintPath></HintPath></Reference>
+    <Reference Include="DevExpress.Xpf.Core.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.Xpf.Charts.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.Xpf.Grid.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.Xpf.Grid.v26.1.Core"><HintPath></HintPath><Private>False</Private></Reference>
     <Reference Include="DevExpress.Xpf.TreeMap.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
-    <Reference Include="DevExpress.Xpf.DemoBase.v26.1">
-      <Private>False</Private>
-    <HintPath></HintPath></Reference>
-    <Reference Include="DevExpress.Xpf.LayoutControl.v26.1">
-      <Private>False</Private>
-    <HintPath></HintPath></Reference>
-    <Reference Include="DevExpress.Mvvm.v26.1">
-      <Private>False</Private>
-    <HintPath></HintPath></Reference>
-    <Reference Include="DevExpress.Xpf.Gauges.v26.1">
-      <Private>False</Private>
-    <HintPath></HintPath></Reference>
-    <Reference Include="DevExpress.Xpf.Ribbon.v26.1">
-      <Private>False</Private>
-    <HintPath></HintPath></Reference>
-    <Reference Include="DevExpress.Xpf.TypedStyles.v26.1">
-      <Private>False</Private>
-    <HintPath></HintPath></Reference>
-    <Reference Include="DevExpress.Xpf.Accordion.v26.1">
-      <Private>False</Private>
-    <HintPath></HintPath></Reference>
+    <Reference Include="DevExpress.Xpf.DemoBase.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.Xpf.LayoutControl.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.Mvvm.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.Xpf.Gauges.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.Xpf.Ribbon.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.Xpf.TypedStyles.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
+    <Reference Include="DevExpress.Xpf.Accordion.v26.1"><HintPath></HintPath><Private>False</Private></Reference>
   </ItemGroup>
   <ItemGroup>
     <Reference Include="PresentationUI"><Private>False</Private></Reference>
@@ -1234,7 +1202,7 @@
   <ItemGroup>
     <Resource Include="Images\Volume.png" />
   </ItemGroup>
-  <ItemGroup />
+  
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="SourceCode" BeforeTargets="PreBuildEvent"><ItemGroup><Resource Include="@(Page)" /></ItemGroup><ItemGroup><Resource Include="@(Compile)" /></ItemGroup></Target>
   <!--ONLY NETCORE3

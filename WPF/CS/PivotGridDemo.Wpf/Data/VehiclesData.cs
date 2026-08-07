@@ -1,31 +1,19 @@
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using DevExpress.Data.Utils;
-using DevExpress.Internal;
 using DevExpress.Xpf.Core.Native;
 
 #if NET
 using Microsoft.EntityFrameworkCore;
+#else
+using System.Data.Entity;
 #endif
 
 namespace DevExpress.DemoData {
     public class VehiclesData {
-        public static List<OrderItem> GetMDBData() {
-#if NET
-            return InitOrdersData(null, 10000, 3 * 365);
-#else
-            return InitOrdersData("Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" + DataDirectoryHelper.GetFile("Vehicles.mdb", DataDirectoryHelper.DataFolderName), 10000, 3 * 365);
-#endif
-        }
-        public class Trademark {
-            public int ID { get; set; }
-            public string Name { get; set; }
-        }
-        public class BodyStyle {
-            public int ID { get; set; }
-            public string Name { get; set; }
+        public static List<OrderItem> GetData() {
+            return InitOrdersData(10000, 3 * 365);
         }
         public class OrderItem {
             internal Model Model;
@@ -92,14 +80,9 @@ namespace DevExpress.DemoData {
             public DateTime DeliveryDate { get; set; }
             public bool InStock { get; set; }
         }
-        public static List<OrderItem> InitOrdersData(string connectionString, int itemCount, int dataInterval) {
+        public static List<OrderItem> InitOrdersData(int itemCount, int dataInterval) {
             NonCryptographicRandom rnd = NonCryptographicRandom.Default;
-#if NET
             List<Model> listModels = InitDataCore(1);
-#else
-            DataSet ds;
-            List<Model> listModels = InitMDBDataCore(connectionString, out ds, 1);
-#endif
             List<OrderItem> orders = new List<OrderItem>();
             decimal averagePrice = listModels.Select(x => x.Price).Average();
             int averageOrders = itemCount / listModels.Count;
@@ -108,12 +91,11 @@ namespace DevExpress.DemoData {
                     orders.Add(new OrderItem(model, dataInterval, rnd, i + 1));
             return orders;
         }
-#if NET
         static List<Model> InitDataCore(int dataInterval) {
             var rnd = NonCryptographicRandom.Default;
             var listModels = new List<Model>();
 
-            var vehiclesContext = new Models.Vehicles.VehiclesContext();
+            using var vehiclesContext = new Models.Vehicles.VehiclesContext();
             vehiclesContext.Models.Load();
             vehiclesContext.BodyStyles.Load();
             vehiclesContext.Categories.Load();
@@ -142,65 +124,5 @@ namespace DevExpress.DemoData {
             }));
             return listModels;
         }
-#else
-        static List<Model> InitMDBDataCore(string connectionString, out DataSet ds, int dataInterval) {
-            string Model = "Model";
-            string Trademark = "Trademark";
-            string Category = "Category";
-            string BodyStyle = "BodyStyle";
-            string TransmissionType = "TransmissionType";
-            ds = new DataSet();
-            FillTable(Model, null, connectionString, ds);
-            FillTable(Category, null, connectionString, ds);
-            FillTable(Trademark, null, connectionString, ds);
-            FillTable(BodyStyle, null, connectionString, ds);
-            FillTable(TransmissionType, null, connectionString, ds);
-
-            List<Trademark> listTrademarks = new List<Trademark>();
-            foreach(DataRow row in ds.Tables[Trademark].Rows)
-                listTrademarks.Add(new Trademark {
-                    ID = (int)row["ID"],
-                    Name = (string)row["Name"]
-                });
-
-            List<BodyStyle> listBodyStyles = new List<BodyStyle>();
-            foreach(DataRow row in ds.Tables[BodyStyle].Rows)
-                listBodyStyles.Add(new BodyStyle {
-                    ID = (int)row["ID"],
-                    Name = (string)row["Name"]
-                });
-
-            List<Model> listModels = new List<Model>();
-            NonCryptographicRandom rnd = NonCryptographicRandom.Default;
-            foreach(DataRow row in ds.Tables[Model].Rows)
-                listModels.Add(new Model() {
-                    ID = (int)row["ID"],
-                    Name = (string)row["Name"],
-                    Trademark = listTrademarks.First(x => x.ID == (int)row["TrademarkID"]).Name,
-                    Modification = (string)row["Modification"],
-                    Category = (int)row["CategoryID"],
-                    Price = (decimal)row["Price"],
-                    MPGCity = DBNull.Value.Equals(row["MPG City"]) ? null : (int?)row["MPG City"],
-                    MPGHighway = DBNull.Value.Equals(row["MPG City"]) ? null : (int?)row["MPG Highway"],
-                    Doors = (int)row["Doors"],
-                    BodyStyle = listBodyStyles.First(x => x.ID == (int)row["BodyStyleID"]).Name,
-                    Cylinders = (int)row["Cylinders"],
-                    Horsepower = (string)row["Horsepower"],
-                    Torque = (string)row["Torque"],
-                    TransmissionSpeeds = Convert.ToInt32(row["Transmission Speeds"]),
-                    TransmissionType = (int)row["Transmission Type"],
-                    Description = string.Format("{0}", row["Description"]),
-                    DeliveryDate = DateTime.Now.AddDays(rnd.Next(dataInterval)),
-                    InStock = rnd.Next(100) < 95
-                });
-            return listModels;
-        }
-        static void FillTable(string table, string query, string connectionString, DataSet ds) {
-            if(query == null)
-                query = string.Format("SELECT * FROM {0}", table);
-            System.Data.OleDb.OleDbDataAdapter oleDbDataAdapter = new System.Data.OleDb.OleDbDataAdapter(query, connectionString);
-            oleDbDataAdapter.Fill(ds, table);
-        }
-#endif
     }
 }

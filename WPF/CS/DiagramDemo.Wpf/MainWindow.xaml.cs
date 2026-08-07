@@ -34,6 +34,11 @@ namespace DiagramDemo {
 
         public MainWindow() {
             Instance = this;
+#if NET
+            System.Data.Common.DbProviderFactory factory;
+            if(!System.Data.Common.DbProviderFactories.TryGetFactory("Microsoft.Data.Sqlite", out factory))
+                System.Data.Common.DbProviderFactories.RegisterFactory("Microsoft.Data.Sqlite", Microsoft.Data.Sqlite.SqliteFactory.Instance);
+#endif
             InitializeComponent();
         }
     }

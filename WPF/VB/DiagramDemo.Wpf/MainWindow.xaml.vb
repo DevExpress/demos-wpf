@@ -44,6 +44,10 @@ Namespace DiagramDemo
 
         Public Sub New()
             Instance = Me
+#If NET
+            Dim factory As System.Data.Common.DbProviderFactory
+            If Not System.Data.Common.DbProviderFactories.TryGetFactory("Microsoft.Data.Sqlite", factory) Then System.Data.Common.DbProviderFactories.RegisterFactory("Microsoft.Data.Sqlite", Microsoft.Data.Sqlite.SqliteFactory.Instance)
+#End If
             InitializeComponent()
         End Sub
     End Class

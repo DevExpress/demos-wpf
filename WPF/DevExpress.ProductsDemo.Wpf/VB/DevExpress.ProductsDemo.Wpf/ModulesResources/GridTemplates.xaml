@@ -38,7 +38,7 @@
     <local:TaskStatusCompletedConverter x:Key="TaskStatusCompletedConverter"/>
     <dxmvvm:FormatStringConverter x:Key="IntToItemsConverter">
         <dxmvvm:FormatStringConverter.FormatString>
-            <sys:String>ITEMS: {0}</sys:String>
+            <sys:String>Items: {0}</sys:String>
         </dxmvvm:FormatStringConverter.FormatString>
     </dxmvvm:FormatStringConverter>
 

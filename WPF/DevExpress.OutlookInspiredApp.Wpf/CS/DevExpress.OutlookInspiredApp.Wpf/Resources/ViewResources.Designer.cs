@@ -79,7 +79,7 @@ namespace DevExpress.DevAV.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to RECORDS: {0}.
+        ///   Looks up a localized string similar to Records: {0}.
         /// </summary>
         public static string Command_Count {
             get {
