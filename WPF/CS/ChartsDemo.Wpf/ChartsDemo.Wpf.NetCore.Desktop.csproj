@@ -146,10 +146,10 @@
     <Resource Include="Images\SeriesViews\ChartTypes_Bubble3D.svg" />
     <Resource Include="Images\SeriesViews\ChartTypes_Point3D.svg" />
     <Resource Include="Data\CityWeather.xml" />
-    <PackageReference Include="DevExpress.Wpf.Demos" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.Themes.All" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.ThemesLW" VersionOverride="26.1.4" />
+    <PackageReference Include="DevExpress.Wpf.Demos" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Themes.All" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.ThemesLW" VersionOverride="26.1.5" />
     
     
     

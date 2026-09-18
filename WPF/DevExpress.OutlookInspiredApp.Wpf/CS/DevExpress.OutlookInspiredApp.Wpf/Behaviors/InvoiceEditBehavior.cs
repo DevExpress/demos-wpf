@@ -12,7 +12,7 @@ using DevExpress.Xpf.Spreadsheet.Extensions.Internal;
 namespace DevExpress.DevAV {
     public class InvoiceEditBehavior : Behavior<SpreadsheetControl> {
         public static readonly DependencyProperty SpreadsheetDataSourceProperty =
-            DependencyProperty.Register("SpreadsheetDataSource", typeof(Tuple<IDevAVDbUnitOfWork, Order>), typeof(InvoiceEditBehavior), new PropertyMetadata(null, (d, e) => ((InvoiceEditBehavior)d).InitSpreadsheet()));
+            DependencyProperty.Register("SpreadsheetDataSource", typeof(Tuple<IDevAVDbUnitOfWork, Order>), typeof(InvoiceEditBehavior), new PropertyMetadata(null, (d, e) => ((InvoiceEditBehavior)d).ReloadSpreadsheet()));
 
         public Tuple<IDevAVDbUnitOfWork, Order> SpreadsheetDataSource {
             get { return (Tuple<IDevAVDbUnitOfWork, Order>)GetValue(SpreadsheetDataSourceProperty); }
@@ -35,12 +35,22 @@ namespace DevExpress.DevAV {
         void OnLoaded(object sender, RoutedEventArgs e) {
             InitSpreadsheet();
         }
+        void ReloadSpreadsheet() {
+            Unsubscribe();
+            try {
+                InitSpreadsheet();
+            }
+            finally {
+                Subscribe();
+            }
+        }
         void InitSpreadsheet() {
             if(AssociatedObject == null || !AssociatedObject.IsLoaded)
                 return;
             LoadInvoiceTemplate();
             ParseDataSource();
             CreateInvoiceHelper();
+            AssociatedObject.Options.RaiseEventsOnModificationsViaAPI = true;
         }
 
         void OnPreviewMouseLeftButtonDown(object sender, System.Windows.Input.MouseButtonEventArgs e) {
@@ -52,6 +62,25 @@ namespace DevExpress.DevAV {
         }
         void OnSelectionChanged(object sender, EventArgs e) {
             invoiceHelper.SelectionChanged();
+        }
+        void OnRowsInserted(object sender, Spreadsheet.RowsChangedEventArgs e) {
+            UnsubscribeFromCellValueAndSelectionChanged();
+            try {
+                invoiceHelper.RowsInserted(e.StartIndex, e.Count);
+            }
+            finally {
+                SubscribeToCellValueAndSelectionChanged();
+            }
+        }
+
+        void OnRowsRemoved(object sender, Spreadsheet.RowsChangedEventArgs e) {
+            UnsubscribeFromCellValueAndSelectionChanged();
+            try {
+                invoiceHelper.RowsRemoved(e.StartIndex, e.Count);
+            }
+            finally {
+                SubscribeToCellValueAndSelectionChanged();
+            }
         }
 
         void CreateInvoiceHelper() {
@@ -97,19 +126,30 @@ namespace DevExpress.DevAV {
         void Subscribe() {
             AssociatedObject.Loaded += OnLoaded;
             AssociatedObject.CustomCellEdit += OnCustomCellEdit;
-            AssociatedObject.SelectionChanged += OnSelectionChanged;
-            AssociatedObject.CellValueChanged += CellValueChanged;
             AssociatedObject.PreviewMouseLeftButtonDown += OnPreviewMouseLeftButtonDown;
             AssociatedObject.ProtectionWarning += OnProtectionWarning;
-
+            AssociatedObject.RowsInserted += OnRowsInserted;
+            AssociatedObject.RowsRemoved += OnRowsRemoved;
+            SubscribeToCellValueAndSelectionChanged();
         }
+
         void Unsubscribe() {
             AssociatedObject.Loaded -= OnLoaded;
             AssociatedObject.CustomCellEdit -= OnCustomCellEdit;
-            AssociatedObject.SelectionChanged -= OnSelectionChanged;
-            AssociatedObject.CellValueChanged -= CellValueChanged;
             AssociatedObject.PreviewMouseLeftButtonDown -= OnPreviewMouseLeftButtonDown;
             AssociatedObject.ProtectionWarning -= OnProtectionWarning;
+            AssociatedObject.RowsInserted -= OnRowsInserted;
+            AssociatedObject.RowsRemoved -= OnRowsRemoved;
+            UnsubscribeFromCellValueAndSelectionChanged();
+        }
+
+        void SubscribeToCellValueAndSelectionChanged() {
+            AssociatedObject.SelectionChanged += OnSelectionChanged;
+            AssociatedObject.CellValueChanged += CellValueChanged;
+        }
+        void UnsubscribeFromCellValueAndSelectionChanged() {
+            AssociatedObject.SelectionChanged -= OnSelectionChanged;
+            AssociatedObject.CellValueChanged -= CellValueChanged;
         }
 
         OrderCollections CreateOrderCollections() {

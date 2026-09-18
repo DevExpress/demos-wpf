@@ -57,10 +57,10 @@
     <Resource Include="Images\demoicon.ico" />
     <Resource Include="Images\Hamburger\Folders.png" />
     <Resource Include="Images\Hamburger\ThemeSelector.png" />
-    <PackageReference Include="DevExpress.Wpf.Demos" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.Themes.All" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.ThemesLW" VersionOverride="26.1.4" />
+    <PackageReference Include="DevExpress.Wpf.Demos" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Themes.All" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.ThemesLW" VersionOverride="26.1.5" />
     
     
     

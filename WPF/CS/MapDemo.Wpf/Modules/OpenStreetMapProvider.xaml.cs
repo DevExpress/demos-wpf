@@ -1,10 +1,8 @@
-using System.Net;
 using DevExpress.Xpf.Map;
 
 namespace MapDemo {
     public partial class OpenStreetMapProvider : MapDemoModule {
         public OpenStreetMapProvider() {
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.SystemDefault;
             InitializeComponent();
         }
         void overlayLayerKind_SelectedIndexChanged(object sender, System.Windows.RoutedEventArgs e) {

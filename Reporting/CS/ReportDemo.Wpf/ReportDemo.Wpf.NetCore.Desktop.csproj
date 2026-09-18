@@ -38,42 +38,42 @@
     <DefineConstants>TRACE;WPF;</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="DevExpress.AIIntegration.Wpf.Reporting" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.Demos" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Win.Design" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Reporting.Demos" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.Themes.DXStyle" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.Themes.LightGray" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.Themes.MetropolisLight" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.Themes.MetropolisDark" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.Themes.Office2007Black" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.Themes.Office2007Blue" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.Themes.Office2007Silver" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.Themes.Office2010Black" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.Themes.Office2010Blue" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.Themes.Office2010Silver" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.Themes.Office2013" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.Themes.Office2013DarkGray" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.Themes.Office2013LightGray" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.Themes.Office2016Black" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.Themes.Office2016BlackSE" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.Themes.Office2016Colorful" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.Themes.Office2016ColorfulSE" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.Themes.Office2016DarkGraySE" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.Themes.Office2016White" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.Themes.Office2016WhiteSE" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.Themes.Office2019Black" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.Themes.Office2019DarkGray" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.Themes.Office2019White" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.Themes.Office2019HighContrast" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.Themes.VS2017Blue" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.Themes.VS2017Dark" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.Themes.VS2017Light" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.Themes.VS2019Blue" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.Themes.Win10Light" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.Themes.Win10Dark" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.Themes.Win11Light" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.Themes.Win11Dark" VersionOverride="26.1.4" />
+    <PackageReference Include="DevExpress.AIIntegration.Wpf.Reporting" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Demos" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Win.Design" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Reporting.Demos" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Themes.DXStyle" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Themes.LightGray" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Themes.MetropolisLight" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Themes.MetropolisDark" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2007Black" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2007Blue" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2007Silver" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2010Black" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2010Blue" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2010Silver" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2013" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2013DarkGray" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2013LightGray" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2016Black" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2016BlackSE" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2016Colorful" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2016ColorfulSE" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2016DarkGraySE" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2016White" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2016WhiteSE" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2019Black" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2019DarkGray" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2019White" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Office2019HighContrast" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Themes.VS2017Blue" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Themes.VS2017Dark" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Themes.VS2017Light" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Themes.VS2019Blue" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Win10Light" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Win10Dark" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Win11Light" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Themes.Win11Dark" VersionOverride="26.1.5" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="SQLitePCLRaw.bundle_e_sqlite3" />
@@ -244,7 +244,7 @@
     <ApplicationHighDpiMode>PerMonitorV2</ApplicationHighDpiMode>
   </PropertyGroup>
   <Target Name="SourceCode" BeforeTargets="PreBuildEvent"><ItemGroup><Resource Include="@(Page)" /></ItemGroup><ItemGroup><Resource Include="@(Compile)" /></ItemGroup></Target>
-  <ItemGroup><PackageReference Include="DevExpress.Wpf.Themes.VS2019Dark" VersionOverride="26.1.4" /><PackageReference Include="DevExpress.Wpf.Themes.VS2019Light" VersionOverride="26.1.4" /><PackageReference Include="DevExpress.Wpf.Themes.Seven" VersionOverride="26.1.4" /><PackageReference Include="DevExpress.Wpf.Themes.TouchlineDark" VersionOverride="26.1.4" /><PackageReference Include="DevExpress.Wpf.Themes.VS2010" VersionOverride="26.1.4" /><PackageReference Include="DevExpress.Wpf.ThemesLW" VersionOverride="26.1.4" /></ItemGroup>
+  <ItemGroup><PackageReference Include="DevExpress.Wpf.Themes.VS2019Dark" VersionOverride="26.1.5" /><PackageReference Include="DevExpress.Wpf.Themes.VS2019Light" VersionOverride="26.1.5" /><PackageReference Include="DevExpress.Wpf.Themes.Seven" VersionOverride="26.1.5" /><PackageReference Include="DevExpress.Wpf.Themes.TouchlineDark" VersionOverride="26.1.5" /><PackageReference Include="DevExpress.Wpf.Themes.VS2010" VersionOverride="26.1.5" /><PackageReference Include="DevExpress.Wpf.ThemesLW" VersionOverride="26.1.5" /></ItemGroup>
   <ItemGroup>
     <PackageReference Include="Microsoft.EntityFrameworkCore" />
     <PackageReference Include="System.Data.SQLite.Core" />

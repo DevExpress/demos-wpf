@@ -14,7 +14,7 @@ Namespace DevExpress.DevAV
     Public Class InvoiceEditBehavior
         Inherits Behavior(Of SpreadsheetControl)
 
-        Public Shared ReadOnly SpreadsheetDataSourceProperty As DependencyProperty = DependencyProperty.Register("SpreadsheetDataSource", GetType(Tuple(Of IDevAVDbUnitOfWork, Order)), GetType(InvoiceEditBehavior), New PropertyMetadata(Nothing, Sub(d, e) CType(d, InvoiceEditBehavior).InitSpreadsheet()))
+        Public Shared ReadOnly SpreadsheetDataSourceProperty As DependencyProperty = DependencyProperty.Register("SpreadsheetDataSource", GetType(Tuple(Of IDevAVDbUnitOfWork, Order)), GetType(InvoiceEditBehavior), New PropertyMetadata(Nothing, Sub(d, e) CType(d, InvoiceEditBehavior).ReloadSpreadsheet()))
 
         Public Property SpreadsheetDataSource As Tuple(Of IDevAVDbUnitOfWork, Order)
             Get
@@ -46,11 +46,21 @@ Namespace DevExpress.DevAV
             InitSpreadsheet()
         End Sub
 
+        Private Sub ReloadSpreadsheet()
+            Unsubscribe()
+            Try
+                InitSpreadsheet()
+            Finally
+                Subscribe()
+            End Try
+        End Sub
+
         Private Sub InitSpreadsheet()
             If AssociatedObject Is Nothing OrElse Not AssociatedObject.IsLoaded Then Return
             LoadInvoiceTemplate()
             ParseDataSource()
             CreateInvoiceHelper()
+            AssociatedObject.Options.RaiseEventsOnModificationsViaAPI = True
         End Sub
 
         Private Sub OnPreviewMouseLeftButtonDown(ByVal sender As Object, ByVal e As Input.MouseButtonEventArgs)
@@ -64,6 +74,24 @@ Namespace DevExpress.DevAV
 
         Private Sub OnSelectionChanged(ByVal sender As Object, ByVal e As EventArgs)
             invoiceHelper.SelectionChanged()
+        End Sub
+
+        Private Sub OnRowsInserted(ByVal sender As Object, ByVal e As Spreadsheet.RowsChangedEventArgs)
+            UnsubscribeFromCellValueAndSelectionChanged()
+            Try
+                invoiceHelper.RowsInserted(e.StartIndex, e.Count)
+            Finally
+                SubscribeToCellValueAndSelectionChanged()
+            End Try
+        End Sub
+
+        Private Sub OnRowsRemoved(ByVal sender As Object, ByVal e As Spreadsheet.RowsChangedEventArgs)
+            UnsubscribeFromCellValueAndSelectionChanged()
+            Try
+                invoiceHelper.RowsRemoved(e.StartIndex, e.Count)
+            Finally
+                SubscribeToCellValueAndSelectionChanged()
+            End Try
         End Sub
 
         Private Sub CreateInvoiceHelper()
@@ -107,19 +135,31 @@ Namespace DevExpress.DevAV
         Private Sub Subscribe()
             AddHandler AssociatedObject.Loaded, AddressOf OnLoaded
             AddHandler AssociatedObject.CustomCellEdit, AddressOf OnCustomCellEdit
-            AddHandler AssociatedObject.SelectionChanged, AddressOf OnSelectionChanged
-            AddHandler AssociatedObject.CellValueChanged, AddressOf CellValueChanged
             AddHandler AssociatedObject.PreviewMouseLeftButtonDown, AddressOf OnPreviewMouseLeftButtonDown
             AddHandler AssociatedObject.ProtectionWarning, AddressOf OnProtectionWarning
+            AddHandler AssociatedObject.RowsInserted, AddressOf OnRowsInserted
+            AddHandler AssociatedObject.RowsRemoved, AddressOf OnRowsRemoved
+            SubscribeToCellValueAndSelectionChanged()
         End Sub
 
         Private Sub Unsubscribe()
             RemoveHandler AssociatedObject.Loaded, AddressOf OnLoaded
             RemoveHandler AssociatedObject.CustomCellEdit, AddressOf OnCustomCellEdit
-            RemoveHandler AssociatedObject.SelectionChanged, AddressOf OnSelectionChanged
-            RemoveHandler AssociatedObject.CellValueChanged, AddressOf CellValueChanged
             RemoveHandler AssociatedObject.PreviewMouseLeftButtonDown, AddressOf OnPreviewMouseLeftButtonDown
             RemoveHandler AssociatedObject.ProtectionWarning, AddressOf OnProtectionWarning
+            RemoveHandler AssociatedObject.RowsInserted, AddressOf OnRowsInserted
+            RemoveHandler AssociatedObject.RowsRemoved, AddressOf OnRowsRemoved
+            UnsubscribeFromCellValueAndSelectionChanged()
+        End Sub
+
+        Private Sub SubscribeToCellValueAndSelectionChanged()
+            AddHandler AssociatedObject.SelectionChanged, AddressOf OnSelectionChanged
+            AddHandler AssociatedObject.CellValueChanged, AddressOf CellValueChanged
+        End Sub
+
+        Private Sub UnsubscribeFromCellValueAndSelectionChanged()
+            RemoveHandler AssociatedObject.SelectionChanged, AddressOf OnSelectionChanged
+            RemoveHandler AssociatedObject.CellValueChanged, AddressOf CellValueChanged
         End Sub
 
         Private Function CreateOrderCollections() As OrderCollections

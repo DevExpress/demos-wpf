@@ -120,10 +120,10 @@
     <Resource Include="Images\WizardControl\Not-so-fast!.png" />
     <Resource Include="Images\WizardControl\wizard-image.png" />
     <Resource Include="Images\WizardControl\devexpress123.png" />
-    <PackageReference Include="DevExpress.Wpf" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.Demos" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.Themes.All" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.ThemesLW" VersionOverride="26.1.4" />
+    <PackageReference Include="DevExpress.Wpf" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Demos" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Themes.All" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.ThemesLW" VersionOverride="26.1.5" />
     
     
     

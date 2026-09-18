@@ -1,4 +1,3 @@
-Imports System.Net
 Imports DevExpress.Xpf.Map
 
 Namespace MapDemo
@@ -7,7 +6,6 @@ Namespace MapDemo
         Inherits MapDemoModule
 
         Public Sub New()
-            ServicePointManager.SecurityProtocol = SecurityProtocolType.SystemDefault
             InitializeComponent()
         End Sub
 

@@ -42,10 +42,10 @@
     <Resource Include="Modules\Behaviors\Images\Admin.svg" />
     <Resource Include="Modules\Behaviors\Images\Moderator.svg" />
     <Resource Include="Modules\Behaviors\Images\User.svg" />
-    <PackageReference Include="DevExpress.Wpf.Demos" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.Themes.All" VersionOverride="26.1.4" />
-    <PackageReference Include="DevExpress.Wpf.ThemesLW" VersionOverride="26.1.4" />
+    <PackageReference Include="DevExpress.Wpf.Demos" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Themes.All" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.ThemesLW" VersionOverride="26.1.5" />
     
     
     
