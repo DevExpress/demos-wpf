@@ -38,14 +38,14 @@
     <DefineConstants>TRACE;</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="DevExpress.Wpf.Demos" VersionOverride="26.1.5" />
-    <PackageReference Include="DevExpress.Document.Processor" VersionOverride="26.1.5" />
-    <PackageReference Include="DevExpress.Wpf" VersionOverride="26.1.5" />
-    <PackageReference Include="DevExpress.AIIntegration.Wpf" VersionOverride="26.1.5" />
-    <PackageReference Include="DevExpress.AIIntegration.Wpf.Chat" VersionOverride="26.1.5" />
-    <PackageReference Include="DevExpress.DataAccess.UI" VersionOverride="26.1.5" />
-    <PackageReference Include="DevExpress.Wpf.Themes.All" VersionOverride="26.1.5" />
-    <PackageReference Include="DevExpress.Wpf.ThemesLW" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Demos" VersionOverride="26.1.6" />
+    <PackageReference Include="DevExpress.Document.Processor" VersionOverride="26.1.6" />
+    <PackageReference Include="DevExpress.Wpf" VersionOverride="26.1.6" />
+    <PackageReference Include="DevExpress.AIIntegration.Wpf" VersionOverride="26.1.6" />
+    <PackageReference Include="DevExpress.AIIntegration.Wpf.Chat" VersionOverride="26.1.6" />
+    <PackageReference Include="DevExpress.DataAccess.UI" VersionOverride="26.1.6" />
+    <PackageReference Include="DevExpress.Wpf.Themes.All" VersionOverride="26.1.6" />
+    <PackageReference Include="DevExpress.Wpf.ThemesLW" VersionOverride="26.1.6" />
     
     
     

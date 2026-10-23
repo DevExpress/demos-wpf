@@ -4,7 +4,7 @@ Namespace MapDemo
 
     Public Module AzureKeyProvider
 
-        Const key As String = "CDOhtwNBSsbmBiN3rUEjmBJGHW2tRMbp5XVwu4J55VBZg8PdRe9MJQQJ99BEACYeBjFllM6LAAAgAZMP1cA4"
+        Const key As String = ""
 
         Const testKey As String = "TestKey"
 

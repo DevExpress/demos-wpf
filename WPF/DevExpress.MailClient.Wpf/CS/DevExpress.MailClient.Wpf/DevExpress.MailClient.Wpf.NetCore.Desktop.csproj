@@ -43,11 +43,11 @@
     <Content Include="Themes.NetCore.targets" />
   </ItemGroup>
   <ItemGroup>
-    <PackageReference Include="DevExpress.Wpf.Demos" VersionOverride="26.1.5" />
-    <PackageReference Include="DevExpress.Document.Processor" VersionOverride="26.1.5" />
-    <PackageReference Include="DevExpress.Wpf" VersionOverride="26.1.5" />
-    <PackageReference Include="DevExpress.Wpf.Themes.All" VersionOverride="26.1.5" />
-    <PackageReference Include="DevExpress.Wpf.ThemesLW" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf.Demos" VersionOverride="26.1.6" />
+    <PackageReference Include="DevExpress.Document.Processor" VersionOverride="26.1.6" />
+    <PackageReference Include="DevExpress.Wpf" VersionOverride="26.1.6" />
+    <PackageReference Include="DevExpress.Wpf.Themes.All" VersionOverride="26.1.6" />
+    <PackageReference Include="DevExpress.Wpf.ThemesLW" VersionOverride="26.1.6" />
     
     
     

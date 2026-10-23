@@ -39,9 +39,9 @@
     <DefineConstants>TRACE;REALTORWORLDDEMO;WPF;</DefineConstants>
   </PropertyGroup>
   <ItemGroup>
-    <PackageReference Include="DevExpress.Wpf" VersionOverride="26.1.5" />
-    <PackageReference Include="DevExpress.Wpf.Demos" VersionOverride="26.1.5" />
-    <PackageReference Include="DevExpress.Wpf.Themes.All" VersionOverride="26.1.5" />
+    <PackageReference Include="DevExpress.Wpf" VersionOverride="26.1.6" />
+    <PackageReference Include="DevExpress.Wpf.Demos" VersionOverride="26.1.6" />
+    <PackageReference Include="DevExpress.Wpf.Themes.All" VersionOverride="26.1.6" />
     
     
     

@@ -10,7 +10,7 @@ Namespace ProductsDemo
 
     Public Class DemoValuesProvider
 
-        Public Const DevExpressAzureKey As String = "CDOhtwNBSsbmBiN3rUEjmBJGHW2tRMbp5XVwu4J55VBZg8PdRe9MJQQJ99BEACYeBjFllM6LAAAgAZMP1cA4"
+        Public Const DevExpressAzureKey As String = ""
     End Class
 
     Public Module DataLoader

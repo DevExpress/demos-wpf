@@ -273,7 +273,9 @@
     <PackageReference Include="Microsoft.Extensions.AI.OpenAI" />
     <PackageReference Include="Microsoft.Extensions.AI" />
     <PackageReference Include="Microsoft.Extensions.VectorData.Abstractions" />
-    <PackageReference Include="Microsoft.Extensions.DependencyInjection" />
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection">
+      <netcore3ignore />
+    </PackageReference>
     <PackageReference Include="Microsoft.SemanticKernel.Connectors.InMemory" />
     <PackageReference Include="System.Numerics.Tensors" />
     <PackageReference Include="System.Data.SQLite">
@@ -430,7 +432,6 @@
      <HintPath>..\..\..\Bin\NETCore\DevExpress.AIIntegration.Agents.v26.1.dll</HintPath>
    </Reference>
    <PackageReference Include="DevExtreme.AspNet.Data" Condition="$(DEMO_REMOVE)==''" />
-   <PackageReference Include="Microsoft.AspNetCore.Components.Web" />
    <PackageReference Include="Microsoft.AspNetCore.Components.WebView.Wpf" />
    <PackageReference Include="Markdig" />
    <PackageReference Include="Microsoft.Agents.AI" />

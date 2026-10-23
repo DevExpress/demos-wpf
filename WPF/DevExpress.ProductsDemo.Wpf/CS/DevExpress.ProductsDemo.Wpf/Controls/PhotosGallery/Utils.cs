@@ -8,7 +8,7 @@ using DevExpress.Utils;
 
 namespace ProductsDemo {
     public class DemoValuesProvider {
-        public const string DevExpressAzureKey = "CDOhtwNBSsbmBiN3rUEjmBJGHW2tRMbp5XVwu4J55VBZg8PdRe9MJQQJ99BEACYeBjFllM6LAAAgAZMP1cA4";
+        public const string DevExpressAzureKey = "";
     }
 
     public static class DataLoader {
